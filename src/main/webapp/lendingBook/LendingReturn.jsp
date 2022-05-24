@@ -74,8 +74,8 @@
 
 
 
-			<input type="submit" value="貸出" formaction="sample.php"> <input
-				type="submit" value="返却">
+			<input type="submit" value="貸出" formaction="sample.php">
+			 <input type="submit" value="返却">
 		</div>
 	</form>
 

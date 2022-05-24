@@ -14,7 +14,7 @@
 <body>
 
 	<h1 style="text-align : center">貸出が完了しました。</h1>
-	<div><a href="/LibraryProject/lendingBook/LendingReturn.jsp" class="btn-square-shadow">貸出・返却に戻る</a></div>
+	<div><a href="/LibraryProject/lendingBook/LendingReturn.jsp" >貸出・返却に戻る</a></div>
 	
 	
 	
