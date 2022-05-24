@@ -43,7 +43,8 @@ public class StockSearchServlet extends HttpServlet {
 			request.setAttribute("message", "内部エラーが発生しました。");
 
 		}
-
+		
+		response.sendRedirect(request.getHeader("REFERER"));
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

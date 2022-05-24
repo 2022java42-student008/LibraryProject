@@ -44,11 +44,12 @@ public class StockAddServlet extends HttpServlet {
 			String publish_date = request.getParameter("publish_date");
 			
 			
-			dao.AddBooks(bookid, isbn, title, arrivalDate, remarks, code, author, publisher, publish_date)
+			dao.AddBooks(bookid, isbn, title, arrivalDate, remarks, code, author, publisher, publish_date);
 		
 		 //追加後、登録した内容を表示
 		   
+			HttpSession session = request.getSession();
 		}
 
-	   
+	   //セッション
 		
