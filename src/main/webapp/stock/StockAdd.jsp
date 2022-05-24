@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+    
+    
+    
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,43 +22,56 @@
     </div>
 
 <div class="centermargin">
-    <h1 style="text-align:center">資料追加</h1>
+    <h1 style="text-align:center">資料登録</h1>
     </div>
 
-<form action="#" method="post">
 
 
+<!--↓ここから入力フォーム-->
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 ISBN番号
 <input type="text" placeholder="ISBN番号を入力" name="ISBN" size="15" maxlength="13">
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 資料名
 <input type="text" placeholder="資料名を入力" name="title" size="80">
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 著者名
 <input type="text" placeholder="著者名を入力"name="author" size="50">
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 出版社
 <input type="text" placeholder="出版者名を入力"name="publisher" size="50">
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 出版年月日
 <input type="date" placeholder="出版年月日を入力"name="publish_date">
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 入荷年月日
 <input type="date" placeholder="入荷年月日を入力"name="arrival_date">
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 分類コード
 <select name="code">
 <option value="">-</option>
@@ -66,16 +86,16 @@ ISBN番号
 <option value="8">8</option>
 <option value="9">9</option>
 </select>
-
+<input type="hidden" name=action value="add">
+</form>
 <br>
 
+<form action="/LibraryProject/StockAddServlet" method="post">
 備考
 <input type="text" placeholder="備考を入力"name="remarks" size="80"> 
-
+<input type="hidden" name=action value="add">
 </form>
 
-
-<input type="submit" value="次へ">
 
 <br>
 

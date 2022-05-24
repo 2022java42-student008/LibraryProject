@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class StockAddDAO {
+public class StockAddDAO2 {
 	private String url = "jdbc:postgresql:sample";
 	private String user = "student";
 	private String pass = "himitu";
 
-	public StockAddDAO() throws DAOException {
+	public StockAddDAO2() throws DAOException {
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
@@ -20,12 +20,12 @@ public class StockAddDAO {
 
 	}
 
-	public int AddBooks(int bookid, long isbn, String title, String arrivalDate, String remarks)
+	public int AddBooks(long isbn, String title, int code, String author, String publisher, String publish_date)
 
 			throws DAOException {
 
 		// SQL文の作成
-		String sql = "INSERT INTO stock(book_id, isbn, title, arrival_date, remarks) VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO inventory(isbn, title, code, author, publisher, publish_date) VALUES(?, ?, ?, ?, ?, ?)";
 
 		try (// データベースへの接続
 				Connection con = DriverManager.getConnection(url, user, pass);
@@ -33,11 +33,12 @@ public class StockAddDAO {
 
 		// 表に入れる項目
 		{
-			st.setInt(1, bookid);
-			st.setLong(2, isbn);
-			st.setString(3, title);
-			st.setString(4, arrivalDate);
-			st.setString(5, remarks);
+			st.setLong(1, isbn);
+			st.setString(2, title);
+			st.setInt(3, code);
+			st.setString(4, author);
+			st.setString(5, publisher);
+			st.setString(6, publish_date);
 
 			// SQLの実行
 			int rows = st.executeUpdate();
@@ -49,5 +50,4 @@ public class StockAddDAO {
 
 		}
 	}
-
 }
