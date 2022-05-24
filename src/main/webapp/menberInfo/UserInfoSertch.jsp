@@ -5,15 +5,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>会員検索</title>
-		<style>
-			.centermargin 
-			{
-				position: relative;
-				text-align: center;
-			}
-			.tableCeter{margin : auto;}
-			
-		</style>
+		<link href="css/UserInfoStyle.css" rel="stylesheet">
 	</head>
 	<body>
 	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>

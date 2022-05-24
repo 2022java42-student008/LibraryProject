@@ -19,7 +19,7 @@ public class ChangeUserInfoConf extends HttpServlet {
 		
 		//リクエストから取得
 		String strName = (String)request.getAttribute("name");
-		long lPost = (long)request.getAttribute("post");
+		String strPost = (String)request.getAttribute("post");
 		String strAddress = (String)request.getAttribute("address");
 		String strTel = (String)request.getAttribute("tel");
 		String strMail = (String)request.getAttribute("mail");
@@ -36,9 +36,9 @@ public class ChangeUserInfoConf extends HttpServlet {
 			user.setStrName(strName);
 		}
 		
-		if(!(lPost == 0))
+		if(!(strPost == null || strPost.length() == 0))
 		{
-			user.setPost_no(lPost);
+			user.setPost_no(Long.parseLong(strBirthday));
 		}
 		
 		if(!(strAddress == null || strAddress.length() == 0))
@@ -61,8 +61,8 @@ public class ChangeUserInfoConf extends HttpServlet {
 			user.setBirthday(strBirthday);
 		}
 		
-		request.setAttribute("user", user);
-		RequestDispatcher rd = request.getRequestDispatcher("ChangeUserConf");
+		session.setAttribute("user", user);
+		RequestDispatcher rd = request.getRequestDispatcher("menberInfo/ChangeUserConf.jsp");
 		rd.forward(request, response);
 		
 	}

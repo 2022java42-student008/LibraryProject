@@ -5,12 +5,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>会員情報変更</title>
+		<link href="css/UserInfoStyle.css" rel="stylesheet">
 	</head>
 	<body>
 		<h1>会員情報変更</h1><br>
 		
 		<div class="tableCeter">
-			<table border="1"class="tableCeter">
+			<table border="1">
 				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
 						<td>${sessionScope.menberInfo.iID}</td>
@@ -28,7 +29,7 @@
 		</div>
 		
 		<br><h2>変更する内容を入力してください</h2><br>
-		<form action="ChangeUserInfoConf" method="post">
+		<form action="../ChangeUserInfoConf" method="post">
 			<table border="1">
 				<tr><td>氏名</td><td><input type="text" name="name"></td></tr>
 				<tr><td>郵便番号</td><td><input type="number" name="post"></td></tr>
@@ -37,7 +38,7 @@
 				<tr><td>E-mail</td><td><input type="text" name="mail"></td></tr>
 				<tr><td>生年月日</td><td><input type="date" name="birthday"></td></tr>
 			</table>
-			<input type="submit" value="戻る" formaction="UserInfoSertch.jsp"><input type="submit" value="追加" >
+			<input type="submit" value="戻る" formaction="UserInfoSertch.jsp"><input type="submit" value="変更" >
 		</form>
 	</body>
 </html>
