@@ -21,13 +21,14 @@ public class StockSearchServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String BookID = request.getParameter("BookID");
-		int IDForSearch = Integer.parseInt(BookID);
-
+		
 		if (BookID == null || BookID.length() == 0) {
-			System.out.print("正しい資料IDを入力してください");
+			response.sendRedirect(request.getHeader("REFERER"));
+			return;
 		}
+        int IDForSearch = Integer.parseInt(BookID);
 
-		response.sendRedirect(request.getHeader("REFERER"));
+		
 
 		try {
 			BookDAO dao = new BookDAO();
