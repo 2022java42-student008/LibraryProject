@@ -19,7 +19,7 @@
 	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
 		<h2 class="centermargin">会員情報</h2>
 		<form action="../SerchInfoUser" method="post" class="centermargin">
-			e-Mail : <input type="text" name="menberMail" placeholder=${sessionScope.sertch}">
+			e-Mail : <input type="text" name="menberMail" placeholder=${sessionScope.sertch}>
 			<input type="submit" value="検索">
 		</form>
 		
@@ -36,12 +36,12 @@
 				</tr>
 			</table>
 		</div>
-		
+	
 		<c:if test="${not empty menberInfo}">
 			<div class="centermargin">
-				<form action="ChangeUserInfo" method="post">
+				<form action="ChangeUserInfo.jsp">
 					<input type="submit" value="変更" >
-					<input type="submit" value="削除"formaction="DeleteUser">
+					<input type="submit" value="削除"formaction="DeleteUser.jsp">
 				</form>
 			</div>
 		</c:if>

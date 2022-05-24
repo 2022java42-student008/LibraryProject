@@ -4,13 +4,40 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>新規会員登録</title>
+		<title>会員情報変更</title>
 	</head>
 	<body>
-		<h1>新規会員登録</h1>
-		<form action="CreateUserServlet" method="post">
-			
-			
+		<h1>会員情報変更</h1><br>
+		
+		<div class="tableCeter">
+			<table border="1"class="tableCeter">
+				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
+				<tr>
+						<td>${sessionScope.menberInfo.iID}</td>
+						<td>${sessionScope.menberInfo.strName}</td>
+						<td>${sessionScope.menberInfo.post_no}</td>
+						<td>${sessionScope.menberInfo.address}</td>
+						<td>${sessionScope.menberInfo.tel}</td>
+						<td>${sessionScope.menberInfo.mail}</td>
+						<td>${sessionScope.menberInfo.birthday}</td>
+						<td>${sessionScope.menberInfo.join_date}</td>
+						<td>${sessionScope.menberInfo.secode_date}</td>
+						<td>${sessionScope.menberInfo.update_date}</td>
+				</tr>
+			</table>
+		</div>
+		
+		<br><h2>変更する内容を入力してください</h2><br>
+		<form action="ChangeUserInfoConf" method="post">
+			<table border="1">
+				<tr><td>氏名</td><td><input type="text" name="name"></td></tr>
+				<tr><td>郵便番号</td><td><input type="number" name="post"></td></tr>
+				<tr><td>住所</td><td><input type="text" name="address"></td></tr>
+				<tr><td>電話番号</td><td><input type="text" name="tel"></td></tr>
+				<tr><td>E-mail</td><td><input type="text" name="mail"></td></tr>
+				<tr><td>生年月日</td><td><input type="date" name="birthday"></td></tr>
+			</table>
+			<input type="submit" value="戻る" formaction="UserInfoSertch.jsp"><input type="submit" value="追加" >
 		</form>
 	</body>
 </html>
