@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ReturnCompletedServlet extends HttpServlet {
  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
-	    String sql = "UPDATE rental"
-	    		+ "   SET return_date = CURRENT_DATE "
-	    		+ "   WHERE  =    ";
+	    String sql = "UPDATE rental SET return_date='CURRENT_DAT' WHERE rental_id=?   ";
 	
         RequestDispatcher rd = request.getRequestDispatcher("/./ReturnDiscriminant.jsp");
         rd.forward(request, response);
