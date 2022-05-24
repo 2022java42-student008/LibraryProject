@@ -40,7 +40,6 @@ public class StockDAO {
 				long ibsn = rs.getLong("isbn");
 				String title = rs.getString("title");
 				String arrival_date = rs.getString("arrival_date");
-				String discard_date = rs.getString("discard_date");
 				String remarks = rs.getString("remarks");
 				
 				//情報を入れる
@@ -64,7 +63,7 @@ public class StockDAO {
 					// 新作ではないので、本日から15日後
 					LocalDate date = LocalDate.now();
 					// 新作なので本日から10日後
-					String returnDate =  date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));;
+					String returnDate =  date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));;
 					bean.setDiscar_date(returnDate);
 				}
 				
