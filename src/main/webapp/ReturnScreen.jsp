@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.ArrayList"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>ReturnScreen</title>
-<link href="/LibraryProject/lendingBook/ReturnCompleted.css" rel="stylesheet">
+<link href="/LibraryProject/lendingBook/ReturnCompleted.css"
+	rel="stylesheet">
 </head>
 <body>
 
@@ -16,22 +17,28 @@
 
 
 
-	<form action="/LibraryProject/returnBook/ReturnScreenServlet.java" method="post">
-		<div class="centermargin">
-			<h1>返却</h1>
-			<table border="1">
-				<tr>
-					<th>会員ID</th>
-					<th width="300">${sessionScope.menberInfo.iID }</th>
-				</tr>
-				<tr>
-					<th>氏名</th>
-					<th width="300">${sessionScope.menberInfo.strName}</th>
-				</tr>
-			</table>
 
 
+	
+		<h1>返却</h1>
+		<table border="1">
+			<tr>
+				<th>会員ID</th>
+				<th width="300">${sessionScope.menberInfo.iID }</th>
+			</tr>
+			<tr>
+				<th>氏名</th>
+				<th width="300">${sessionScope.menberInfo.strName}</th>
+			</tr>
+		</table>
+		
+		
+		<form action="/LibraryProject/ReturnScreenServlet" method="post">
+			<input type="hidden" name="userID"
+				value=${sessionScope.menberInfo.iID}> <input type="hidden"
+				name="userName" value=${sessionScope.menberInfo.strName}>
 
+            <div class="centermargin">
 
 
 			<table border="1">
@@ -45,11 +52,12 @@
 				</tr>
 
 
-				
 
-					
 
-					<c:forEach items="${sessionScope.rentalInfo}" var="book" varStatus="stat">
+
+
+				<c:forEach items="${sessionScope.rentalInfo}" var="book"
+					varStatus="stat">
 
 					<tr>
 						<td><input type="checkbox" name="return" value=${stat.index }></td>
@@ -67,12 +75,12 @@
 
 			</table>
 
-		
 
-			<input type="submit" value="戻る" formaction="/LibraryProject/lendingBook/LendingReturn.jsp"> <input
-				type="submit" value="返却">
 
-		</div>
+			<input type="submit" value="戻る"
+				formaction="/LibraryProject/lendingBook/LendingReturn.jsp">
+			<input type="submit" value="返却">
+	</div>
 	</form>
 
 </body>

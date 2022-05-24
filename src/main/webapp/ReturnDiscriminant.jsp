@@ -21,16 +21,19 @@
 			<table border="1">
 				<tr>
 					<th>会員ID</th>
-					<th width="300"></th>
+					<th width="300">${sessionScope.menberInfo.iID }</th>
 				</tr>
 				<tr>
 					<th>氏名</th>
-					<th width="300"></th>
+					<th width="300">${sessionScope.menberInfo.strName}</th>
 				</tr>
 			</table>
 
 
 
+			<c:if test="{bool ne true}">
+			   ture
+			</c:if>
 
 
 			<table border="1">
@@ -44,15 +47,15 @@
 
 
 
-				<c:forEach items="${param.rental}" var="book" varStatus="stat">
+				<c:forEach items="${requestScope.rental}" var="book" varStatus="stat">
 
 					<tr>
 
-						<th>${rental.book.iBookID}</th>
-						<th>${rental.book.isbn}</th>
-						<th>${rental.book.title}</th>
-						<th>${rental.book.dRentalDate}</th>
-						<th>${rental.book.dFixedDate}</th>
+						<th>${book.iBookID}</th>
+						<th>${book.isbn}</th>
+						<th>${book.title}</th>
+						<th>${book.dRentalDate}</th>
+						<th>${book.dFixedDate}</th>
 
 					</tr>
 
