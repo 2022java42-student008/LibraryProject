@@ -5,10 +5,13 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import bean.BookBean;
+import bean.StockBean;
 
 public class BookDAO {
 	private String url = "jdbc:postgresql:sample";
@@ -28,8 +31,7 @@ public class BookDAO {
 	public List<BookBean> findBooks(int bookid) throws DAOException {
 		String sql = "SELECT * FROM stock LEFT OUTER JOIN inventory ON stock.isbn = inventory.isbn WHERE book_id =?";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
-				PreparedStatement st = con.prepareStatement(sql);)
-				 {
+				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setInt(1, bookid);
 			ResultSet rs = st.executeQuery();
 			List<BookBean> list = new ArrayList<BookBean>();
@@ -65,4 +67,71 @@ public class BookDAO {
 		}
 	}
 
+	public void addrental(List<StockBean> list, int user_id) throws DAOException {
+		String sql = "INSERT INTO rental(user_id, book_id, rental_date, fixed_date) VALUES (?,?,CURRENT_DATE,?)";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			for (StockBean stock : list) {
+				String returnDate = null;
+				if (fixedDate(stock.getBook_id())) {
+					LocalDate date = LocalDate.now();
+					// 新作なので本日から10日後
+					returnDate = date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+					;
+				} else {
+					// 新作ではないので、本日から15日後
+					LocalDate date = LocalDate.now();
+					// 新作なので本日から10日後
+					returnDate = date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+					;
+
+				}
+
+				st.setInt(1, user_id);
+				st.setLong(2, stock.getBook_id());
+				st.setDate(3, java.sql.Date.valueOf(returnDate));
+				st.executeUpdate();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
+
+	public boolean fixedDate(int book_id) throws DAOException {
+		String sql = "SELECT " + "  CASE " + "      WHEN arrival_date + interval '30 day' >= CURRENT_DATE THEN 1 "
+				+ "      ELSE 2 " + "    END AS type,"
+				+ "    TO_CHAR(arrival_date + interval '10 day', 'YYYY-MM-DD') AS  new_lend_date, "
+				+ "    TO_CHAR(arrival_date + interval '15 day', 'YYYY-MM-DD') AS old_lend_date " + "FROM stock "
+				+ "WHERE book_id = ? ";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setInt(1, book_id);
+			try (ResultSet rs = st.executeQuery();) {
+				int type = 0;
+				String new_lend_date = "";
+				String old_lend_date = "";
+				boolean fixedDate;
+				while (rs.next()) {
+					type = rs.getInt("type");
+					old_lend_date = rs.getString("old_lend_date");
+					new_lend_date = rs.getString("new_lend_date");
+				}
+				if (type == 1) {
+					fixedDate = true;
+				} else {
+					fixedDate = false;
+				}
+				return fixedDate;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 }

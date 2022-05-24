@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-       <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-       <%@ page 	import="java.time.LocalDate"
-       				import="java.time.format.DateTimeFormatter"
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page 	import="java.time.LocalDate"
+       		import="java.time.format.DateTimeFormatter"
        %>
        
 <!DOCTYPE html>
@@ -49,12 +49,13 @@
 
 <br>
 
- <form action="/lendingBook/LendComp.jsp" method="post">
+ <form action="/LibraryProject/LendBookServlet" method="post">
  <div>
-	<input type="button"  onclick="location.href='LendBook.jsp'"  display="inline-block"  name="return" value="戻る"  size="5">
-	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5">
-	</div>
- </form>
+	<input type="button"  onclick="location.href='/lendingBook/LendBook.jsp'"  display="inline-block"  name="return" value="戻る"  size="5">
+	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 	
+			<input type="hidden" name="action" value="rentaldate">
+  </div>
+  </form>
  
 
 </body>

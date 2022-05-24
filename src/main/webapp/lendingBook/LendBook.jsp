@@ -45,6 +45,7 @@
 <div>
 	<input type="submit" name="return" value="戻る"size="5">	
 	<input type="submit" name="lending" value="貸出" size="5">
+	<input type="hidden" name="action" value="seach">
 </div>
  </form> 
  
