@@ -52,7 +52,7 @@
 					<c:forEach items="${sessionScope.rentalInfo}" var="book" varStatus="stat">
 
 					<tr>
-						<td><input type="checkbox" name="return" value=${stat.count }></td>
+						<td><input type="checkbox" name="return" value=${stat.index }></td>
 						<th>${book.iBookID}</th>
 						<th>${book.isbn}</th>
 						<th>${book.title}</th>
