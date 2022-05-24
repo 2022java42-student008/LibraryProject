@@ -51,7 +51,7 @@
 
  <form action="/LibraryProject/LendBookServlet" method="post">
  <div>
-	<input type="button"  onclick="location.href='/lendingBook/LendBook.jsp'"  display="inline-block"  name="return" value="戻る"  size="5">
+	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5">
 	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 	
 			<input type="hidden" name="action" value="rentaldate">
   </div>

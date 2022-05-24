@@ -17,7 +17,7 @@
 	<div><h1>貸出</h1></div>
 
 	<font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝">	
-		<div><h4>会員情報</h4></div>
+		<div>会員情報</div>
 	</font>
 	
  <table border="1" width="7%" align="center">
@@ -43,7 +43,7 @@
 <br>
 
 <div>
-	<input type="submit" name="return" value="戻る"size="5">	
+	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5">	
 	<input type="submit" name="lending" value="貸出" size="5">
 	<input type="hidden" name="action" value="seach">
 </div>
