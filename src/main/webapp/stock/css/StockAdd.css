@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.centermargin {
+	position: relative;
+	text-align: center;
+}
+
+.leftmargin {
+	position: top;
+	left: 0;
+	bottom: 0;
+}
+
+.next {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+} 
