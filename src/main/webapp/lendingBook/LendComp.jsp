@@ -7,14 +7,14 @@
 <title>Lead Comp</title>
 
 <style>
-	div { text-align : center ; }
+	#text { text-align : center ; }
 </style>
 
 </head>
 <body>
 
 	<h1 style="text-align : center">貸出が完了しました。</h1>
-	<div><a href="/LibraryProject/lendingBook/LendingReturn.jsp" >貸出・返却に戻る</a></div>
+	<div id="text"><a href="/LibraryProject/lendingBook/LendingReturn.jsp" >貸出・返却に戻る</a></div>
 	
 	
 	
