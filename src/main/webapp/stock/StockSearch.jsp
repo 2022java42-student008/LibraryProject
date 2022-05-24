@@ -12,7 +12,7 @@
 <body>
 
 <div class="leftmargin">
-	 <a href="./TopMenu.html" >トップメニュー</a>
+	 <a href="../TopMenu.html" >トップメニュー</a>
     </div>
 
 
@@ -28,7 +28,7 @@
   <input type="submit" name="submit" value="検索">
 </form>
 
-<br>
+
 
 <table border="1" align="center">
      
@@ -41,9 +41,9 @@
      <tr><td align="center"  bgcolor="#CCCCFF"> 資料名</td><th>${item.title}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 著者名</td><th>${item.author}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 出版社</td><th>${item.publisher}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 出版日</td><th>${item.publish_date}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 出版日</td><th>${item.publishDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 入荷年月日</td><th>${item.arrivalDate}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 出荷年月日</td><th>${item.discardDate}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 削除年月日</td><th>${item.discardDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 備考</td><th>${item.remarks}</th></tr>
      
      <td>
@@ -57,12 +57,9 @@
 </table>
 
 <br>
-
-
-
 <br>
 
-<div class="return">
+<div class="return" align="center">
 <input type="button" onclick="location.href='./StockMenu.html'" name="return" value="資料管理メニューへ戻る">	
 </div>
 
