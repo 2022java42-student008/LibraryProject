@@ -34,6 +34,8 @@ public class SerchInfoUser extends HttpServlet {
 		if(menberMail == null || menberMail.length() == 0)
 		{
 			response.sendRedirect(request.getHeader("REFERER"));
+			session.setAttribute("menberInfo", user);
+			session.setAttribute("rentalInfo", rental);
 			return;
 		}
 		
@@ -52,6 +54,8 @@ public class SerchInfoUser extends HttpServlet {
 		if(user == null)
 		{			
 			response.sendRedirect(request.getHeader("REFERER"));
+			session.setAttribute("menberInfo", user);
+			session.setAttribute("rentalInfo", rental);
 			return;
 		}
 			

@@ -131,5 +131,40 @@ public class UserDAO {
 		return bRet;
 	}
 	
+	//会員情報を変更する
+	public boolean changeUserInfo(UserBean _user) throws DAOException
+	{
+		boolean bRet = false;
+		
+		String sql = "UPDATE user_table SET name = ? , post_no = ? , address = ? , tel = ? , mail = ? , birthday = ? , update_date = CURRENT_TIMESTAMP WHERE user_id = ?";
+		
+		try (
+				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);)
+		{
+			ps.setString(1, _user.getStrName());
+			ps.setLong(2, _user.getPost_no());
+			ps.setString(3, _user.getAddress());
+			ps.setString(4, _user.getTel());
+			ps.setString(5, _user.getMail());
+			
+			//StringからsqlDateにフォーマット
+			java.sql.Date sqlDate = java.sql.Date.valueOf(_user.getBirthday());
+			ps.setDate(6,sqlDate);
+			
+			ps.setInt(7, _user.getiID());
+			int n = ps.executeUpdate();
+			
+			if(n == 1)
+			{
+				bRet = true;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("エラー");
+		}
+		return bRet;
+	}
+	
 
 }
