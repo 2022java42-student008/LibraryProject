@@ -16,7 +16,7 @@
 
 
 
-	<form action="ReturnDiscriminant.jsp" method="post">
+	<form action="/LibraryProject/returnBook/ReturnScreenServlet.java" method="post">
 		<div class="centermargin">
 			<h1>返却</h1>
 			<table border="1">

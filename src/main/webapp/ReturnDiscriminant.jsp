@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,16 +43,16 @@
 				</tr>
 
 
-			
-					<c:forEach items="${stat.count }" var="book" varStatus="stat">
+
+				<c:forEach items="${param.rental}" var="book" varStatus="stat">
 
 					<tr>
-						
-						<th>${book.iBookID}</th>
-						<th>${book.isbn}</th>
-						<th>${book.title}</th>
-						<th>${book.dRentalDate}</th>
-						<th>${book.dFixedDate}</th>
+
+						<th>${rental.book.iBookID}</th>
+						<th>${rental.book.isbn}</th>
+						<th>${rental.book.title}</th>
+						<th>${rental.book.dRentalDate}</th>
+						<th>${rental.book.dFixedDate}</th>
 
 					</tr>
 
@@ -62,8 +64,8 @@
 
 			<h3>上記の資料を返却します。</h3>
 
-			<input type="submit" value="戻る" formaction="ReturnScreen.jsp"> <input
-				type="submit" value="返却">
+			<input type="submit" value="戻る" formaction="ReturnScreen.jsp">
+			<input type="submit" value="返却">
 
 		</div>
 	</form>
