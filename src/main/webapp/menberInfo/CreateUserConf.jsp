@@ -9,6 +9,7 @@
 		<title>新規会員登録</title>
 	</head>
 	<body>
+	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
 		<h1>新規会員登録</h1>
 		<form action="../CreateUserServlet" method="post">
 			<table border="1">

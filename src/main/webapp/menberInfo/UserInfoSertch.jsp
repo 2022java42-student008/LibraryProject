@@ -8,7 +8,7 @@
 		<link href="css/UserInfoStyle.css" rel="stylesheet">
 	</head>
 	<body>
-	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
 		<h2 class="centermargin">会員情報</h2>
 		<form action="../SerchInfoUser" method="post" class="centermargin">
 			e-Mail : <input type="text" name="menberMail" placeholder=${sessionScope.sertch}>

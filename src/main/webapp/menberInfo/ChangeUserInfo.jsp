@@ -8,6 +8,7 @@
 		<link href="css/UserInfoStyle.css" rel="stylesheet">
 	</head>
 	<body>
+	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
 		<h1>会員情報変更</h1><br>
 		
 		<div class="tableCeter">

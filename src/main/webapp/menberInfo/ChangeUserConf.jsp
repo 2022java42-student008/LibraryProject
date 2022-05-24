@@ -7,6 +7,7 @@
 		<link href="css/UserInfoStyle.css" rel="stylesheet">
 	</head>
 	<body>
+	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
 	<h1>変更内容確認</h1>
 		<div class="tableCeter">
 			<table border="1"class="tableCeter">

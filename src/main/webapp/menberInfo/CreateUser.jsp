@@ -10,6 +10,7 @@
 		<title>新規会員登録</title>
 	</head>
 	<body>
+	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
 		<h1>新規会員登録</h1>
 		<form action="CreateUserConf.jsp">
 			<table border="1">
