@@ -22,29 +22,21 @@ public class StockSearchServlet extends HttpServlet {
 
 		String BookID = request.getParameter("BookID");
 		int IDForSearch = Integer.parseInt(BookID);
-		
-		if(BookID == null || BookID.length() == 0 ) {
+
+		if (BookID == null || BookID.length() == 0) {
 			System.out.print("正しい資料IDを入力してください");
 		}
 
+		response.sendRedirect(request.getHeader("REFERER"));
 
-	//資料IDから資料情報を出す
-		
 		try {
 			BookDAO dao = new BookDAO();
-			dao.findByStockID(IDForSearch);
-			List<BookBean> list = dao.findByStockID(IDForSearch);
+			List<BookBean> list = dao.findBooks(IDForSearch);
 			request.setAttribute("searchResult", list);
-			
+
 			HttpSession session = request.getSession();
 			session.setAttribute("searchResult", list);
-			
 
-			response.sendRedirect(request.getHeader("REFERER"));
-
-			
-			
-			
 		} catch (DAOException e) {
 			e.printStackTrace();
 			request.setAttribute("message", "内部エラーが発生しました。");
