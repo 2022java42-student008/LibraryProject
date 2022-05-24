@@ -31,9 +31,7 @@
 
 
 
-			<c:if test="{bool ne true}">
-			   ture
-			</c:if>
+			
 
 
 			<table border="1">

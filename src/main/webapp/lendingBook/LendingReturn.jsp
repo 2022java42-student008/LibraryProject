@@ -74,7 +74,7 @@
 
 
 
-			<input type="submit" value="貸出" formaction="sample.php">
+			<input type="submit" value="貸出" formaction="LendBook.jsp">
 			 <input type="submit" value="返却">
 		</div>
 	</form>

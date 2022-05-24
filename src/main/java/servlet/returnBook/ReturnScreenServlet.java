@@ -26,15 +26,14 @@ public class ReturnScreenServlet extends HttpServlet {
         
         
         ArrayList<RentalBean> list = new  ArrayList<RentalBean>();
-        if(bean != null)
-        {
+      
         	for(String value: values) 
         	{
-	    	 b=true;
+	    	
         		list.add(bean.get(Integer.parseInt(value)));
         	}
-        }
-        request.setAttribute("bool", b);
+        
+        
         request.setAttribute("rental", list);
         RequestDispatcher rd = request.getRequestDispatcher("/./ReturnDiscriminant.jsp");
         rd.forward(request, response);
