@@ -30,7 +30,7 @@
 		<h2 class="centermargin ">上記の内容で変更して宜しいでしょうか?</h2>
 		<div class="tableCeter">
 			<form action="ChangeUserInfoComp" method="post">
-				<input type="submit" value="戻る" formaction=""><input type="submit" value="変更" name="ok">
+				<input type="submit" value="戻る" formaction="/LibraryProject/menberInfo/ChangeUserInfo.jsp"><input type="submit" value="変更" name="ok">
 			</form>
 		</div>
 	</body>
