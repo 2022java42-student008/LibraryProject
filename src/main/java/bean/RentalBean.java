@@ -72,8 +72,8 @@ public class RentalBean implements Serializable{
 	public long getIsbn() {return isbn;}
 	public void setIsbn(int isbn) {this.isbn = isbn;}
 	
-	public String getTitle() {return title;}
-	public void setTitle(Date title) {this.title = fm.format(title);}
+//	public String getTitle() {return title;}
+//	public void setTitle(Date title) {this.title = fm.format(title);}
 	
 	public String getdRentalDate() {return dRentalDate;}
 	public void setdRentalDate(Date dRentalDate) {this.dRentalDate = fm.format(dRentalDate);}
@@ -86,6 +86,12 @@ public class RentalBean implements Serializable{
 	
 	public String getStrRemarks() {return strRemarks;}
 	public void setStrRemarks(String strRemarks) {this.strRemarks = strRemarks;}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	
 	
 }
