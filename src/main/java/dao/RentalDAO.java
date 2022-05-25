@@ -56,7 +56,7 @@ public class RentalDAO {
 
 		return listRental;
 	}
-	
+
 	public void ReturnCompletedInfo(int _iRenatalID) throws DAOException {
 
 		// listRental.add(new RentalBean())
@@ -67,7 +67,7 @@ public class RentalDAO {
 			ps.setInt(1, _iRenatalID);
 
 			ps.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DAOException("エラー");
@@ -98,7 +98,9 @@ public class RentalDAO {
 				bean.setTitle(title);
 				bean.setdRentalDate(rental_date);
 				bean.setdFixedDate(fixed_date);
-				bean.setdReturnDate(return_date);
+				if (return_date != null) {
+					bean.setdReturnDate(return_date);
+				}
 				bean.setStrRemarks(remarks);
 				listRental.add(bean);
 			}
@@ -109,6 +111,5 @@ public class RentalDAO {
 		}
 
 	}
-	
 
 }

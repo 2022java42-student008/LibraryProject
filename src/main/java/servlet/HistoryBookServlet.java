@@ -19,19 +19,19 @@ public class HistoryBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		request.setCharacterEncoding("UTF-8");
 		String action = request.getParameter("action");
 
 		if (action.equals("history")) {
 			String text = request.getParameter("search");
-			if (text == null) {
+			if (text == null || text == "") {
 				try {
 
 					RentalDAO dao = new RentalDAO();
 					List<RentalBean> listRental = dao.ListAllRentalInfo();
 					// Listをリクエストスコープに入れてjspへフォワードする
-					request.setAttribute("history", listRental);
-					RequestDispatcher rd = request.getRequestDispatcher("/LendHistory.jsp");
+					request.setAttribute("historys", listRental);
+					RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendHistory.jsp");
 					rd.forward(request, response);
 
 				} catch (DAOException e) {
@@ -41,13 +41,13 @@ public class HistoryBookServlet extends HttpServlet {
 					rd.forward(request, response);
 					return;
 				}
+			} else {
+
 			}
 
 		}
 
 	}
-
-	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
