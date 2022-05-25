@@ -42,9 +42,26 @@ public class HistoryBookServlet extends HttpServlet {
 					return;
 				}
 			} else {
+				String id = request.getParameter("ID");
+				if (id.equals("1")) {
+					// 会員ID選択
+					try {
+						RentalDAO dao = new RentalDAO();
+						List<RentalBean> RentalUser = dao.RentalUser(ID);
+						// Listをリクエストスコープに入れてjspへフォワードする
+						request.setAttribute("1", RentalUser);
+						RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendHistory.jsp");
+						rd.forward(request, response);
+					} catch (DAOException e) {
+						e.printStackTrace();
+						request.setAttribute("message", "内部エラーが発生しました。");
+						RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
+						rd.forward(request, response);
+						return;
 
+					}
+				}
 			}
-
 		}
 
 	}
