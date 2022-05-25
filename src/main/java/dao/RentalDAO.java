@@ -80,7 +80,7 @@ public class RentalDAO {
 				bean.setTitle(title);
 				bean.setdRentalDate(rental_date);
 				bean.setdFixedDate(fixed_date);
-				bean.setdReturnDate(rental_date);
+				bean.setdReturnDate(return_date);
 				bean.setStrRemarks(remarks);
 				listRental.add(bean);
 			}
