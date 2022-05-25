@@ -21,7 +21,7 @@
 						<td>${sessionScope.user.mail}</td>
 						<td>${sessionScope.user.birthday}</td>
 						<td>${sessionScope.user.join_date}</td>
-						<td>${sessionScope.user.secode_date}</td>
+						<td>${sessionScope.user.secede_date}</td>
 						<td>${sessionScope.user.update_date}</td>
 				</tr>
 			</table>

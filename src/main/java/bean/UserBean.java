@@ -13,7 +13,7 @@ public class UserBean implements Serializable{
 	private String mail;
 	private String birthday;
 	private String join_date;
-	private String secode_date;
+	private String secede_date;
 	private String update_date;
 	private SimpleDateFormat nomalFM;
 	private SimpleDateFormat timeFM;
@@ -60,11 +60,12 @@ public class UserBean implements Serializable{
 	public void setJoin_date(Date join_date) {this.join_date = nomalFM.format(join_date);}
 	public void setJoin_date(String join_date) {this.join_date = join_date;}
 	
-	public String getSecode_date() {return secode_date;}
-	public void setSecode_date(Date secode_date) {this.secode_date = nomalFM.format(secode_date);}
+	public String getSecede_date() {return secede_date;}
+	public void setSecede_date(Date secede_date) {this.secede_date = nomalFM.format(secede_date);}
+	public void setSecede_date(String secede_date) {this.secede_date = secede_date;}
 	
 	public String getUpdate_date() {return update_date;}
 	public void setUpdate_date(Date update_date) {this.update_date = timeFM.format(update_date);}
-	
+	public void setUpdate_date(String update_date) {this.update_date = update_date;}
 	
 }

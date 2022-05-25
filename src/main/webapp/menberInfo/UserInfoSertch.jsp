@@ -17,13 +17,17 @@
 		
 		<div class="tableCeter">
 			<table border="1"class="tableCeter">
-				<tr><td>会員ID</td><td>氏名</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
+				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
 						<td>${sessionScope.menberInfo.iID}</td>
 						<td>${sessionScope.menberInfo.strName}</td>
+						<td>${sessionScope.menberInfo.post_no}</td>
+						<td>${sessionScope.menberInfo.address}</td>
+						<td>${sessionScope.menberInfo.tel}</td>
+						<td>${sessionScope.menberInfo.mail}</td>
 						<td>${sessionScope.menberInfo.birthday}</td>
 						<td>${sessionScope.menberInfo.join_date}</td>
-						<td>${sessionScope.menberInfo.secode_date}</td>
+						<td>${sessionScope.menberInfo.secede_date}</td>
 						<td>${sessionScope.menberInfo.update_date}</td>
 				</tr>
 			</table>

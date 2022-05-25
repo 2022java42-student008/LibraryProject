@@ -47,15 +47,23 @@ public class UserDAO {
 					{
 						retBean = new UserBean(rs.getInt("user_id"),rs.getString("name"),
 								rs.getLong("post_no"),rs.getString("address"),rs.getString("tel"),
-								rs.getString("mail"),rs.getDate("birthday"),new Date());
+								rs.getString("mail"),rs.getDate("birthday"),rs.getDate("join_date"));
 						
 						if(rs.getDate("secede_date") != null)
 						{
-							retBean.setSecode_date(rs.getDate("secede_date"));
+							retBean.setSecede_date(rs.getDate("secede_date"));
+						}
+						else
+						{
+							retBean.setSecede_date("");
 						}
 						if(rs.getDate("update_date") != null)
 						{
-							retBean.setSecode_date(rs.getDate("update_date"));
+							retBean.setUpdate_date(rs.getTimestamp("update_date"));;
+						}
+						else
+						{
+							retBean.setUpdate_date("");
 						}
 					}
 				}catch(SQLException e) {

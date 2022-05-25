@@ -16,14 +16,14 @@ import bean.UserBean;
 public class ChangeUserInfoConf extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		
+
 		//リクエストから取得
-		String strName = (String)request.getAttribute("name");
-		String strPost = (String)request.getAttribute("post");
-		String strAddress = (String)request.getAttribute("address");
-		String strTel = (String)request.getAttribute("tel");
-		String strMail = (String)request.getAttribute("mail");
-		String strBirthday = (String)request.getAttribute("birthday");
+		String strName = (String)request.getParameter("inputName");
+		String strPost = (String)request.getParameter("inputPost");
+		String strAddress = (String)request.getParameter("inputAddress");
+		String strTel = (String)request.getParameter("inputTel");
+		String strMail = (String)request.getParameter("inputMail");
+		String strBirthday = (String)request.getParameter("inputBirthday");
 		
 		//セッションから取得
 		HttpSession session = request.getSession(false);
