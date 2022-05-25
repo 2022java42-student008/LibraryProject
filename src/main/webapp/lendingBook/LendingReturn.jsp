@@ -31,11 +31,11 @@
 	<table border="1">
 		<tr>
 			<td>会員ID</td>
-			<td>${menberInfo.iID}</td>
+			<td>${sessionScope.menberInfo.iID}</td>
 		</tr>
 		<tr>
 			<td>氏名</td>
-			<td>${menberInfo.strName}</td>
+			<td>${sessonScope.menberInfo.strName}</td>
 		</tr>
 	</table>
 

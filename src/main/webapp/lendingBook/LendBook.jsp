@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <% session.setAttribute("menberInfo", "user"); 
-    session.setAttribute("rentalInfo", "rental"); %>
-    <% UserBean bean = (UserBean)repuest.getAttribute %>
+
 <!DOCTYPE html>
 <html>
 <head>
