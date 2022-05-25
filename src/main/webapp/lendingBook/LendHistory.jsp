@@ -21,6 +21,8 @@
 
 <br>
 
+<form action="/LibraryProject/LendBookServlet"></form>
+
 <div id="text">
 <input type="text" display="inline-block"  name="search">
 
@@ -28,9 +30,9 @@
     <option value="1">会員ID</option>
     <option value="2">資料ID</option>
   </select>
-  
-   <input type="submit" name="return" value="検索" size="5">
    <input type="hidden" name="action" value="history">
+   <input type="submit" name="return" value="検索" size="5">
+  
 </div>
 
 

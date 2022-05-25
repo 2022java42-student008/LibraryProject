@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,4 +61,34 @@ public class RentalDAO {
 		
 		return listRental;
 	}
+	
+	public List<RentalBean> ListAllRentalInfo() throws DAOException
+	{
+		List<RentalBean> listRental = new ArrayList<RentalBean>();
+		String sql = "SELECT * FROM rental INNER JOIN stock ON rental.book_id = stock.book_id ";
+		
+
+		try (Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);
+				ResultSet rs = ps.executeQuery()) {
+			
+			while(rs.next())
+			{
+				int user_id = rs.getInt("user_id");
+				int book_id = rs.getInt("book_id");
+				String title = rs.getString("title");
+				LocalDate rental_date = rs.getDate("rental_date").toLocalDate();
+				LocalDate fixed_date = rs.getDate("fixed_date").toLocalDate();
+				LocalDate return_date = rs.getDate("return_date").toLocalDate();
+				String remarks = rs.getText("remarks");
+				
+			}
+			
+		} catch (SQLException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+		
+	}
+	
 }
