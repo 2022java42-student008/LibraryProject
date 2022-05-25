@@ -32,12 +32,12 @@
 		<br><h2>変更する内容を入力してください</h2><br>
 		<form action="../ChangeUserInfoConf" method="post">
 			<table border="1">
-				<tr><td>氏名</td><td><input type="text" name="inputName" placeholder=${sessionScope.menberInfo.strName} value=${param.inputName}></td></tr>
-				<tr><td>郵便番号</td><td><input type="number" name="inputPost" placeholder=${sessionScope.menberInfo.post_no}></td></tr>
-				<tr><td>住所</td><td><input type="text" name="inputAddress" placeholder=${sessionScope.menberInfo.address}></td></tr>
-				<tr><td>電話番号</td><td><input type="text" name="inputTel" placeholder=${sessionScope.menberInfo.tel}></td></tr>
-				<tr><td>E-mail</td><td><input type="text" name="inputMail" placeholder=${sessionScope.menberInfo.mail}></td></tr>
-				<tr><td>生年月日</td><td><input type="date" name="inputBirthday" placeholder=${sessionScope.menberInfo.birthday}></td></tr>
+				<tr><td>氏名</td><td><input type="text" name="inputName" value='${sessionScope.user.strName}'></td></tr>
+				<tr><td>郵便番号</td><td><input type="number" name="inputPost" value='${sessionScope.user.post_no}'></td></tr>
+				<tr><td>住所</td><td><input type="text" name="inputAddress" value='${sessionScope.user.address}'></td></tr>
+				<tr><td>電話番号</td><td><input type="text" name="inputTel" value='${sessionScope.user.tel}'></td></tr>
+				<tr><td>E-mail</td><td><input type="text" name="inputMail" value='${sessionScope.user.mail}'></td></tr>
+				<tr><td>生年月日</td><td><input type="date" name="inputBirthday" value='${sessionScope.user.birthday}'></td></tr>
 			</table>
 			<input type="submit" value="戻る" formaction="UserInfoSertch.jsp"><input type="submit" value="変更" >
 		</form>

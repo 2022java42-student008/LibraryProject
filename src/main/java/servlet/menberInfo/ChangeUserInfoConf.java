@@ -16,7 +16,8 @@ import bean.UserBean;
 public class ChangeUserInfoConf extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-
+		String action = request.getParameter("action");
+		
 		//リクエストから取得
 		String strName = (String)request.getParameter("inputName");
 		String strPost = (String)request.getParameter("inputPost");
@@ -25,10 +26,23 @@ public class ChangeUserInfoConf extends HttpServlet {
 		String strMail = (String)request.getParameter("inputMail");
 		String strBirthday = (String)request.getParameter("inputBirthday");
 		
+		if()
+		
 		//セッションから取得
 		HttpSession session = request.getSession(false);
+		UserBean sessionUser = (UserBean)(session.getAttribute("menberInfo"));
+		UserBean user = new UserBean();
+		user.setiID(sessionUser.getiID());
+		user.setStrName(sessionUser.getStrName());
+		user.setPost_no(sessionUser.getPost_no());
+		user.setAddress(sessionUser.getAddress());
+		user.setTel(sessionUser.getTel());
+		user.setMail(sessionUser.getMail());
+		user.setBirthday(sessionUser.getBirthday());
+		user.setJoin_date(sessionUser.getJoin_date());
+		user.setSecede_date(sessionUser.getSecede_date());
+		user.setUpdate_date(sessionUser.getUpdate_date());
 		
-		UserBean user = (UserBean)session.getAttribute("menberInfo");
 		
 		//比較して挿入
 		if(!(strName == null || strName.length() == 0))
@@ -66,5 +80,8 @@ public class ChangeUserInfoConf extends HttpServlet {
 		rd.forward(request, response);
 		
 	}
-
+	
+	protected void dpGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
 }

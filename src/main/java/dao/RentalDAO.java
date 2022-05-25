@@ -42,6 +42,7 @@ public class RentalDAO {
 				while (rs.next()) {
 					listRental.add(new RentalBean(rs.getInt("book_id"), rs.getLong("isbn"), rs.getString("title"),
 							rs.getDate("rental_date"), rs.getDate("fixed_date")));
+					listRental.get(listRental.size() - 1).setiRentalID(rs.getInt("renal_id"));
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

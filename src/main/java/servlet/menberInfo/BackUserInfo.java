@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import bean.UserBean;
 
 /**
  * Servlet implementation class BackUserInfo
@@ -16,8 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 public class BackUserInfo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession(false);
+		UserBean sessionUser = (UserBean)(session.getAttribute("menberInfo"));
+		UserBean user = (UserBean)(session.getAttribute("user"));
 		
-		//リクエストから取得
+		//セッションから取得
 		String strName = (String)request.getParameter("inputName");
 		String strPost = (String)request.getParameter("inputPost");
 		String strAddress = (String)request.getParameter("inputAddress");
