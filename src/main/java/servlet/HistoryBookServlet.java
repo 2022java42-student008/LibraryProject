@@ -47,9 +47,9 @@ public class HistoryBookServlet extends HttpServlet {
 					// 会員ID選択
 					try {
 						RentalDAO dao = new RentalDAO();
-						List<RentalBean> RentalUser = dao.RentalUser(ID);
+						List<RentalBean> RentalUser = dao.RentalUser(Integer.parseInt(text));
 						// Listをリクエストスコープに入れてjspへフォワードする
-						request.setAttribute("1", RentalUser);
+						request.setAttribute("historys", RentalUser);
 						RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendHistory.jsp");
 						rd.forward(request, response);
 					} catch (DAOException e) {
