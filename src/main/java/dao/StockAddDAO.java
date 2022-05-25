@@ -20,12 +20,12 @@ public class StockAddDAO {
 
 	}
 
-	public int AddBooks(int bookid, long isbn, String title, String arrivalDate, String remarks)
+	public int AddBooks(long isbn, String title, String arrivalDate, String remarks)
 
 			throws DAOException {
 
 		// SQL文の作成
-		String sql = "INSERT INTO stock(book_id, isbn, title, arrival_date, remarks) VALUES(?, ?, ?, ?, ?)";
+		String sql = "INSERT INTO stock(isbn, title, arrival_date, remarks) VALUES(?, ?, ?, ?)";
 
 		try (// データベースへの接続
 				Connection con = DriverManager.getConnection(url, user, pass);
@@ -33,11 +33,11 @@ public class StockAddDAO {
 
 		// 表に入れる項目
 		{
-			st.setInt(1, bookid);
-			st.setLong(2, isbn);
-			st.setString(3, title);
-			st.setString(4, arrivalDate);
-			st.setString(5, remarks);
+			
+			st.setLong(1, isbn);
+			st.setString(2, title);
+			st.setDate(3, java.sql.Date.valueOf(arrivalDate));
+			st.setString(4, remarks);
 
 			// SQLの実行
 			int rows = st.executeUpdate();

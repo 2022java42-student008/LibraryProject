@@ -38,7 +38,7 @@ public class StockAddDAO2 {
 			st.setInt(3, code);
 			st.setString(4, author);
 			st.setString(5, publisher);
-			st.setString(6, publish_date);
+			st.setDate(6, java.sql.Date.valueOf(publish_date));
 
 			// SQLの実行
 			int rows = st.executeUpdate();
