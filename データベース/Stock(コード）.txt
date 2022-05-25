@@ -1,0 +1,8 @@
+create table public.stock (
+   book_id serial PRIMARY KEY
+  ,isbn bigint not null
+  , title character varying
+  ,arrival_date date
+  ,discard_date date
+  ,remarks text
+);
