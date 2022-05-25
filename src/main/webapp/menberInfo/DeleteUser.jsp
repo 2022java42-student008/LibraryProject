@@ -37,13 +37,13 @@
 			</c:forEach>
 		</table>
 		<div class="centermargin">
-			<form action="UserDeleteServlet" method="post">
-			<c:if test="${empty sessionScope.rentalInfo}">
+			<form action="../UserDeleteServlet" method="post">
+			<c:if test="${empty sessionScope.rentalInfo && empty sessionScope.menberInfo.secede_date}">
 				本当に退会してもよろしいですか？<br>
 			</c:if>
 				<input type="submit" value="戻る" formaction="UserInfoSertch.jsp">
-				<c:if test="${empty sessionScope.rentalInfo}">
-					<input type="submit" value="退会">
+				<c:if test="${empty sessionScope.rentalInfo && empty sessionScope.menberInfo.secede_date}">
+					<input type="submit" value="退会" >
 				</c:if>
 			</form>
 		</div>

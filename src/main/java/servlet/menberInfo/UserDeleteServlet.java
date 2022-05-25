@@ -13,9 +13,7 @@ import javax.servlet.http.HttpSession;
 import bean.UserBean;
 import dao.DAOException;
 import dao.UserDAO;
-/**
- * Servlet implementation class UserDeleteServlet
- */
+
 @WebServlet("/UserDeleteServlet")
 public class UserDeleteServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +22,7 @@ public class UserDeleteServlet extends HttpServlet {
 		try {
 			UserDAO userDAO = new UserDAO();
 			userDAO.deleteUser(user.getiID());
-			gotoPage(request,response,"ChangeUserComp.jsp");
+			gotoPage(request,response,"menberInfo/DeleteUserComp.jsp");
 		}catch(DAOException e){
 			e.printStackTrace();
 			request.setAttribute("message", "エラー：SQLエラー1");
