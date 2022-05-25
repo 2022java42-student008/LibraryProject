@@ -55,15 +55,15 @@ public class StockDAO {
 				{
 					LocalDate date = LocalDate.now();
 					// 新作なので本日から10日後
-					String returnDate =  date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));;
+					String returnDate =  date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));;
 					bean.setDiscar_date(returnDate);
 				}
 				else
 				{
-					// 新作ではないので、本日から15日後
+					// 新作ではないので、本日から10日後
 					LocalDate date = LocalDate.now();
-					// 新作なので本日から10日後
-					String returnDate =  date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));;
+					// 新作ではないので本日から10日後
+					String returnDate =  date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));;
 					bean.setDiscar_date(returnDate);
 				}
 				

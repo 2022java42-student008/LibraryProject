@@ -19,7 +19,7 @@ public class RentalBean implements Serializable{
 	public RentalBean(){}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, String _strRemarks)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
@@ -30,7 +30,7 @@ public class RentalBean implements Serializable{
 	}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
@@ -39,7 +39,7 @@ public class RentalBean implements Serializable{
 	}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, Date _dReturnDate,String _strRemarks)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
@@ -51,7 +51,7 @@ public class RentalBean implements Serializable{
 	
 	public RentalBean(int _iBookID, long _isbn, String _title,Date _dRentalDate,Date _dFixedDate)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iBookID = _iBookID;
 		isbn = _isbn;
 		title = _title;
