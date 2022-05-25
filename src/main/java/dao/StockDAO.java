@@ -53,8 +53,6 @@ public class StockDAO {
 				if (fixedDate(book_id)) {
 					LocalDate date = LocalDate.now();
 					// 新作なので本日から10日後
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 					String returnDate =  date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));;
 					bean.setDiscar_date(returnDate);
 				}
@@ -64,25 +62,6 @@ public class StockDAO {
 					LocalDate date = LocalDate.now();
 					// 新作ではないので本日から10日後
 					String returnDate =  date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));;
-=======
-					String returnDate = date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-					;
-					bean.setDiscar_date(returnDate);
-=======
-					String returnDate = date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-					;
-					bean.setDiscar_date(returnDate);
->>>>>>> Stashed changes
-				} else {
-					// 新作ではないので、本日から15日後
-					LocalDate date = LocalDate.now();
-					// 新作なので本日から10日後
-					String returnDate = date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy/MM/dd"));
-					;
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 					bean.setDiscar_date(returnDate);
 				}
 

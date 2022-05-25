@@ -26,7 +26,7 @@
 
 <table border="1" align="center">
      
-     <c:forEach  items="${searchResult}" var = "item">;
+     <c:forEach  items="${searchBook}" var = "item">;
     
      
      <tr><td align="center"  bgcolor="#CCCCFF"> 資料ID</td><th>${item.book_id}</th></tr>
@@ -47,6 +47,13 @@
 上記の内容を削除してよろしいですか？
 </div>
 <br>
+
+<div class="return" align="center">
+<form action="/LibraryProject/StockDeleteServlet" method="post">
+<input type="submit" name="delete" value="削除">
+</form>
+</div>
+
 <br>
 
 <div class="return" align="center">
