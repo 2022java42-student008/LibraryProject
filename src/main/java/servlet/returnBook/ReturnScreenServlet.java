@@ -22,7 +22,7 @@ public class ReturnScreenServlet extends HttpServlet {
 	    HttpSession session = request.getSession(false);
         @SuppressWarnings("unchecked")
         List<RentalBean> bean = (List<RentalBean>) session.getAttribute("rentalInfo");
-	    boolean b=false;
+	
         
         
         ArrayList<RentalBean> list = new  ArrayList<RentalBean>();
@@ -34,7 +34,7 @@ public class ReturnScreenServlet extends HttpServlet {
         	}
         
         
-        request.setAttribute("rental", list);
+        session.setAttribute("rental", list);
         RequestDispatcher rd = request.getRequestDispatcher("/./ReturnDiscriminant.jsp");
         rd.forward(request, response);
  

@@ -15,6 +15,7 @@ public class RentalBean implements Serializable{
 	private String dReturnDate;
 	private String strRemarks;
 	private SimpleDateFormat fm;
+	public int iRenatalID;
 	
 	public RentalBean(){}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, String _strRemarks)

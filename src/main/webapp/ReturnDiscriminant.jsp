@@ -15,7 +15,7 @@
 
 
 
-	<form action="ReturnCompleted.html" method="post">
+	<form action="/LibraryProject/ReturnCompletedServlet" method="post">
 		<div class="centermargin">
 			<h1>返却</h1>
 			<table border="1">
@@ -45,7 +45,7 @@
 
 
 
-				<c:forEach items="${requestScope.rental}" var="book" varStatus="stat">
+				<c:forEach items="${rental}" var="book" varStatus="stat">
 
 					<tr>
 
@@ -66,6 +66,7 @@
 			<h3>上記の資料を返却します。</h3>
 
 			<input type="submit" value="戻る" formaction="ReturnScreen.jsp">
+			<input type="hidden" name="action" value="comp">
 			<input type="submit" value="返却">
 
 		</div>
