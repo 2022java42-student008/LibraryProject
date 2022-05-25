@@ -26,6 +26,7 @@
 <form action="../StockDeleteServlet" method="post" align="center">
  資料ID
   <input type="search" name="BookID" placeholder="資料IDを入力">
+  <input type = hidden name= "action" value = "search" >
   <input type="submit" name="action" value="検索">
 </form>
 

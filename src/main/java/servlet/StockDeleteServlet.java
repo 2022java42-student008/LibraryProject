@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,9 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import bean.StockBean;
+import bean.BookBean;
+import dao.BookDAO;
 import dao.DAOException;
-import dao.StockDAO;
 
 /**
  * Servlet implementation class LendBookServlet
@@ -25,25 +24,20 @@ public class StockDeleteServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String action = request.getParameter("action");
-		if (action.equals("seach")) {
+		if (action.equals("search")) {
 
-			String[] Bookinfo = request.getParameterValues("BookID");
-			ArrayList<String> ids = new ArrayList<String>();
-			for (String id : Bookinfo) {
-				if (id.length() != 0) {
-					ids.add(id);
-				}
-			}
 			try {
-				StockDAO dao = new StockDAO();
-				List<StockBean> list = dao.findBooks(ids);
+				int Bookinfo = Integer.parseInt(request.getParameter("BookID"));
+				BookDAO dao = new BookDAO();
+				List<BookBean> list = dao.findBooks(Bookinfo);
+
 				if (list == null || list.size() == 0) {
 					System.out.print("資料IDがありません");
 				}
 
 				HttpSession session = request.getSession();
-				session.setAttribute("books", list);
-				RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/StockDeleteConf.jsp");
+				session.setAttribute("searchBook", list);
+				RequestDispatcher rd = request.getRequestDispatcher("/stock/StockDeleteConf.jsp");
 				rd.forward(request, response);
 				return;
 			} catch (DAOException e) {
@@ -52,10 +46,22 @@ public class StockDeleteServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
 				rd.forward(request, response);
 				return;
+
+			} catch (NumberFormatException n) {
+				n.printStackTrace();
+				request.setAttribute("message", "内部エラーが発生しました。");
+				RequestDispatcher rd = request.getRequestDispatcher("stock/StockDelete.jsp");
+				rd.forward(request, response);
+
 			}
-		
 		}
 
+		if(action.equals("delete")) {
+			HttpSession session = request.getSession();
+			List<BookBean> list= (List<BookBean>)session.getAttribute("searchBook");
+			dao.deleteByBookID =(); 
+			
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

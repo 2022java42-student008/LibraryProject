@@ -26,6 +26,14 @@ public class StockAddServlet extends HttpServlet {
 		// パラメータの解析
 		String action = request.getParameter("action");
 
+		
+		//if (BookID == null || BookID.length() == 0) {
+			//response.sendRedirect(request.getHeader("REFERER"));
+			//return;
+		//}
+        //int IDForSearch = Integer.parseInt(BookID);//
+		
+
 		try {
 
 			if (action.equals("add")) {
