@@ -21,7 +21,11 @@
 
 <br>
 
+<<<<<<< Updated upstream
 <form action="/LibraryProject/HistoryBookServlet">
+=======
+<form action="/LibraryProject/LendBookServlet"></form>
+>>>>>>> Stashed changes
 
 <div id="text">
 <input type="text" display="inline-block"  name="search">
@@ -32,7 +36,10 @@
   </select>
    <input type="hidden" name="action" value="history">
    <input type="submit" name="return" value="検索" size="5">
+<<<<<<< Updated upstream
    
+=======
+>>>>>>> Stashed changes
   
 </div>
 </form>
