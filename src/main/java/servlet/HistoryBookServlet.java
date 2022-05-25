@@ -60,10 +60,28 @@ public class HistoryBookServlet extends HttpServlet {
 						return;
 
 					}
+				} else {
+					if (id.equals("2")) {
+						// 会員ID選択
+						try {
+							RentalDAO dao = new RentalDAO();
+							List<RentalBean> RentalBook = dao.RentalBook(Integer.parseInt(text));
+							// Listをリクエストスコープに入れてjspへフォワードする
+							request.setAttribute("historys", RentalBook);
+							RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendHistory.jsp");
+							rd.forward(request, response);
+						} catch (DAOException e) {
+							e.printStackTrace();
+							request.setAttribute("message", "内部エラーが発生しました。");
+							RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
+							rd.forward(request, response);
+							return;
+
+						}
+					}
 				}
 			}
 		}
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
