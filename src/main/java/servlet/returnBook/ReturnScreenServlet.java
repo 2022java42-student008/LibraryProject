@@ -16,29 +16,30 @@ import bean.RentalBean;
 
 @WebServlet("/ReturnScreenServlet")
 public class ReturnScreenServlet extends HttpServlet {
- protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-     
-	    String[] values = request.getParameterValues("return");
-	    HttpSession session = request.getSession(false);
-        @SuppressWarnings("unchecked")
-        List<RentalBean> bean = (List<RentalBean>) session.getAttribute("rentalInfo");
-	
-        
-        
-        ArrayList<RentalBean> list = new  ArrayList<RentalBean>();
-      
-        	for(String value: values) 
-        	{
-	    	
-        		list.add(bean.get(Integer.parseInt(value)));
-        	}
-        
-        
-        session.setAttribute("rental", list);
-        RequestDispatcher rd = request.getRequestDispatcher("/./ReturnDiscriminant.jsp");
-        rd.forward(request, response);
- 
- }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
+		String[] values = request.getParameterValues("return");
+		if (values != null) {
+			HttpSession session = request.getSession(false);
+			@SuppressWarnings("unchecked")
+			List<RentalBean> bean = (List<RentalBean>) session.getAttribute("rentalInfo");
+
+			ArrayList<RentalBean> list = new ArrayList<RentalBean>();
+
+			for (String value : values) {
+
+				list.add(bean.get(Integer.parseInt(value)));
+			}
+
+			session.setAttribute("rental", list);
+			RequestDispatcher rd = request.getRequestDispatcher("/./ReturnDiscriminant.jsp");
+			rd.forward(request, response);
+		} else {
+			response.sendRedirect(request.getHeader("REFERER"));
+
+		}
+
+	}
 
 }

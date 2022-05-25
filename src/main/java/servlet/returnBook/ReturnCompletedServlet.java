@@ -51,7 +51,7 @@ public class ReturnCompletedServlet extends HttpServlet {
 				List<RentalBean> beans = (List<RentalBean>) session.getAttribute("rental");
 				System.out.println(beans);
 				for (RentalBean bean : beans) {
-					dao.ReturnCompletedInfo(bean.iRenatalID);
+					dao.ReturnCompletedInfo(bean.getiRentalID());
 				}
 				RequestDispatcher rd = request.getRequestDispatcher("ReturnCompleted.html");
 		        rd.forward(request, response);
