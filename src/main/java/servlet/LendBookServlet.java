@@ -74,8 +74,15 @@ public class LendBookServlet extends HttpServlet {
 				return;
 			}
 		}
+		
+	//	if(action.equals("history")) {
+		//	String text = request.getParameter("search");
+			//if (text == null) {
+				
+			}
+	//	}
 
-	}
+	//}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

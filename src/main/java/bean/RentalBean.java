@@ -20,7 +20,7 @@ public class RentalBean implements Serializable{
 	public RentalBean(){}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, String _strRemarks)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
@@ -31,7 +31,7 @@ public class RentalBean implements Serializable{
 	}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
@@ -40,7 +40,7 @@ public class RentalBean implements Serializable{
 	}
 	public RentalBean(int _iRenatalID,int _iUserID, int _iBookID,Date _dRentalDate,Date _dFixedDate, Date _dReturnDate,String _strRemarks)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iRentalID = _iRenatalID;
 		iUserID = _iUserID;
 		iBookID = _iBookID;
@@ -52,7 +52,7 @@ public class RentalBean implements Serializable{
 	
 	public RentalBean(int _iBookID, long _isbn, String _title,Date _dRentalDate,Date _dFixedDate)
 	{
-		fm = new SimpleDateFormat("yyyy-MM-dd");
+		fm = new SimpleDateFormat("yyyy/MM/dd");
 		iBookID = _iBookID;
 		isbn = _isbn;
 		title = _title;
@@ -73,8 +73,8 @@ public class RentalBean implements Serializable{
 	public long getIsbn() {return isbn;}
 	public void setIsbn(int isbn) {this.isbn = isbn;}
 	
-	public String getTitle() {return title;}
-	public void setTitle(Date title) {this.title = fm.format(title);}
+//	public String getTitle() {return title;}
+//	public void setTitle(Date title) {this.title = fm.format(title);}
 	
 	public String getdRentalDate() {return dRentalDate;}
 	public void setdRentalDate(Date dRentalDate) {this.dRentalDate = fm.format(dRentalDate);}
@@ -87,6 +87,12 @@ public class RentalBean implements Serializable{
 	
 	public String getStrRemarks() {return strRemarks;}
 	public void setStrRemarks(String strRemarks) {this.strRemarks = strRemarks;}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	
 	
 }
