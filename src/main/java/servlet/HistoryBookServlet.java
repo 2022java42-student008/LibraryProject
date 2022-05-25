@@ -19,24 +19,35 @@ public class HistoryBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String action = request.getParameter("action");
-		try {
 
-			RentalDAO dao = new RentalDAO();
-			List<RentalBean> listRental = dao.ListAllRentalInfo();
-			// Listをリクエストスコープに入れてjspへフォワードする
-			request.setAttribute("history", listRental);
-			RequestDispatcher rd = request.getRequestDispatcher("/LendHistory.jsp");
-			rd.forward(request, response);
+		if (action.equals("history")) {
+			String text = request.getParameter("search");
+			if (text == null) {
+				try {
 
-		} catch (DAOException e) {
-			e.printStackTrace();
-			request.setAttribute("message", "内部エラーが発生しました。");
-			RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
-			rd.forward(request, response);
-			return;
+					RentalDAO dao = new RentalDAO();
+					List<RentalBean> listRental = dao.ListAllRentalInfo();
+					// Listをリクエストスコープに入れてjspへフォワードする
+					request.setAttribute("history", listRental);
+					RequestDispatcher rd = request.getRequestDispatcher("/LendHistory.jsp");
+					rd.forward(request, response);
+
+				} catch (DAOException e) {
+					e.printStackTrace();
+					request.setAttribute("message", "内部エラーが発生しました。");
+					RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
+					rd.forward(request, response);
+					return;
+				}
+			}
+
 		}
+
 	}
+
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

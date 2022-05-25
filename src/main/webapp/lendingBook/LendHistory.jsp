@@ -21,7 +21,7 @@
 
 <br>
 
-<form action="/LibraryProject/LendBookServlet"></form>
+<form action="/LibraryProject/HistoryBookServlet">
 
 <div id="text">
 <input type="text" display="inline-block"  name="search">
@@ -32,8 +32,10 @@
   </select>
    <input type="hidden" name="action" value="history">
    <input type="submit" name="return" value="検索" size="5">
+   
   
 </div>
+</form>
 
 
 <br>
@@ -42,9 +44,9 @@
 <table border="1"  align="center">
  		<tr bgcolor="#ffe4c4"><th>会員ID</th><th>資料ID</th><th>資料名</th><th>貸出年月日</th><th>返却期日</th>
  		<th>返却年月日</th><th>備考</th></tr>
- 		<c:forEach >
- 		
- 		</c:forEach>
+<c:forEach items=${"historys".rental} var="rental">
+		<tr><td>${rental.user_id}</td><td>${rental.book_id}</td><td>${rental.title}</td><td>${rental.rental_date}</td><td>${rental.fixed_date}</td><td>${rental.return_date}<td>${book.remarks}</td></tr>
+</c:forEach>
 </table>
 
 </body>

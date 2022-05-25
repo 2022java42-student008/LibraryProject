@@ -65,8 +65,31 @@ public class RentalDAO {
 				PreparedStatement ps = con.prepareStatement(sql);) {
 			ps.setInt(1, _iRenatalID);
 
+<<<<<<< Updated upstream
 			ps.executeUpdate();
 			
+=======
+			while (rs.next()) {
+				int user_id = rs.getInt("user_id");
+				int book_id = rs.getInt("book_id");
+				String title = rs.getString("title");
+				Date rental_date = rs.getDate("rental_date");
+				Date fixed_date = rs.getDate("fixed_date");
+				Date return_date = rs.getDate("return_date");
+				String remarks = rs.getString("remarks");
+//				System.out.println(user_id+book_id+title+rental_date+fixed_date+return_date+remarks);
+				RentalBean bean = new RentalBean();
+				bean.setiUserID(user_id);
+				bean.setiBookID(book_id);
+				bean.setTitle(title);
+				bean.setdRentalDate(rental_date);
+				bean.setdFixedDate(fixed_date);
+				bean.setdReturnDate(return_date);
+				bean.setStrRemarks(remarks);
+				listRental.add(bean);
+			}
+			return listRental;
+>>>>>>> Stashed changes
 		} catch (SQLException e) {
 			e.printStackTrace();
 			throw new DAOException("エラー");
