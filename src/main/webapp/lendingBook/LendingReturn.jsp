@@ -35,7 +35,7 @@
 		</tr>
 		<tr>
 			<td>氏名</td>
-			<td>${sessonScope.menberInfo.strName}</td>
+			<td>${sessionScope.menberInfo.strName}</td>
 		</tr>
 	</table>
 

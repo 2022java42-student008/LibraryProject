@@ -62,8 +62,6 @@ public class LendBookServlet extends HttpServlet {
 			UserBean user = (UserBean) session.getAttribute("menberInfo");
 			try {
 				BookDAO dao = new BookDAO();
-				user = new UserBean();
-				user.setiID(7);
 				dao.addrental(list, user.getiID());
 				RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendComp.jsp");
 				rd.forward(request, response);

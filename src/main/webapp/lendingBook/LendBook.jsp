@@ -20,9 +20,9 @@
 		<div id="text">会員情報</div>
 	</font>
 	
- <table border="1" width="7%" align="center">
- 	 <tr><td align="center"  bgcolor="#f0e68c"> 氏名 </td><th>${sessionScope.menberInfo.iID}</th></tr>
- 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th>${sessionScope.rentalInfo.strName}</th></tr>
+ <table border="1" width="200px" align="center">
+ 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th>${sessionScope.menberInfo.iID}</th></tr>
+ 	 <tr><td align="center"  bgcolor="#f0e68c" > 氏名 </td><th>${sessionScope.menberInfo.strName}</th></tr>
  </table>
  
  <font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝"><br>
