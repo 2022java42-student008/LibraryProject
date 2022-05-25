@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <% session.setAttribute("menberInfo", "user"); 
+    session.setAttribute("rentalInfo", "rental"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +22,8 @@
 	</font>
 	
  <table border="1" width="7%" align="center">
- 	 <tr><td align="center"  bgcolor="#f0e68c"> 氏名 </td><th></th></tr>
- 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th></th></tr>
+ 	 <tr><td align="center"  bgcolor="#f0e68c"> 氏名 </td><th>${ssesionScope.menberInfo.iID}</th></tr>
+ 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th>${rentalInfo}</th></tr>
  </table>
  
  <font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝"><br>
