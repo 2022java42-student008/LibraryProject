@@ -10,7 +10,7 @@
 <body>
 
 <div class="leftmargin">
-	 <a href="../TopMenu.html" >トップメニュー</a>
+	 <a href="/LibraryProject/TopMenu.html" >トップメニュー</a>
     </div>
 
 <div class="centermargin">
@@ -33,7 +33,7 @@
 
 <form action="/LibraryProject/StockAddServlet" method="post">
  <div class="enter">
- <input type="button" onclick="location.href='./StockAdd.jsp'" name="return" value="戻る" >	
+ <input type="button" onclick="location.href='/LibraryProject/stock/StockAdd.jsp'" name="return" value="戻る" >	
 <input type=submit name="enter" value="登録" >
 <input type="hidden" name=action value="add">
 	</form>
