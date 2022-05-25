@@ -26,8 +26,6 @@ public class ChangeUserInfoConf extends HttpServlet {
 		String strMail = (String)request.getParameter("inputMail");
 		String strBirthday = (String)request.getParameter("inputBirthday");
 		
-		if()
-		
 		//セッションから取得
 		HttpSession session = request.getSession(false);
 		UserBean sessionUser = (UserBean)(session.getAttribute("menberInfo"));

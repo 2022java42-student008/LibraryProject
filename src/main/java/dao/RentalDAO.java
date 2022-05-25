@@ -56,6 +56,24 @@ public class RentalDAO {
 
 		return listRental;
 	}
+	
+	public void ReturnCompletedInfo(int _iRenatalID) throws DAOException {
+
+		// listRental.add(new RentalBean())
+		String sql = "UPDATE rental SET return_date=current_date WHERE rental_id=?";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement ps = con.prepareStatement(sql);) {
+			ps.setInt(1, _iRenatalID);
+
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("エラー");
+		}
+
+	}
 
 	public List<RentalBean> ListAllRentalInfo() throws DAOException {
 		List<RentalBean> listRental = new ArrayList<RentalBean>();
