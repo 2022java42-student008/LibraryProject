@@ -22,6 +22,7 @@ public class UserDeleteServlet extends HttpServlet {
 		try {
 			UserDAO userDAO = new UserDAO();
 			userDAO.deleteUser(user.getiID());
+			session.invalidate();
 			gotoPage(request,response,"menberInfo/DeleteUserComp.jsp");
 		}catch(DAOException e){
 			e.printStackTrace();
