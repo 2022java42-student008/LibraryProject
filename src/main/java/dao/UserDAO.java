@@ -174,5 +174,26 @@ public class UserDAO {
 		return bRet;
 	}
 	
-
+	//会員を退会する
+	public boolean deleteUser(int _userID) throws DAOException
+	{
+		boolean bRet = false;
+		
+		String sql = "UPDATE user_table SET secede_date = CURRENT_DATE WHERE user_id = ?";
+		
+		try (
+				Connection con = DriverManager.getConnection(url,user,pass);
+				PreparedStatement ps = con.prepareStatement(sql);)
+		{
+			ps.setInt(1, _userID);
+			if(ps.executeUpdate() != 0)
+			{
+				bRet = true;
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+			throw new DAOException("エラー");
+		}
+		return bRet;
+	}
 }
