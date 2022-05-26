@@ -5,7 +5,9 @@
 
  <%@page import="bean.RentalBean" %>
  <%@page import="java.util.List" %>
- <% List<RentalBean> rentalBook = (List<RentalBean>)session.getAttribute("rentalInfo");
+ <% 
+ 	@SuppressWarnings("unchecked")
+ 	List<RentalBean> rentalBook = (List<RentalBean>)session.getAttribute("rentalInfo");
  	int size = rentalBook.size();
  %>
 

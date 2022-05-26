@@ -46,7 +46,9 @@
 	<table border="1"  align="center">
  		<tr bgcolor="#ffe4c4"><th>資料ID</th><th>ISBN番号</th><th>資料名</th><th>貸出年月日</th><th>返却期日</th><th>備考</th></tr>
 <c:forEach items="${books}" var="book">
+	<c:if test="${not empty discarBook[index].discardDate}" > 
  		<tr><td>${book.book_id}</td><td>${book.isbn}</td><td>${book.title}</td><td><%= LocalDate.now() %></td><td>${book.discar_date}</td><td>${book.remarks}</td></tr>
+	</c:if>
 </c:forEach>
     </table>
 
@@ -56,9 +58,7 @@
  <div id="text">
 	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5">
 	
-	<c:if test="${discarBook.discar_date != null}" > 
 	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 	
-</c:if>
 
 			<input type="hidden" name="action" value="rentaldate">
   </div>

@@ -64,6 +64,7 @@ public class SerchInfoUser extends HttpServlet {
 		try {
 			RentalDAO rentalDAO = new RentalDAO();
 			rental = rentalDAO.ListUserRentalInfo(user.getiID());
+			
 		}catch(DAOException e){
 			e.printStackTrace();
 			request.setAttribute("message", "エラー：SQLエラー2");

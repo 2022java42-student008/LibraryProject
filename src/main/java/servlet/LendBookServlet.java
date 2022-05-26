@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.BookBean;
 import bean.StockBean;
 import bean.UserBean;
 import dao.BookDAO;
@@ -38,13 +39,25 @@ public class LendBookServlet extends HttpServlet {
 			}
 			try {
 				StockDAO dao = new StockDAO();
+				BookDAO bookDAO = new BookDAO();
 				List<StockBean> list = dao.findBooks(ids);
-				if (list == null || list.size() == 0) {
-					System.out.print("ないよ");
+				
+				List<StockBean> sendStockList = new ArrayList<StockBean>();
+				List<BookBean> sendBookList =  new ArrayList<BookBean>();
+				
+				for(int i = 0;i < list.size();i++)
+				{
+					BookBean book = bookDAO.findBooks(list.get(i).getBook_id()).get(0);
+					if(book.getDiscardDate() == null)
+					{
+						sendStockList.add(list.get(i));
+						sendBookList.add(book);
+					}
 				}
-
 				HttpSession session = request.getSession();
-				session.setAttribute("books", list);
+				session.setAttribute("books", sendStockList);
+				session.setAttribute("discarBook", sendBookList);
+
 				RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendConf.jsp");
 				rd.forward(request, response);
 				return;
@@ -58,6 +71,7 @@ public class LendBookServlet extends HttpServlet {
 		}
 		if (action.equals("rentaldate")) {
 			HttpSession session = request.getSession();
+			@SuppressWarnings("unchecked")
 			List<StockBean> list = (List<StockBean>) session.getAttribute("books");
 			UserBean user = (UserBean) session.getAttribute("menberInfo");
 			try {
