@@ -10,6 +10,9 @@
 <title>ReturnScreen</title>
 <link href="/LibraryProject/lendingBook/ReturnCompleted.css"
 	rel="stylesheet">
+<style>
+	#text { text-align : center ; }
+</style>
 </head>
 <body>
 
@@ -19,29 +22,34 @@
 
 
 
-	
+	<div id="text">
 		<h1>返却</h1>
-		<table border="1">
+	</div>
+	
+	
+		<table border="1" align="center">
 			<tr>
-				<th>会員ID</th>
-				<th width="300">${sessionScope.menberInfo.iID }</th>
+				<th align="center" >会員ID</th>
+				<th  align="center" width="300">${sessionScope.menberInfo.iID }</th>
 			</tr>
 			<tr>
-				<th>氏名</th>
-				<th width="300">${sessionScope.menberInfo.strName}</th>
+				<th align="center">氏名</th>
+				<th align="center" width="300">${sessionScope.menberInfo.strName}</th>
 			</tr>
 		</table>
 		
+		<br>
 		
+		<div id="text">
 		<form action="/LibraryProject/ReturnScreenServlet" method="post">
 			<input type="hidden" name="userID"
 				value=${sessionScope.menberInfo.iID}> <input type="hidden"
 				name="userName" value=${sessionScope.menberInfo.strName}>
 
-            <div class="centermargin">
+            <div >
 
 
-			<table border="1">
+			<table border="1"align="center">
 				<tr>
 					<th width="50" height="50"></th>
 					<th width="150">資料ID</th>
@@ -75,13 +83,14 @@
 
 			</table>
 
-
+<br>
 
 			<input type="submit" value="戻る"
 				formaction="/LibraryProject/lendingBook/LendingReturn.jsp">	
-			<input type="submit" value="返却">
+			<input type="submit" value="確認">
 	</div>
 	</form>
+</div>
 
 </body>
 </html>

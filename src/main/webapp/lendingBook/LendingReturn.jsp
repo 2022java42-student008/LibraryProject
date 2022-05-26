@@ -35,12 +35,12 @@
 		<table border="1" align="center">
 
 			<tr>
-				<td>会員ID</td>
-				<td>${sessionScope.menberInfo.iID}</td>
+				<td align="center">会員ID</td>
+				<td align="center">${sessionScope.menberInfo.iID}</td>
 			</tr>
 			<tr>
-				<td>氏名</td>
-				<td>${sessionScope.menberInfo.strName}</td>
+				<td align="center">氏名</td>
+				<td align="center">${sessionScope.menberInfo.strName}</td>
 			</tr>
 
 		</table>

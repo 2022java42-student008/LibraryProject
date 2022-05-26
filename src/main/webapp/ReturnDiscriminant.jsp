@@ -18,23 +18,23 @@
 	<form action="/LibraryProject/ReturnCompletedServlet" method="post">
 		<div class="centermargin">
 			<h1>返却</h1>
-			<table border="1">
+			<table border="1" align="center">
 				<tr>
-					<th>会員ID</th>
-					<th width="300">${sessionScope.menberInfo.iID }</th>
+					<th align="center">会員ID</th>
+					<th align="center" width="300">${sessionScope.menberInfo.iID }</th>
 				</tr>
 				<tr>
-					<th>氏名</th>
-					<th width="300">${sessionScope.menberInfo.strName}</th>
+					<th align="center">氏名</th>
+					<th align="center" width="300">${sessionScope.menberInfo.strName}</th>
 				</tr>
 			</table>
 
 
-
+<br>
 			
 
 
-			<table border="1">
+			<table border="1" align="center">
 				<tr>
 					<th width="150">資料ID</th>
 					<th width="150">ISBN番号</th>
