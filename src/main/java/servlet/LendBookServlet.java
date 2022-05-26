@@ -19,9 +19,6 @@ import dao.BookDAO;
 import dao.DAOException;
 import dao.StockDAO;
 
-/**
- * Servlet implementation class LendBookServlet
- */
 @WebServlet("/LendBookServlet")
 public class LendBookServlet extends HttpServlet {
 
@@ -42,6 +39,7 @@ public class LendBookServlet extends HttpServlet {
 				BookDAO bookDAO = new BookDAO();
 				List<StockBean> list = dao.findBooks(ids);
 				
+<<<<<<< HEAD
 				List<StockBean> sendStockList = new ArrayList<StockBean>();
 				List<BookBean> sendBookList =  new ArrayList<BookBean>();
 				
@@ -53,6 +51,10 @@ public class LendBookServlet extends HttpServlet {
 						sendStockList.add(list.get(i));
 						sendBookList.add(book);
 					}
+=======
+				if (list == null || list.size() == 0) {
+					System.out.print("ないよ");
+>>>>>>> 158154b0796b75152364ee5583c9a81b4ca2f9c6
 				}
 				HttpSession session = request.getSession();
 				session.setAttribute("books", sendStockList);
