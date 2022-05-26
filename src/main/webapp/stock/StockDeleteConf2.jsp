@@ -1,4 +1,3 @@
-<!-- 資料削除画面（004-006）-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -72,7 +71,7 @@
 	</table>
 	
 <!--削除理由の表示-->
-削除理由：${sessionScope.reason}$	
+削除理由：${reason}	
 	
 	
 	<br>
@@ -91,7 +90,7 @@
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
 		<form
-			action="/LibraryProject/StockDeleteServlet?action=####"
+			action="/LibraryProject/StockDeleteServlet?action=conf"
 			method="post">
 			<input type="submit" value="削除確定">
 		</form>

@@ -25,6 +25,7 @@ public class StockDeleteServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		// パラメータの解析
 		String action = request.getParameter("action");
+		String BookID = request.getParameter("BookID");
 
 		try {
 
@@ -53,57 +54,62 @@ public class StockDeleteServlet extends HttpServlet {
 
 			if (action.equals("conf")) {
 
-				int BookID = Integer.parseInt(request.getParameter("BookID"));
-
 				StockAddBean info1 = new StockAddBean();
 
 				HttpSession session = request.getSession();
-				session.setAttribute("bookinfo1", info1);
-
-				RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteConf.jsp");
+				String reason = request.getParameter("DeleteReason");
+				session.setAttribute("reason", reason);
+				RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteConf2.jsp");
 				rd.forward(request, response);
 
+				return;
 			}
 
 			// BookIDから本を探す(findBookメソッド in BookDAO)
 
-			String BookID = request.getParameter("BookID");
+			if (action.equals("search")) {
+				if (BookID == null || BookID.length() == 0) {
+					response.sendRedirect(request.getHeader("REFERER"));
+					return;
+				}
+				int IDForSearch = Integer.parseInt(BookID);
 
-			if (BookID == null || BookID.length() == 0) {
-				response.sendRedirect(request.getHeader("REFERER"));
-				return;
+				try {
+					BookDAO dao = new BookDAO();
+					List<BookBean> list = dao.findBooks(IDForSearch);
+					request.setAttribute("searchResult", list);
+
+					HttpSession session = request.getSession();
+					session.setAttribute("searchResult", list);
+					RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteConf.jsp");
+					rd.forward(request, response);
+					return;
+				} catch (DAOException e) {
+					e.printStackTrace();
+					request.setAttribute("message", "内部エラーが発生しました。");
+					response.sendRedirect(request.getHeader("REFERER"));
+					return;
+				}
 			}
-			int IDForSearch = Integer.parseInt(BookID);
-
-			try {
-				BookDAO dao = new BookDAO();
-				List<BookBean> list = dao.findBooks(IDForSearch);
-				request.setAttribute("searchResult", list);
-
-				HttpSession session = request.getSession();
-				session.setAttribute("searchResult", list);
-
-			} catch (DAOException e) {
-				e.printStackTrace();
-				request.setAttribute("message", "内部エラーが発生しました。");
-
-			}
-
-			response.sendRedirect(request.getHeader("REFERER"));
 
 		} catch (NumberFormatException n) {
 			n.printStackTrace();
 			request.setAttribute("message", "内部エラーが発生しました。");
 			RequestDispatcher rd = request.getRequestDispatcher("stock/StockDelete.jsp");
 			rd.forward(request, response);
+			return;
 
 		}
 
-		// 入力した削除理由をセッションに入れる
+		if (action.equals("inputRemark")) {
+			// 入力した削除理由をセッションに入れる
 
-		HttpSession session = request.getSession();
-		String reason = request.getParameter("DeleteReason");
-		session.setAttribute("reason", reason);
+			HttpSession session = request.getSession();
+			String reason = request.getParameter("DeleteReason");
+			session.setAttribute("reason", reason);
+			RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteConf2.jsp");
+			rd.forward(request, response);
+		}
 
 	}
 

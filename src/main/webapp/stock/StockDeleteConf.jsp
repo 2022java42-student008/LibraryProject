@@ -1,4 +1,3 @@
-<!-- 資料削除画面（004-006）-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -78,12 +77,14 @@
 		<p>よろしければ以下に削除理由を入力し、確認画面へ進んでください。</p>
 	</div>
 
-	<form action="/LibraryProject/StockAddServlet" method="post" align="center">
+	<form action="/LibraryProject/StockDeleteServlet" method="post">
 		<input type="text" placeholder="削除理由を入力" name="DeleteReason" size="80">
-		<input type="hidden" name=action value="conf">
+		<input type="hidden" name="action" value="conf">
+	
+<input type="submit" value="確認画面へ">
 	</form>
-
 	<br>
+	
 
 
 
@@ -92,9 +93,10 @@
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
 
-		<input type=submit value="確認画面へ">
+		
 		
 	</div>
+
 
 	<br>
 
