@@ -59,11 +59,11 @@
 
 
 				<tr>
-					<th width="150">資料ID</th>
-					<th width="150">ISBN番号</th>
-					<th width="150">資料名</th>
-					<th width="150">貸出年月日</th>
-					<th width="150">返却期日</th>
+					<th >資料ID</th>
+					<th >ISBN番号</th>
+					<th >資料名</th>
+					<th >貸出年月日</th>
+					<th >返却期日</th>
 				</tr>
 
 				<c:forEach items="${sessionScope.rentalInfo}" var="book"

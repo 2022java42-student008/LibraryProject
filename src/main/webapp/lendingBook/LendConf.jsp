@@ -16,6 +16,8 @@
 
 <style>
 	#text { text-align : center ; }
+	.sub{background-color:#ffb6c1; border-radius: 10%;}
+	.retu{background-color:#c0c0c0; border-radius: 10%;}
 </style>
 </head>
 <body>
@@ -31,8 +33,8 @@
 	
  <table border="1"  align="center">
  <div id="text">
- 	 <tr><td  align="center" bgcolor="#f0e68c"> 会員ID</td><th>${sessionScope.menberInfo.iID}</th></tr>
- 	 <tr><td align="center" bgcolor="#f0e68c"> 氏名 </td><th>${sessionScope.menberInfo.strName}</th></tr>
+ 	 <tr><td  align="center" bgcolor="#f0e68c"> 会員ID</td><th align="center">${sessionScope.menberInfo.iID}</th></tr>
+ 	 <tr><td align="center" bgcolor="#f0e68c"> 氏名 </td><th align="center">${sessionScope.menberInfo.strName}</th></tr>
  </div>
  </table>
  
@@ -43,13 +45,12 @@
 		<div id="text"> 貸し出す資料ID</div>
  </font>
 
-${discarBook[0].discardDate }
 	<table border="1"  align="center">
  		<tr bgcolor="#ffe4c4"><th>資料ID</th><th>ISBN番号</th><th>資料名</th><th>貸出年月日</th><th>返却期日</th><th>備考</th></tr>
-<c:forEach items="${books}" var="book" varStatus="i">
-	
+<c:forEach items="${books}" var="book">
+	<c:if test="${not empty discarBook[index].discardDate}" > 
  		<tr><td>${book.book_id}</td><td>${book.isbn}</td><td>${book.title}</td><td><%= LocalDate.now() %></td><td>${book.discar_date}</td><td>${book.remarks}</td></tr>
-	
+	</c:if>
 </c:forEach>
     </table>
 
@@ -57,10 +58,10 @@ ${discarBook[0].discardDate }
 
  <form action="/LibraryProject/LendBookServlet" method="post">
  <div id="text">
-	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5">
+	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5" class="retu">
 	
-	<c:if test="${not empty books}">
-		<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 
+	<c:if test="${not empty book}">
+		<input type="submit"  display="inline-block" name="return" value="貸出"  size="5" class="sub"> 
 	</c:if>
 
 			<input type="hidden" name="action" value="rentaldate">

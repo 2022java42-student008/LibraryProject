@@ -8,6 +8,7 @@
 
 <style>
 	#text { text-align : center ; }
+	.retu{background-color:#98fb98; border-radius: 10%;}
 </style>
 
 </head>
@@ -17,7 +18,7 @@
 	
 	<div id="text">
 	<form action="/LibraryProject/lendingBook/LendingReturn.jsp"  method=post>
-	 <input type="submit" name="return" value="貸出・返却に戻る">
+	 <input type="submit" class="retu" name="return" value="貸出・返却に戻る">
 	 </form>
 	</div>
 	
