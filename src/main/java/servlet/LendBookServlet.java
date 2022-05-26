@@ -18,9 +18,6 @@ import dao.BookDAO;
 import dao.DAOException;
 import dao.StockDAO;
 
-/**
- * Servlet implementation class LendBookServlet
- */
 @WebServlet("/LendBookServlet")
 public class LendBookServlet extends HttpServlet {
 
@@ -39,6 +36,7 @@ public class LendBookServlet extends HttpServlet {
 			try {
 				StockDAO dao = new StockDAO();
 				List<StockBean> list = dao.findBooks(ids);
+				
 				if (list == null || list.size() == 0) {
 					System.out.print("ないよ");
 				}

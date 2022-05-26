@@ -56,7 +56,7 @@
  <div id="text">
 	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5">
 	
-	<c:if test="${discarBook.discar_date != null}" > 
+<c:if test="${not empty discarBook.discar_date}" > 
 	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 	
 </c:if>
 
