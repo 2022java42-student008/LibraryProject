@@ -30,9 +30,9 @@
 	<table border="1" align="center">
 
 		<c:forEach items="${searchResult}" var="item">
-    
-     
-     <tr>
+
+
+			<tr>
 				<td align="center" bgcolor="#CCCCFF">資料ID</td>
 				<th>${item.book_id}</th>
 			</tr>
@@ -69,11 +69,20 @@
 		</c:forEach>
 
 	</table>
-	
-<!--削除理由の表示-->
-削除理由：${reason}	
-	
-	
+
+	<br>
+
+	<!--削除理由の表示-->
+	<table border="1" align="center">
+		<tr>
+			<td align="center" bgcolor="#E5E4E2">削除理由</td>
+			<th>${reason}</th>
+		</tr>
+	</table>
+
+
+
+
 	<br>
 	<div id="text">
 		<p>削除する資料の最終確認です。</p>
@@ -82,15 +91,14 @@
 
 
 	<br>
-	
+
 
 
 	<div class="return" align="center">
 		<input type="button"
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
-		<form
-			action="/LibraryProject/StockDeleteServlet?action=conf"
+		<form action="/LibraryProject/StockDeleteServlet?action=conf"
 			method="post">
 			<input type="submit" value="削除確定">
 		</form>

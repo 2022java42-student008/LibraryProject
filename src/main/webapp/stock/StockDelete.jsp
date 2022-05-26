@@ -21,7 +21,7 @@
 
 <br>
 
-<!-- 削除する資料を検索フォーム -->
+
 <form action="/LibraryProject/StockDeleteServlet?action=search" method="post" align="center">
  資料ID
   <input type="number" name="BookID" placeholder="資料IDを入力">

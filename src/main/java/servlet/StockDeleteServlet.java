@@ -29,27 +29,6 @@ public class StockDeleteServlet extends HttpServlet {
 
 		try {
 
-			// if (action.equals("DiscardDateAdd")) {
-
-			// モデルのDAOを生成
-			// StockAddDAO dao = new StockAddDAO();
-
-			// 削除してもいいか確認したら削除完了画面(StockDeleteComp)へ
-
-			// HttpSession session = request.getSession();
-			// StockAddBean bookinfo1 = (StockAddBean) session.getAttribute("bookinfo1");
-
-			// String discardDate = bookinfo1.getDiscardDate();
-
-			// dao.AddDiscardDate(discardDate);
-
-			// RequestDispatcher rd =
-			// request.getRequestDispatcher("stock/StockDeleteComp.jsp");
-			// rd.forward(request, response);
-			// return;
-
-			// }
-
 			// 検索後、登録した内容を表示する処理(StockConfで使う)
 
 			if (action.equals("conf")) {
@@ -112,6 +91,8 @@ public class StockDeleteServlet extends HttpServlet {
 		}
 
 	}
+	
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

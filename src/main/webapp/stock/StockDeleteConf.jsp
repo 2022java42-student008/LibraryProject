@@ -79,12 +79,11 @@
 
 	<form action="/LibraryProject/StockDeleteServlet" method="post">
 		<input type="text" placeholder="削除理由を入力" name="DeleteReason" size="80">
-		<input type="hidden" name="action" value="conf">
-	
-<input type="submit" value="確認画面へ">
+		<input type="hidden" name="action" value="conf"> <input
+			type="submit" value="確認画面へ">
 	</form>
 	<br>
-	
+
 
 
 
@@ -93,8 +92,8 @@
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
 
-		
-		
+
+
 	</div>
 
 
