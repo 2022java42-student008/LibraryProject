@@ -19,6 +19,8 @@
 <title>lendbook</title>
 <style>
 	#text { text-align : center ; }
+	.sub{background-color:#ffb6c1; border-radius: 10%;}
+	.retu{background-color:#c0c0c0; border-radius: 10%;}
 </style>
 </head>
 <body>
@@ -32,8 +34,8 @@
 	</font>
 	
  <table border="1" width="200px" align="center">
- 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th>${sessionScope.menberInfo.iID}</th></tr>
- 	 <tr><td align="center"  bgcolor="#f0e68c" > 氏名 </td><th>${sessionScope.menberInfo.strName}</th></tr>
+ 	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th align="center">${sessionScope.menberInfo.iID}</th></tr>
+ 	 <tr><td align="center"  bgcolor="#f0e68c" > 氏名 </td><th align="center">${sessionScope.menberInfo.strName}</th></tr>
  </table>
  
  <font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝"><br>
@@ -54,9 +56,9 @@
 <br>
 
 <div id="text">
-	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5">	
+	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5" class="retu">	
 	<%if(size < 5 && size >= 0 ){ %>
-	<input type="submit"  name="lending" value="確認" size="5">
+	<input type="submit"  name="lending" value="確認" size="5" class="sub">
 	<%} %>
 	<input type="hidden" name="action" value="seach">
 </div>
