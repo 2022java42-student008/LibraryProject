@@ -50,4 +50,30 @@ public class StockAddDAO {
 		}
 	}
 
+	public int AddDiscardDate(String discardDate)
+
+			throws DAOException {
+
+		// SQL文の作成
+		String sql = "UPDATE stock SET remarks = ?";
+
+		try (// データベースへの接続
+				Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);)
+
+		// 表に入れる項目
+		{
+			st.setDate(1, java.sql.Date.valueOf(discardDate));
+
+
+			// SQLの実行
+			int rows = st.executeUpdate();
+			return rows;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの操作に失敗しました。");
+
+		}
+	}	
 }

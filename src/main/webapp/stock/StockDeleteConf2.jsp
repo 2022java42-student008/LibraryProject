@@ -30,7 +30,7 @@
 
 	<table border="1" align="center">
 
-		<c:forEach items="${searchResult}" var="item">;
+		<c:forEach items="${searchResult}" var="item">
     
      
      <tr>
@@ -70,30 +70,31 @@
 		</c:forEach>
 
 	</table>
+	
+<!--削除理由の表示-->
+削除理由：${sessionScope.reason}$	
+	
+	
 	<br>
 	<div id="text">
-		<p>上記の資料を削除します。</p>
-		<p>（削除すると在庫台帳に廃棄年月日が記録されます）</p>
-		<br>
-		<p>よろしければ以下に削除理由を入力し、確認画面へ進んでください。</p>
+		<p>削除する資料の最終確認です。</p>
+		<p>上記の資料を削除してよろしいですか？</p>
 	</div>
 
-	<form action="/LibraryProject/StockAddServlet" method="post" align="center">
-		<input type="text" placeholder="削除理由を入力" name="DeleteReason" size="80">
-		<input type="hidden" name=action value="conf">
-	</form>
 
 	<br>
-
+	
 
 
 	<div class="return" align="center">
 		<input type="button"
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
-
-		<input type=submit value="確認画面へ">
-		
+		<form
+			action="/LibraryProject/StockDeleteServlet?action=####"
+			method="post">
+			<input type="submit" value="削除確定">
+		</form>
 	</div>
 
 	<br>

@@ -26,14 +26,6 @@ public class StockAddServlet extends HttpServlet {
 		// パラメータの解析
 		String action = request.getParameter("action");
 
-		
-		//if (BookID == null || BookID.length() == 0) {
-			//response.sendRedirect(request.getHeader("REFERER"));
-			//return;
-		//}
-        //int IDForSearch = Integer.parseInt(BookID);//
-		
-
 		try {
 
 			if (action.equals("add")) {
@@ -42,23 +34,21 @@ public class StockAddServlet extends HttpServlet {
 				StockAddDAO dao = new StockAddDAO();
 				StockAddDAO2 dao2 = new StockAddDAO2();
 
-				
-			 //登録したら登録完了画面へ   
-				
+				// 登録したら登録完了画面へ
+
 				HttpSession session = request.getSession();
-				StockAddBean bookinfo1 =(StockAddBean)session.getAttribute("bookinfo1");
-				StockAddBean2 bookinfo2 =(StockAddBean2)session.getAttribute("bookinfo2");
-				
+				StockAddBean bookinfo1 = (StockAddBean) session.getAttribute("bookinfo1");
+				StockAddBean2 bookinfo2 = (StockAddBean2) session.getAttribute("bookinfo2");
+
 				long isbn = bookinfo1.getIsbn();
 				String title = bookinfo1.getTitle();
 				String arrivalDate = bookinfo1.getArrivalDate();
 				String remarks = bookinfo1.getRemarks();
 				int code = bookinfo2.getCode();
 				String author = bookinfo2.getAuthor();
-				String  publisher = bookinfo2.getPublisher();
-				String  publish_date = bookinfo2.getPublishDate();
-					
-		        
+				String publisher = bookinfo2.getPublisher();
+				String publish_date = bookinfo2.getPublishDate();
+
 				dao.AddBooks(isbn, title, arrivalDate, remarks);
 				dao2.AddBooks(isbn, title, code, author, publisher, publish_date);
 

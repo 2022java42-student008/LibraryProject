@@ -22,11 +22,10 @@
 
 <br>
 
-<!-- 検索フォーム -->
-<form action="../StockDeleteServlet" method="post" align="center">
+<!-- 削除する資料を検索フォーム -->
+<form action="/LibraryProject/StockDeleteServlet?action=conf" method="post" align="center">
  資料ID
   <input type="search" name="BookID" placeholder="資料IDを入力">
-  <input type = hidden name= "action" value = "search" >
   <input type="submit" name="action" value="検索">
 </form>
 

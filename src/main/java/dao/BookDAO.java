@@ -134,6 +134,21 @@ public class BookDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 	}
+	
+	public void BookDelete(String DeleteReason) throws DAOException {
+		String sql = "UPDATE stock SET remarks = ?";
+	
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) {
+			st.setString(1, DeleteReason);
+			st.executeUpdate();
+			
+			 
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 		
 	}
 

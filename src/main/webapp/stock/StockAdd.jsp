@@ -47,7 +47,11 @@
 			<option value="7">7</option>
 			<option value="8">8</option>
 			<option value="9">9</option>
-		</select> <br> 備考 <input type="text" placeholder="備考を入力" name="remarks"
+		</select>
+		
+		 <br>
+		 
+		  備考 <input type="text" placeholder="備考を入力" name="remarks"
 			size="80"> <input type="hidden" name=action value="conf">
 
 

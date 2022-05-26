@@ -22,9 +22,9 @@
 
 <br>
 
-<form action="../StockSearchServlet" method="post" align="center">
+<form action="../StockSearchServlet" method="post">
  資料ID
-  <input type="search" name="BookID" placeholder="資料IDを入力">
+  <input type="search" name="BookID" placeholder="資料IDを入力" align="center">
   <input type="submit" name="submit" value="検索">
 </form>
 

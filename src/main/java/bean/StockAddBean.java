@@ -7,6 +7,7 @@ public class StockAddBean implements Serializable {
 	String title;
 	String arrivalDate;
 	String remarks;
+	String discardDate;
 	
 	
 
@@ -42,4 +43,11 @@ public class StockAddBean implements Serializable {
 		this.remarks = remarks;
 	}
 	
+	//discard_date
+	public String getDiscardDate() {
+		return discardDate;
+	}
+	public void setDiscardDate(String discard_date) {
+		this.discardDate = discard_date;
+	}
 }
