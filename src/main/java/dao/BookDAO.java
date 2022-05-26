@@ -90,7 +90,6 @@ public class BookDAO {
 					LocalDate date = LocalDate.now();
 					// 新作なので本日から10日後
 					returnDate = date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-					;
 
 				}
 

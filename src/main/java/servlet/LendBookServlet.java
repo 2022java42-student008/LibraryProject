@@ -79,6 +79,7 @@ public class LendBookServlet extends HttpServlet {
 				return;
 			}
 		}
+		
 		if (action.equals("rentaldate")) {
 			HttpSession session = request.getSession();
 			@SuppressWarnings("unchecked")
