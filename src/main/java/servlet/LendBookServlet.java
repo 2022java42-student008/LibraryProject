@@ -23,23 +23,27 @@ import dao.StockDAO;
 public class LendBookServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException 
+	{
 		String action = request.getParameter("action");
-		if (action.equals("seach")) {
+		if (action.equals("seach")) 
+		{
 
 			String[] lends = request.getParameterValues("lend");
 			ArrayList<String> ids = new ArrayList<String>();
-			for (String id : lends) {
-				if (id.length() != 0) {
+			for (String id : lends) 
+			{
+				if (id.length() != 0) 
+				{
 					ids.add(id);
 				}
 			}
+			
 			try {
 				StockDAO dao = new StockDAO();
 				BookDAO bookDAO = new BookDAO();
 				List<StockBean> list = dao.findBooks(ids);
 				
-<<<<<<< HEAD
 				List<StockBean> sendStockList = new ArrayList<StockBean>();
 				List<BookBean> sendBookList =  new ArrayList<BookBean>();
 				
@@ -51,11 +55,8 @@ public class LendBookServlet extends HttpServlet {
 						sendStockList.add(list.get(i));
 						sendBookList.add(book);
 					}
-=======
-				if (list == null || list.size() == 0) {
-					System.out.print("ないよ");
->>>>>>> 158154b0796b75152364ee5583c9a81b4ca2f9c6
 				}
+
 				HttpSession session = request.getSession();
 				session.setAttribute("books", sendStockList);
 				session.setAttribute("discarBook", sendBookList);

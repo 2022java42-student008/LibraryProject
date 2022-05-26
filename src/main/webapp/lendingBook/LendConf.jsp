@@ -58,10 +58,6 @@
  <div id="text">
 	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5">
 	
-<<<<<<< HEAD
-=======
-<c:if test="${not empty discarBook.discar_date}" > 
->>>>>>> 158154b0796b75152364ee5583c9a81b4ca2f9c6
 	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 	
 
 			<input type="hidden" name="action" value="rentaldate">
