@@ -29,44 +29,40 @@
 
 	<table border="1" align="center">
 
-		<c:forEach items="${searchResult}" var="item">
-
 
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">資料ID</td>
-				<th>${item.book_id}</th>
+				<th>${searchResult.book_id}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">ISBN番号</td>
-				<th>${item.isbn}</th>
+				<th>${searchResult.isbn}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">資料名</td>
-				<th>${item.title}</th>
+				<th>${searchResult.title}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">著者名</td>
-				<th>${item.author}</th>
+				<th>${searchResult.author}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">分類コード</td>
-				<th>${item.code}</th>
+				<th>${searchResult.code}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">出版社</td>
-				<th>${item.publisher}</th>
+				<th>${searchResult.publisher}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">出版日</td>
-				<th>${item.publishDate}</th>
+				<th>${searchResult.publishDate}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">備考</td>
-				<th>${item.remarks}</th>
+				<th>${searchResult.remarks}</th>
 			</tr>
 
-
-		</c:forEach>
 
 	</table>
 
