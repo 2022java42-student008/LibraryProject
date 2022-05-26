@@ -9,13 +9,16 @@
 <meta charset="UTF-8">
 <title>ReturnScreen</title>
 <link href="css/ReturnCompleted.css" rel="stylesheet">
+<style>
+	#text { text-align : center ; }
+</style>
 </head>
 <body>
 
 	<a href="/LibraryProject/TopMenu.html" class="btn">トップメニュー</a>
 
 
-
+<div id="text">
 	<form action="../SerchInfoUser" method="post">
 		<div>
 			<h1>貸出・返却</h1>
@@ -25,10 +28,11 @@
 				type="submit" value="検索">
 		</div>
 	</form>
+</div>
 
+<br>
 
-	
-		<table border="1">
+		<table border="1" align="center">
 
 			<tr>
 				<td>会員ID</td>
@@ -47,8 +51,10 @@
 		<input type="hidden" name="userID" value=${menberInfo.iID}> <input
 			type="hidden" name="userName" value=${menberInfo.strName}>
 
+<br>
+
 		<div>
-			<table border="1" >
+			<table border="1" align="center">
 
 
 
@@ -75,16 +81,18 @@
 
 				</c:forEach>
 			</table>
-
-
+<br>
+<div id="text">
 			<c:if test="${not empty sessionScope.menberInfo }">
 				<input type="submit" value="貸出" formaction="LendBook.jsp" > 
 				<c:if test="${ not empty sessionScope.rentalInfo }">
 					<input type="submit" value="返却" >
 				</c:if>
 			</c:if>
+			</div>
 		</div>
 	</form>
+
 
 </body>
 </html>
