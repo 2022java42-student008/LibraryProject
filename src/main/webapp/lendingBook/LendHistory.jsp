@@ -26,10 +26,10 @@
 <form action="/LibraryProject/HistoryBookServlet" method="post">
 
 <div id="text">
-<input type="text" display="inline-block"  name="search">
+<input type="number" display="inline-block"  name="search">
 
   <select display="inline-block"  name="ID">
-    <option value="1">会員ID</option>
+    <option value="1" selected >会員ID</option>
     <option value="2">資料ID</option>
   </select>
    <input type="hidden" name="action" value="history">

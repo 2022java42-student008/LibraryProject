@@ -2,11 +2,13 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  
+
  <%@page import="bean.RentalBean" %>
  <%@page import="java.util.List" %>
  <% List<RentalBean> rentalBook = (List<RentalBean>)session.getAttribute("rentalInfo");
  	int size = rentalBook.size();
  %>
+
 
 <!DOCTYPE html>
 <html>
@@ -52,7 +54,7 @@
 <div id="text">
 	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5">	
 	<%if(size < 5 && size >= 0 ){ %>
-	<input type="submit" name="lending" value="確認" size="5">
+	<input type="submit"  name="lending" value="確認" size="5">
 	<%} %>
 	<input type="hidden" name="action" value="seach">
 </div>

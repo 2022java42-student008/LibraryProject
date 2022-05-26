@@ -4,6 +4,9 @@
 <%@ page 	import="java.time.LocalDate"
        		import="java.time.format.DateTimeFormatter"
        %>
+         <%@page import="bean.StockBean" %>
+          <%@page import="java.util.List" %>
+       <%  List<StockBean> discarBook = (List<StockBean>)session.getAttribute("books"); %>
        
 <!DOCTYPE html>
 <html>
@@ -52,7 +55,11 @@
  <form action="/LibraryProject/LendBookServlet" method="post">
  <div id="text">
 	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5">
+	
+	<c:if test="${discarBook.discar_date != null}" > 
 	<input type="submit"  display="inline-block" name="return" value="貸出"  size="5"> 	
+</c:if>
+
 			<input type="hidden" name="action" value="rentaldate">
   </div>
   </form>
