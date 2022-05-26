@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import bean.BookBean;
@@ -33,6 +35,7 @@ public class BookDAO {
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setInt(1, bookid);
+			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 			ResultSet rs = st.executeQuery();
 			List<BookBean> list = new ArrayList<BookBean>();
 			while (rs.next()) {
@@ -45,7 +48,7 @@ public class BookDAO {
 				String publisher = rs.getString("publisher");
 				String publish_date = rs.getString("publish_date");
 				String arrivalDate = rs.getString("arrival_date");
-				String discardDate = rs.getString("discard_date");
+				Date discardDate = rs.getDate("discard_date");
 				String remarks = rs.getString("remarks");
 				BookBean bean = new BookBean();
 				bean.setbook_id(book_id);
@@ -56,7 +59,10 @@ public class BookDAO {
 				bean.setPublisher(publisher);
 				bean.setPublishDate(publish_date);
 				bean.setArrivalDate(arrivalDate);
-				bean.setDiscardDate(discardDate);
+				if(discardDate != null)
+				{
+					bean.setDiscardDate(fmt.format(discardDate));
+				}
 				bean.setRemarks(remarks);
 				list.add(bean);
 			}
@@ -84,7 +90,6 @@ public class BookDAO {
 					LocalDate date = LocalDate.now();
 					// 新作なので本日から10日後
 					returnDate = date.plusDays(15).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-					;
 
 				}
 

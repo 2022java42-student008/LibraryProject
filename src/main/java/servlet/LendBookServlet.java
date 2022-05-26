@@ -56,7 +56,8 @@ public class LendBookServlet extends HttpServlet {
 				for(int i = 0;i < list.size();i++)
 				{
 					BookBean book = bookDAO.findBooks(list.get(i).getBook_id()).get(0);
-					if(book.getDiscardDate() == null)
+					System.out.print(book.getDiscardDate());
+					if(book.getDiscardDate() == null || book.getDiscardDate() == "" || book.getDiscardDate().length() == 0)
 					{
 						sendStockList.add(list.get(i));
 						sendBookList.add(book);
@@ -78,6 +79,7 @@ public class LendBookServlet extends HttpServlet {
 				return;
 			}
 		}
+		
 		if (action.equals("rentaldate")) {
 			HttpSession session = request.getSession();
 			@SuppressWarnings("unchecked")
