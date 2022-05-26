@@ -70,7 +70,8 @@ public class StockDeleteServlet extends HttpServlet {
 					return;
 				}
 			}
-
+			
+			
 		} catch (NumberFormatException n) {
 			n.printStackTrace();
 			request.setAttribute("message", "内部エラーが発生しました。");
