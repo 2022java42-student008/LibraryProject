@@ -39,6 +39,12 @@ public class LendBookServlet extends HttpServlet {
 				}
 			}
 			
+			if(ids.size() == 0)
+			{
+				response.sendRedirect(request.getHeader("REFERER"));
+				return;
+			}
+			
 			try {
 				StockDAO dao = new StockDAO();
 				BookDAO bookDAO = new BookDAO();
