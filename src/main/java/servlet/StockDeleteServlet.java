@@ -70,8 +70,7 @@ public class StockDeleteServlet extends HttpServlet {
 					return;
 				}
 			}
-			
-			
+
 		} catch (NumberFormatException n) {
 			n.printStackTrace();
 			request.setAttribute("message", "内部エラーが発生しました。");
@@ -91,9 +90,24 @@ public class StockDeleteServlet extends HttpServlet {
 			rd.forward(request, response);
 		}
 
+		if (action.equals("DeleteComp")) {
+			HttpSession session = request.getSession();
+			String reason = (String)session.getAttribute("reason");
+
+			try {
+				BookDAO dao = new BookDAO();
+				dao.BookDelete(reason);
+
+				RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteComp.jsp");
+				rd.forward(request, response);
+			} catch (DAOException e) {
+				e.printStackTrace();
+				request.setAttribute("message", "内部エラーが発生しました。");
+				response.sendRedirect(request.getHeader("REFERER"));
+				return;
+			}
+		}
 	}
-	
-	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

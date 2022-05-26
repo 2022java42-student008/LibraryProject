@@ -16,7 +16,7 @@
 <body>
 
 	<div class="leftmargin">
-		<a href="../TopMenu.html">トップメニュー</a>
+		<a href="/LibraryProject/TopMenu.html">トップメニュー</a>
 	</div>
 
 
@@ -98,7 +98,7 @@
 		<input type="button"
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
-		<form action="/LibraryProject/StockDeleteServlet?action=conf"
+		<form action="/LibraryProject/StockDeleteServlet?action=DeleteComp"
 			method="post">
 			<input type="submit" value="削除確定">
 		</form>

@@ -11,7 +11,7 @@
 <body>
 
 <div class="leftmargin">
-	 <a href="../TopMenu.html" >トップメニュー</a>
+	 <a href="/LibraryProject/TopMenu.html" >トップメニュー</a>
     </div>
 
 <div class="centermargin">
@@ -19,7 +19,7 @@
     </div>
 
 <div class="next" align = center>
-<input type="button" onclick="location.href='./StockMenu.html'" name="return" value="資料管理メニューに戻る">	
+<input type="button" onclick="location.href='StockMenu.html'" name="return" value="資料管理メニューに戻る">	
 </div>
 
 </body>

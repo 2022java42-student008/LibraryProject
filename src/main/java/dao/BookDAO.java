@@ -141,7 +141,7 @@ public class BookDAO {
 	}
 	
 	public void BookDelete(String DeleteReason) throws DAOException {
-		String sql = "UPDATE stock SET remarks = ?";
+		String sql = "UPDATE stock SET remarks = ? ,discard_date=CURRENT_DATE";
 	
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {

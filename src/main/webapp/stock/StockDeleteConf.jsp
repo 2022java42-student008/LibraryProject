@@ -16,7 +16,7 @@
 <body>
 
 	<div class="leftmargin">
-		<a href="../TopMenu.html">トップメニュー</a>
+		<a href="/LibraryProject/TopMenu.html">トップメニュー</a>
 	</div>
 
 
@@ -70,6 +70,9 @@
 
 	</table>
 	<br>
+	<c:if test ="${not empty item.discardDate}" >
+	
+	
 	<div id="text">
 		<p>上記の資料を削除します。</p>
 		<p>（削除すると在庫台帳に廃棄年月日が記録されます）</p>
@@ -82,16 +85,18 @@
 		<input type="hidden" name="action" value="conf"> <input
 			type="submit" value="確認画面へ">
 	</form>
+	
+	</c:if>
+	
 	<br>
 
 
 
 
 	<div class="return" align="center">
-		<input type="button"
-			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
-			name="return" value="戻る">
-
+	<form action=/LibraryProject/stock/StockDelete.html>
+		<input type="submit"name="return" value="戻る">
+    </form>
 
 
 	</div>
