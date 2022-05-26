@@ -28,49 +28,43 @@
 
 
 	<table border="1" align="center">
-
-		<c:forEach items="${searchResult}" var="item">;
-    
      
      <tr>
 				<td align="center" bgcolor="#CCCCFF">資料ID</td>
-				<th>${item.book_id}</th>
+				<th>${searchResult.book_id}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">ISBN番号</td>
-				<th>${item.isbn}</th>
+				<th>${searchResult.isbn}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">資料名</td>
-				<th>${item.title}</th>
+				<th>${searchResult.title}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">著者名</td>
-				<th>${item.author}</th>
+				<th>${searchResult.author}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">分類コード</td>
-				<th>${item.code}</th>
+				<th>${searchResult.code}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">出版社</td>
-				<th>${item.publisher}</th>
+				<th>${searchResult.publisher}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">出版日</td>
-				<th>${item.publishDate}</th>
+				<th>${searchResult.publishDate}</th>
 			</tr>
 			<tr>
 				<td align="center" bgcolor="#CCCCFF">備考</td>
-				<th>${item.remarks}</th>
+				<th>${searchResult.remarks}</th>
 			</tr>
-
-
-		</c:forEach>
 
 	</table>
 	<br>
-	<c:if test ="${not empty item.discardDate}" >
+	<c:if test="${empty searchResult.discardDate}" >
 	
 	
 	<div id="text">
@@ -80,10 +74,10 @@
 		<p>よろしければ以下に削除理由を入力し、確認画面へ進んでください。</p>
 	</div>
 
-	<form action="/LibraryProject/StockDeleteServlet" method="post">
-		<input type="text" placeholder="削除理由を入力" name="DeleteReason" size="80">
-		<input type="hidden" name="action" value="conf"> <input
-			type="submit" value="確認画面へ">
+	<form action="/LibraryProject/StockDeleteServlet" method="post" align="center">
+		<input type="text" placeholder="削除理由を入力" name="DeleteReason" size="80"><br>
+		<input type="hidden" name="action" value="conf"> 
+		<input type="submit" value="確認画面へ">
 	</form>
 	
 	</c:if>

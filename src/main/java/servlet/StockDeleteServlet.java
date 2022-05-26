@@ -1,7 +1,6 @@
 package servlet;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.BookBean;
-import bean.StockAddBean;
 import dao.BookDAO;
 import dao.DAOException;
 
@@ -33,7 +31,6 @@ public class StockDeleteServlet extends HttpServlet {
 
 			if (action.equals("conf")) {
 
-				StockAddBean info1 = new StockAddBean();
 
 				HttpSession session = request.getSession();
 				String reason = request.getParameter("DeleteReason");
@@ -55,7 +52,7 @@ public class StockDeleteServlet extends HttpServlet {
 
 				try {
 					BookDAO dao = new BookDAO();
-					List<BookBean> list = dao.findBooks(IDForSearch);
+					BookBean list = dao.findBooks(IDForSearch).get(0);
 					request.setAttribute("searchResult", list);
 
 					HttpSession session = request.getSession();
