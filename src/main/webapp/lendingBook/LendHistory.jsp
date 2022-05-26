@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 <style>
 	#text { text-align : center ; }
+	.retu{background-color:#98fb98; border-radius: 10%;}
 </style>
 </head>
 <body>
@@ -33,7 +34,7 @@
     <option value="2">資料ID</option>
   </select>
    <input type="hidden" name="action" value="history">
-   <input type="submit" name="return" value="検索" size="5">
+   <input type="submit" name="return" value="検索" size="5" class="retu">
 
 </div>
 </form>
@@ -46,7 +47,7 @@
  		<tr bgcolor="#ffe4c4"><th>会員ID</th><th>資料ID</th><th>資料名</th><th>貸出年月日</th><th>返却期日</th>
  		<th>返却年月日</th><th>備考</th></tr>
 <c:forEach  items="${historys}" var="history">
-		<tr><td>${history.iUserID}</td><td>${history.iBookID}</td><td>${history.title}</td><td>${history.dRentalDate}</td>
+		<tr><td align="center">${history.iUserID}</td><td align="center">${history.iBookID}</td><td>${history.title}</td><td>${history.dRentalDate}</td>
 		<td>${history.dFixedDate}</td><td>${history.dReturnDate}<td>${history.strRemarks}</td></tr>
 </c:forEach>
 </table>
