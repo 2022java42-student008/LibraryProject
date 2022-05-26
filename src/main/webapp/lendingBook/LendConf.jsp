@@ -48,7 +48,7 @@
 	<table border="1"  align="center">
  		<tr bgcolor="#ffe4c4"><th>資料ID</th><th>ISBN番号</th><th>資料名</th><th>貸出年月日</th><th>返却期日</th><th>備考</th></tr>
 <c:forEach items="${books}" var="book">
- 		<tr><td>${book.book_id}</td><td>${book.isbn}</td><td>${book.title}</td><td><%= LocalDate.now() %></td><td>${book.discar_date}</td><td>${book.remarks}</td></tr>
+ 		<tr><td  align="center">${book.book_id}</td><td>${book.isbn}</td><td>${book.title}</td><td><%= LocalDate.now() %></td><td>${book.discar_date}</td><td>${book.remarks}</td></tr>
 </c:forEach>
     </table>
 
