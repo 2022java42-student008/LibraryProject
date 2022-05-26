@@ -23,6 +23,8 @@ public class BackUserInfo extends HttpServlet {
 		UserBean sessionUser = (UserBean)(session.getAttribute("menberInfo"));
 		UserBean user = (UserBean)(session.getAttribute("user"));
 		
+		
+		
 		//セッションから取得
 		String strName = (String)request.getParameter("inputName");
 		String strPost = (String)request.getParameter("inputPost");
