@@ -52,7 +52,7 @@
 <div id="text">
 	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5">	
 	<%if(size < 5 && size >= 0 ){ %>
-	<input type="submit" name="lending" value="貸出" size="5">
+	<input type="submit" name="lending" value="確認" size="5">
 	<%} %>
 	<input type="hidden" name="action" value="seach">
 </div>
