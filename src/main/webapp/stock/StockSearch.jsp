@@ -22,9 +22,10 @@
 
 <br>
 
-<form action="../StockSearchServlet" method="post">
+
+<form action="../StockSearchServlet" method="post" align="center">
  資料ID
-  <input type="search" name="BookID" placeholder="資料IDを入力" align="center">
+  <input type="search" name="BookID" placeholder="資料IDを入力">
   <input type="submit" name="submit" value="検索">
 </form>
 
@@ -32,28 +33,27 @@
 
 <table border="1" align="center">
      <!--検索結果の表示 -->
-     <c:forEach  items="${searchResult}" var = "item">;
     
      
-     <tr><td align="center"  bgcolor="#CCCCFF"> 資料ID</td><th>${item.book_id}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> ISBN番号</td><th>${item.isbn}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 分類コード</td><th>${item.code}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 資料名</td><th>${item.title}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 著者名</td><th>${item.author}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 出版社</td><th>${item.publisher}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 出版日</td><th>${item.publishDate}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 入荷年月日</td><th>${item.arrivalDate}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 削除年月日</td><th>${item.discardDate}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 備考</td><th>${item.remarks}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 資料ID</td><th>${searchResult.book_id}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> ISBN番号</td><th>${searchResult.isbn}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 分類コード</td><th>${searchResult.code}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 資料名</td><th>${searchResult.title}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 著者名</td><th>${searchResult.author}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 出版社</td><th>${searchResult.publisher}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 出版日</td><th>${searchResult.publishDate}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 入荷年月日</td><th>${searchResult.arrivalDate}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 削除年月日</td><th>${searchResult.discardDate}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 備考</td><th>${searchResult.remarks}</th></tr>
      
-     <td>
+     </table>
+    <table border="1" align="center">
      
-     <table border="1" align="center">
-<tr><td align="center"  bgcolor="#D9E5FF">同じ資料(ISBN番号)の在庫</td><th></th>
-</table>
-
- </c:forEach>
- 
+<tr><td align="center"  bgcolor="#D9E5FF">同じ資料(ISBN番号)の在庫</td><th>
+	<c:forEach items="${bookIDs}" var="bookID" varStatus="i">
+		<a href="../StockSearchServlet?BookID=${bookID}">${bookID}</a> <c:if test="${i.last == false}"> ,</c:if> 
+	</c:forEach>
+</th>
 </table>
 
 <br>

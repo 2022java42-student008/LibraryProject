@@ -15,7 +15,7 @@ public class BookBean implements Serializable {
 	 String remarks;
 	
 	//資料ID
-	public long getbook_id() {
+	public int getbook_id() {
 		return book_id;
 	}
 	public void setbook_id(int book_id) {

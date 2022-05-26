@@ -95,6 +95,7 @@ public class StockDeleteServlet extends HttpServlet {
 				BookDAO dao = new BookDAO();
 				dao.BookDelete(reason);
 
+				session.invalidate();
 				RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteComp.jsp");
 				rd.forward(request, response);
 			} catch (DAOException e) {

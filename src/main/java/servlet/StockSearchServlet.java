@@ -32,11 +32,15 @@ public class StockSearchServlet extends HttpServlet {
 
 		try {
 			BookDAO dao = new BookDAO();
-			List<BookBean> list = dao.findBooks(IDForSearch);
+			BookBean list = dao.findBooks(IDForSearch).get(0);
 			request.setAttribute("searchResult", list);
+			
+			//ISBNを検索
+			List<Integer> bookIDList = dao.liFindBookIDFromISBN(list.getbook_id());
 
 			HttpSession session = request.getSession();
 			session.setAttribute("searchResult", list);
+			session.setAttribute("bookIDs", bookIDList);
 
 		} catch (DAOException e) {
 			e.printStackTrace();

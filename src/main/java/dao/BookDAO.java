@@ -154,6 +154,31 @@ public class BookDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 	}
-		
+	
+	public List<Integer> liFindBookIDFromISBN(int _isbn) throws DAOException {
+		String sql = "SELECT book_id FROM stock WHERE isbn = ?";
+		List<Integer> list = new ArrayList<Integer>();
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) 
+		{
+			
+			st.setInt(1, _isbn);
+			try(ResultSet rs = st.executeQuery();)
+			{
+				while(rs.next())
+				{
+					list.add(rs.getInt(1));
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		return list;
 	}
+			
+}
 
