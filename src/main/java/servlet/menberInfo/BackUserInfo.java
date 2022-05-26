@@ -39,7 +39,7 @@ public class BackUserInfo extends HttpServlet {
 		request.setAttribute("inputMail", strMail);
 		request.setAttribute("inputBirthday", strBirthday);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/LibraryProject/menberInfo/ChangeUserInfo.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("ChangeUserInfo");
 		rd.forward(request, response);
 	}
 
