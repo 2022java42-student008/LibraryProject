@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
+ <%@page import="bean.RentalBean" %>
+ <%@page import="java.util.List" %>
+ <% List<RentalBean> rentalBook = (List<RentalBean>)session.getAttribute("rentalInfo");
+ 	int size = rentalBook.size();
+ %>
 
 <!DOCTYPE html>
 <html>
@@ -33,7 +40,7 @@
 <form action ="/LibraryProject/LendBookServlet" method="post">
 
 <%
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5 - size ; i++) {
 %>
     <div id="text"> <input type="text" name="lend" ></div>
 <%
@@ -44,7 +51,9 @@
 
 <div id="text">
 	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5">	
+	<%if(size < 5 && size >= 0 ){ %>
 	<input type="submit" name="lending" value="貸出" size="5">
+	<%} %>
 	<input type="hidden" name="action" value="seach">
 </div>
  </form> 
