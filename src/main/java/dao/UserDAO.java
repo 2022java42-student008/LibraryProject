@@ -85,7 +85,7 @@ public class UserDAO {
 		
 		//先にシーケンス情報を取得
 		int sequence = 0;
-		String sql = "SELECT nextval('user_sequence')";
+		String sql = "SELECT count(*) FROM user_table";
 		
 		try(				Connection con = DriverManager.getConnection(url,user,pass);
 				PreparedStatement ps = con.prepareStatement(sql);)
@@ -93,7 +93,7 @@ public class UserDAO {
 			ResultSet rs = ps.executeQuery();
 			if(rs.next())
 			{
-				sequence = rs.getInt(1);
+				sequence = rs.getInt(1) + 1;
 			}
 			
 		}catch(SQLException e) {
