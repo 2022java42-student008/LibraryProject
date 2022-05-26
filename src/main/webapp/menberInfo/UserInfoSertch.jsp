@@ -35,9 +35,9 @@
 	
 		<c:if test="${not empty menberInfo}">
 			<div class="centermargin">
-				<form action="ChangeUserInfo.jsp">
+				<form action="ChangeUserInfo.jsp" method="get">
 					<input type="submit" value="変更" >
-					<input type="submit" value="削除"formaction="DeleteUser.jsp">
+					<input type="submit" value="削除" formaction="../DeleteConfServlet">
 				</form>
 			</div>
 		</c:if>

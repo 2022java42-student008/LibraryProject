@@ -38,11 +38,11 @@
 		</table>
 		<div class="centermargin">
 			<form action="../UserDeleteServlet" method="post">
-			<c:if test="${empty sessionScope.rentalInfo && empty sessionScope.menberInfo.secede_date}">
+			<c:if test="${sessionScope.canDelete == true}">
 				本当に退会してもよろしいですか？<br>
 			</c:if>
 				<input type="submit" value="戻る" formaction="UserInfoSertch.jsp">
-				<c:if test="${empty sessionScope.rentalInfo && empty sessionScope.menberInfo.secede_date}">
+				<c:if test="${sessionScope.canDelete == true}">
 					<input type="submit" value="退会" >
 				</c:if>
 			</form>
