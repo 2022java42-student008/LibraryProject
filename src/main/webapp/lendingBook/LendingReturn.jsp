@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.ArrayList"%>
 
 <!DOCTYPE html>
@@ -17,27 +17,30 @@
 
 
 	<form action="../SerchInfoUser" method="post">
-		<div class="centermargin">
+		<div>
 			<h1>貸出・返却</h1>
 
 
-			E-mail <input type="text" name="menberMail">
+			E-mail <input type="text" name="menberMail" > <input
+				type="submit" value="検索">
 		</div>
-		<input type="submit" value="検索">
 	</form>
 
 
+	
+		<table border="1">
 
-	<table border="1">
-		<tr>
-			<td>会員ID</td>
-			<td>${sessionScope.menberInfo.iID}</td>
-		</tr>
-		<tr>
-			<td>氏名</td>
-			<td>${sessionScope.menberInfo.strName}</td>
-		</tr>
-	</table>
+			<tr>
+				<td>会員ID</td>
+				<td>${sessionScope.menberInfo.iID}</td>
+			</tr>
+			<tr>
+				<td>氏名</td>
+				<td>${sessionScope.menberInfo.strName}</td>
+			</tr>
+
+		</table>
+	
 
 
 	<form action="../ReturnScreen.jsp" method="post">
@@ -45,7 +48,7 @@
 			type="hidden" name="userName" value=${menberInfo.strName}>
 
 		<div>
-			<table border="1">
+			<table border="1" >
 
 
 
@@ -57,10 +60,11 @@
 					<th width="150">返却期日</th>
 				</tr>
 
-				<c:forEach items="${sessionScope.rentalInfo}" var="book" varStatus="stat">
+				<c:forEach items="${sessionScope.rentalInfo}" var="book"
+					varStatus="stat">
 
 					<tr>
-					
+
 						<th>${book.iBookID}</th>
 						<th>${book.isbn}</th>
 						<th>${book.title}</th>
@@ -74,8 +78,8 @@
 
 
 
-			<input type="submit" value="貸出" formaction="LendBook.jsp">
-			 <input type="submit" value="返却">
+			<input type="submit" value="貸出" formaction="LendBook.jsp" > <input
+				type="submit" value="返却">
 		</div>
 	</form>
 
