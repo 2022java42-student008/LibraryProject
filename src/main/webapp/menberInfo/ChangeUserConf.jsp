@@ -29,7 +29,7 @@
 		
 		<h2 class="centermargin ">上記の内容で変更して宜しいでしょうか?</h2>
 		<div class="centermargin">
-			<form action="/LibraryProject/menberInfo/BackUserInfo" method="post">
+			<form action="/LibraryProject/BackUserInfo" method="post">
 				<input type="submit" value="戻る" ><input type="submit" value="変更" formaction="ChangeUserInfoComp">
 			</form>
 		</div>

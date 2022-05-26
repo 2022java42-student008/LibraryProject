@@ -48,7 +48,7 @@ public class ChangeUserInfoConf extends HttpServlet {
 			user.setStrName(strName);
 		}
 		
-		if(!(strPost == null || strPost.length() == 0))
+		if(!(strPost == null || strPost.length() == 0 || strBirthday.equals(sessionUser.getUpdate_date())))
 		{
 			user.setPost_no(Long.parseLong(strBirthday));
 		}

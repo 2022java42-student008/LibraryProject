@@ -2,7 +2,6 @@ package servlet.menberInfo;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,26 +22,48 @@ public class BackUserInfo extends HttpServlet {
 		UserBean sessionUser = (UserBean)(session.getAttribute("menberInfo"));
 		UserBean user = (UserBean)(session.getAttribute("user"));
 		
+		String strName = null;
+		String strPost = null;
+		String strAddress = null;
+		String strTel = null;
+		String strMail = null;
+		String strBirthday = null;
 		
+		//更新した情報のみ設定
+		if(!(sessionUser.getStrName().equals(user.getStrName())))
+		{
+			strName = user.getStrName();
+		}
+		if(!(sessionUser.getPost_no() == (user.getPost_no())))
+		{
+			strPost = String.valueOf(user.getPost_no());
+		}
+		if(!(sessionUser.getAddress().equals(user.getAddress())))
+		{
+			strAddress = user.getAddress();
+		}
+		if(!(sessionUser.getTel().equals(user.getTel())))
+		{
+			strTel = user.getTel();
+		}
+		if(!(sessionUser.getMail().equals(user.getMail())))
+		{
+			strMail = user.getMail();
+		}
+		if(!(sessionUser.getBirthday().equals(user.getBirthday())))
+		{
+			strBirthday = user.getBirthday();
+		}
 		
-		//セッションから取得
-		String strName = (String)request.getParameter("inputName");
-		String strPost = (String)request.getParameter("inputPost");
-		String strAddress = (String)request.getParameter("inputAddress");
-		String strTel = (String)request.getParameter("inputTel");
-		String strMail = (String)request.getParameter("inputMail");
-		String strBirthday = (String)request.getParameter("inputBirthday");
+		//もう一度セッションに送る
+		session.setAttribute("inputName", strName);
+		session.setAttribute("inputPost", strPost);
+		session.setAttribute("inputAddress", strAddress);
+		session.setAttribute("inputTel", strTel);
+		session.setAttribute("inputMail", strMail);
+		session.setAttribute("inputBirthday", strBirthday);
 		
-		//もう一度リクエストに送る
-		request.setAttribute("inputName", strName);
-		request.setAttribute("inputPost", strPost);
-		request.setAttribute("inputAddress", strAddress);
-		request.setAttribute("inputTel", strTel);
-		request.setAttribute("inputMail", strMail);
-		request.setAttribute("inputBirthday", strBirthday);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("ChangeUserInfo");
-		rd.forward(request, response);
+		response.sendRedirect("/LibraryProject/menberInfo/ChangeUserInfo.jsp");
 	}
 
 }
