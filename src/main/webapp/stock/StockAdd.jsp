@@ -59,7 +59,7 @@
 
 
 	<br>
-
+    <br>
 
 	<div id="text">
 		<input type=submit name="return" value="次へ"> <br> <br>
