@@ -83,26 +83,8 @@ public class UserDAO {
 	{
 		boolean bRet = false;
 		
-		//先にシーケンス情報を取得
-		int sequence = 0;
-		String sql = "SELECT count(*) FROM user_table";
-		
-		try(				Connection con = DriverManager.getConnection(url,user,pass);
-				PreparedStatement ps = con.prepareStatement(sql);)
-		{
-			ResultSet rs = ps.executeQuery();
-			if(rs.next())
-			{
-				sequence = rs.getInt(1) + 1;
-			}
-			
-		}catch(SQLException e) {
-			e.printStackTrace();
-			throw new DAOException("エラー");
-		}
-		
 		//追加
-		 sql = "INSERT INTO user_table VALUES (?,?,?,?,?,?,?,?)";
+		 String sql = "INSERT INTO user_table(name,post_no,address,tel,mail,birthday,join_date) VALUES (?,?,?,?,?,?,?)";
 		
 		try (
 				Connection con = DriverManager.getConnection(url,user,pass);
@@ -110,21 +92,19 @@ public class UserDAO {
 		{
 			Date date = new Date();
 			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
-			ps.setInt(1, sequence);
-			ps.setString(2, _user.getStrName());
-			ps.setLong(3, _user.getPost_no());
-			ps.setString(4, _user.getAddress());
-			ps.setString(5, _user.getTel());
-			ps.setString(6, _user.getTel());
-			ps.setString(7, _user.getMail());
+			ps.setString(1, _user.getStrName());
+			ps.setLong(2, _user.getPost_no());
+			ps.setString(3, _user.getAddress());
+			ps.setString(4, _user.getTel());
+			ps.setString(5, _user.getMail());
 			
 			//StringからsqlDateにフォーマット
 			java.sql.Date sqlDate = java.sql.Date.valueOf(_user.getBirthday());
-			ps.setDate(7, sqlDate);
+			ps.setDate(6, sqlDate);
 			
 			//javaDateを変換
 			sqlDate = new java.sql.Date(date.getTime());
-			ps.setDate(8, sqlDate);
+			ps.setDate(7, sqlDate);
 			
 			int n = ps.executeUpdate();
 			
