@@ -50,7 +50,7 @@ public class StockDAO {
 				bean.setArrival_date(arrival_date);
 
 				// 予定日を挿入
-				if (fixedDate(book_id)) {
+				if (fixedDate(ibsn)) {
 					LocalDate date = LocalDate.now();
 					// 新作なので本日から10日後
 					String returnDate =  date.plusDays(10).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));;
@@ -75,25 +75,21 @@ public class StockDAO {
 		}
 	}
 
-	public boolean fixedDate(int book_id) throws DAOException {
-		String sql = "SELECT " + "  CASE " + "      WHEN arrival_date + interval '30 day' >= CURRENT_DATE THEN 1 "
+	public boolean fixedDate(long isbn) throws DAOException {
+		String sql = "SELECT " + "  CASE " + "      WHEN publish_date + interval '30 day' >= CURRENT_DATE THEN 1 "
 				+ "      ELSE 2 " + "    END AS type,"
-				+ "    TO_CHAR(arrival_date + interval '10 day', 'YYYY-MM-DD') AS  new_lend_date, "
-				+ "    TO_CHAR(arrival_date + interval '15 day', 'YYYY-MM-DD') AS old_lend_date " + "FROM stock "
-				+ "WHERE book_id = ? ";
+				+ "    TO_CHAR(publish_date + interval '10 day', 'YYYY-MM-DD') AS  new_lend_date, "
+				+ "    TO_CHAR(publish_date + interval '15 day', 'YYYY-MM-DD') AS old_lend_date " + "FROM inventory "
+				+ "WHERE isbn = ? ";
 
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
-			st.setInt(1, book_id);
+			st.setLong(1, isbn);
 			try (ResultSet rs = st.executeQuery();) {
 				int type = 0;
-				String new_lend_date = "";
-				String old_lend_date = "";
 				boolean fixedDate;
 				while (rs.next()) {
 					type = rs.getInt("type");
-					old_lend_date = rs.getString("old_lend_date");
-					new_lend_date = rs.getString("new_lend_date");
 				}
 				if (type == 1) {
 					fixedDate = true;
