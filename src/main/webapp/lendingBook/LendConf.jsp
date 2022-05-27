@@ -27,9 +27,9 @@
 		<div id="text"><h1>貸出</h1></div>
 	
 	
-	<font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝">	
+
 		<div id="text">会員情報</div>
-	</font>
+	
 	
  <table border="1"  align="center">
  <div id="text">
@@ -41,9 +41,9 @@
  <br>
  <br>
  
-   <font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝">
+ 
 		<div id="text"> 貸し出す資料ID</div>
- </font>
+
 
 	<table border="1"  align="center">
  		<tr bgcolor="#ffe4c4"><th>資料ID</th><th>ISBN番号</th><th>資料名</th><th>貸出年月日</th><th>返却期日</th><th>備考</th></tr>

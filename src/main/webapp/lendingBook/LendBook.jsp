@@ -29,18 +29,18 @@
 
 	<div id="text"><h1>貸出</h1></div>
 
-	<font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝">	
+	
 		<div id="text">会員情報</div>
-	</font>
+	
 	
  <table border="1" width="200px" align="center">
  	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th align="center">${sessionScope.menberInfo.iID}</th></tr>
  	 <tr><td align="center"  bgcolor="#f0e68c" > 氏名 </td><th align="center">${sessionScope.menberInfo.strName}</th></tr>
  </table>
  
- <font size="4" face="ＭＳ Ｐ明朝,ＭＳ 明朝"><br>
+ <br>
 		<div id="text"> 貸し出す資料ID</div>
- </font>
+
 
 <div id="text">
 <form action ="/LibraryProject/LendBookServlet" method="post">
