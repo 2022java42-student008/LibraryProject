@@ -58,7 +58,7 @@ INSERT INTO stock (isbn, title, arrival_date)
  
  CREATE TABLE stock (book_id SERIAL PRIMARY KEY, inbn bigint NOT NULL, title character varying, arrival_date date, discard_date date, remarks text);
  
- CREATE TABLE user_table (user_id SERIAL PRIMARY KEY, name character varying, post_no bigint, address text, tel text, mail character varying, birthday date, join_date date, update_date timestamp);
+ CREATE TABLE user_table (user_id SERIAL PRIMARY KEY, name character varying, post_no bigint, address text, tel text, mail character varying, birthday date, join_date date, update_date timestamp, retire_date date);
  
 
  
