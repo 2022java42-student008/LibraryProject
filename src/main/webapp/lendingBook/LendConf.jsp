@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>LendConf</title>
+<title>Lend Conf</title>
 
 <style>
 	#text { text-align : center ; }
@@ -23,6 +23,8 @@
 <body>
 
 <a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+
+<br><br>
 
 		<div id="text"><h1>貸出</h1></div>
 	
@@ -52,7 +54,9 @@
 </c:forEach>
     </table>
 
-<br>
+
+
+	<div id="text"><h3>上記の資料を貸出します。</h3></div>
 
 <form action="/LibraryProject/LendBookServlet" method="post">
 	<div id="text">
