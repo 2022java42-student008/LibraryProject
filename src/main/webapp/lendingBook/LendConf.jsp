@@ -54,8 +54,8 @@
 
 <br>
 
- <form action="/LibraryProject/LendBookServlet" method="post">
- <div id="text">
+<form action="/LibraryProject/LendBookServlet" method="post">
+	<div id="text">
 	<input type="submit"  formaction="/LibraryProject/lendingBook/LendBook.jsp"  display="inline-block"  name="return" value="戻る"  size="5" class="retu">
 	
 	<c:if test="${not empty books}">
@@ -64,8 +64,8 @@
 	</c:if>
 
 			
-  </div>
-  </form>
+  	</div>
+</form>
  
 
 </body>
