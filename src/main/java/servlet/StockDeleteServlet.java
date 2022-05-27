@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -52,7 +53,17 @@ public class StockDeleteServlet extends HttpServlet {
 
 				try {
 					BookDAO dao = new BookDAO();
-					BookBean list = dao.findBooks(IDForSearch).get(0);
+					BookBean list = new BookBean();
+					List<BookBean> listBean = dao.findBooks(IDForSearch);
+					if(listBean.size() != 0)
+					{
+						list = listBean.get(0);
+					}
+					else
+					{
+						response.sendRedirect(request.getHeader("REFERER"));
+						return;
+					}
 					request.setAttribute("searchResult", list);
 
 					HttpSession session = request.getSession();

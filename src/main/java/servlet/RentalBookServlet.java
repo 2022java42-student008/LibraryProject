@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/RentalBookServlet")
 public class RentalBookServlet extends HttpServlet {
@@ -20,6 +21,8 @@ public class RentalBookServlet extends HttpServlet {
 			// rentaldate 追加
 			if (action.equals("rentaldate")) 
 			{
+				HttpSession session = request.getSession();
+				session.invalidate();
 				//リクエストスコープに入れｔJSPへフォワード
 				gotoPage(request,response, "/LendComp.jsp");
 			} 
