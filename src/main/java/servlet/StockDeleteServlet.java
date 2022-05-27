@@ -53,21 +53,22 @@ public class StockDeleteServlet extends HttpServlet {
 
 				try {
 					BookDAO dao = new BookDAO();
-					BookBean list = new BookBean();
+					BookBean book = new BookBean();
 					List<BookBean> listBean = dao.findBooks(IDForSearch);
 					if(listBean.size() != 0)
 					{
-						list = listBean.get(0);
+						book = listBean.get(0);
 					}
 					else
 					{
 						response.sendRedirect(request.getHeader("REFERER"));
 						return;
 					}
-					request.setAttribute("searchResult", list);
+					
+					request.setAttribute("searchResult", book);
 
 					HttpSession session = request.getSession();
-					session.setAttribute("searchResult", list);
+					session.setAttribute("searchResult", book);
 					RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteConf.jsp");
 					rd.forward(request, response);
 					return;
@@ -101,10 +102,11 @@ public class StockDeleteServlet extends HttpServlet {
 		if (action.equals("DeleteComp")) {
 			HttpSession session = request.getSession();
 			String reason = (String)session.getAttribute("reason");
-
+			//削除しようとする本
+			BookBean book = (BookBean)session.getAttribute("searchResult");
 			try {
 				BookDAO dao = new BookDAO();
-				dao.BookDelete(reason);
+				dao.BookDelete(reason,book.getbook_id());
 
 				session.invalidate();
 				RequestDispatcher rd = request.getRequestDispatcher("stock/StockDeleteComp.jsp");

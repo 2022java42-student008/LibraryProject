@@ -140,12 +140,13 @@ public class BookDAO {
 		}
 	}
 	
-	public void BookDelete(String DeleteReason) throws DAOException {
-		String sql = "UPDATE stock SET remarks = ? ,discard_date=CURRENT_DATE";
+	public void BookDelete(String DeleteReason,int _bookID) throws DAOException {
+		String sql = "UPDATE stock SET remarks = ? ,discard_date = CURRENT_DATE WHERE book_id = ?";
 	
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) {
 			st.setString(1, DeleteReason);
+			st.setInt(2, _bookID);
 			st.executeUpdate();
 			
 			 
