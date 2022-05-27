@@ -25,7 +25,7 @@
 
 <form action="../StockSearchServlet" method="post" align="center">
  資料ID
-  <input type="search" name="BookID" placeholder="資料IDを入力">
+  <input type="number" name="BookID" placeholder="資料IDを入力">
   <input type="submit" name="submit" value="検索">
 </form>
 
