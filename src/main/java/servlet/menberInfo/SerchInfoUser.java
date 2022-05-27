@@ -27,7 +27,6 @@ public class SerchInfoUser extends HttpServlet {
 		
 		String menberMail = request.getParameter("menberMail");
 		
-		
 		UserBean user = null;
 		List<RentalBean> rental = new ArrayList<RentalBean>();
 		

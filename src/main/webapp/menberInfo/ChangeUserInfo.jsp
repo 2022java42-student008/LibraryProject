@@ -6,7 +6,7 @@
 		<meta charset="UTF-8">
 		<title>会員情報変更</title>
 		<link href="css/UserInfoStyle.css" rel="stylesheet">
-		<script src="LibraryProject/VariousFunction.js"></script>
+		<script src="/LibraryProject/VariousFunctions.js"></script>
 	</head>
 	<body>
 	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
@@ -34,7 +34,7 @@
 		<form action="../ChangeUserInfoConf" method="post">
 			<table border="1" >
 				<tr><td>氏名</td><td><input type="text" name="inputName" value='${sessionScope.inputName}'></td></tr>
-				<tr><td>郵便番号</td><td><input type="number" name="inputPost" value='${sessionScope.inputPost}' oninput="sliceMaxLength(this, 3)"></td></tr>
+				<tr><td>郵便番号</td><td><input type="number" name="inputPost" value='${sessionScope.inputPost}' oninput="sliceMaxLength(this, 7)"></td></tr>
 				<tr><td>住所</td><td><input type="text" name="inputAddress" value='${sessionScope.inputAddress}'></td></tr>
 				<tr><td>電話番号</td><td><input type="text" name="inputTel" value='${sessionScope.inputTel}'></td></tr>
 				<tr><td>E-mail</td><td><input type="text" name="inputMail" value='${sessionScope.inputMail}'></td></tr>
