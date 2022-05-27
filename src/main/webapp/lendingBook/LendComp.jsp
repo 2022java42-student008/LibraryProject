@@ -21,6 +21,6 @@
 	 <input type="submit" class="retu" name="return" value="貸出・返却に戻る">
 	 </form>
 	</div>
-	
+
 </body>
 </html>
