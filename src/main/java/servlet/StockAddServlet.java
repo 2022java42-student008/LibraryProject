@@ -36,6 +36,8 @@ public class StockAddServlet extends HttpServlet {
 				StockAddDAO2 dao2 = new StockAddDAO2();
 				BookDAO bookdao = new BookDAO();
 
+				
+				
 				// 登録したら登録完了画面へ
 				HttpSession session = request.getSession();
 				StockAddBean bookinfo1 = (StockAddBean) session.getAttribute("bookinfo1");
@@ -59,7 +61,6 @@ public class StockAddServlet extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("stock/StockAddComp.jsp");
 				rd.forward(request, response);
 				return;
-
 			}
 
 			// 追加後、登録した内容を表示

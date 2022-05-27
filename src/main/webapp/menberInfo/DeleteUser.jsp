@@ -5,13 +5,13 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<link href="css/UserInfoStyle.css" rel="stylesheet">
+		<link href="/LibraryProject/menberInfo/css/UserInfoStyle.css" rel="stylesheet">
 	</head>
 	<body>
 		<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
 		<h1 class="centermargin">退会処理</h1>
 		<div class="tableCeter">
-		会員情報<br>
+		 <p class="centermargin">会員情報
 			<table border="1"class="tableCeter">
 				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
@@ -37,7 +37,7 @@
 			</c:forEach>
 		</table>
 		<div class="centermargin">
-			<form action="../UserDeleteServlet" method="post">
+			<form action="/LibraryProject/UserDeleteServlet" method="post">
 			<c:if test="${sessionScope.canDelete == true}">
 				本当に退会してもよろしいですか？<br>
 			</c:if>
