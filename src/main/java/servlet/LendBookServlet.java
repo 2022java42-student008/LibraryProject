@@ -33,12 +33,24 @@ public class LendBookServlet extends HttpServlet {
 
 			String[] lends = request.getParameterValues("lend");
 			ArrayList<String> ids = new ArrayList<String>();
+			
+			//入力されているか
+			boolean bInputdte = false;
+			
 			for (String id : lends) 
 			{
 				if (id.length() != 0) 
 				{
 					ids.add(id);
+					bInputdte = true;
 				}
+			}
+			
+			//入力なしなので
+			if(bInputdte == false)
+			{
+				response.sendRedirect(request.getHeader("REFERER"));
+				return;
 			}
 			
 			try {
@@ -66,6 +78,7 @@ public class LendBookServlet extends HttpServlet {
 					}
 				}
 				
+				//借りられる本はないので戻る
 				if(sendStockList.size() == 0)
 				{
 					response.sendRedirect(request.getHeader("REFERER"));
