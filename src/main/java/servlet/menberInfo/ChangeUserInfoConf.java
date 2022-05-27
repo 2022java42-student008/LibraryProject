@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.UserBean;
+import dao.DAOException;
+import dao.UserDAO;
 
 @WebServlet("/ChangeUserInfoConf")
 public class ChangeUserInfoConf extends HttpServlet {
@@ -41,7 +43,6 @@ public class ChangeUserInfoConf extends HttpServlet {
 		user.setSecede_date(sessionUser.getSecede_date());
 		user.setUpdate_date(sessionUser.getUpdate_date());
 		
-		
 		//比較して挿入
 		if(!(strName == null || strName.length() == 0))
 		{
@@ -66,6 +67,23 @@ public class ChangeUserInfoConf extends HttpServlet {
 		if(!(strMail == null || strMail.length() == 0))
 		{
 			user.setMail(strMail);
+			try {
+				UserDAO userDAO = new UserDAO();
+				
+				//すでにあるメールアドレスなので戻る
+				if(userDAO.GetUser(strMail) !=  null)
+				{
+					session.setAttribute("ChangeMessage", "すでに登録しているメールアドレスです");
+					response.sendRedirect(request.getHeader("REFERER"));
+					return;
+				}
+			} catch (DAOException e) {
+				e.printStackTrace();
+				request.setAttribute("message", "内部エラーが発生しました。");
+				RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
+				rd.forward(request, response);
+				return;
+			}
 		}
 		
 		if(!(strBirthday == null || strBirthday.length() == 0))

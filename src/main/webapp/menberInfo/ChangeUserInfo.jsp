@@ -13,6 +13,7 @@
 		<h1>会員情報変更</h1><br>
 		
 		<div class="tableCeter">
+			<font color="red">${ChangeMessage}</font>
 			<table border="1">
 				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
