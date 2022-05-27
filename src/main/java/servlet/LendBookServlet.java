@@ -56,7 +56,8 @@ public class LendBookServlet extends HttpServlet {
 			try {
 				StockDAO dao = new StockDAO();
 				BookDAO bookDAO = new BookDAO();
-				//借りる予定の本情報
+				
+				//借りる予定の本情報（返却日時）
 				List<StockBean> list = dao.findBooks(ids);
 				
 				List<StockBean> sendStockList = new ArrayList<StockBean>();
@@ -65,7 +66,7 @@ public class LendBookServlet extends HttpServlet {
 				//借りる予定分
 				for(int i = 0;i < list.size();i++)
 				{
-					//借りる本の書籍情報
+					//借りる本の資料情報
 					BookBean book = bookDAO.findBooks(list.get(i).getBook_id()).get(0);
 					RentalDAO rentalDAO = new RentalDAO();
 					if(book.getDiscardDate() == null || book.getDiscardDate() == "" || book.getDiscardDate().length() == 0)
