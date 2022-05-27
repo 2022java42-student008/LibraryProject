@@ -17,8 +17,8 @@
 	<h1 style="text-align : center">貸出が完了しました。</h1>
 	
 	<div id="text">
-	<form action="/LibraryProject/lendingBook/LendingReturn.jsp"  method=post>
-	 <input type="submit" class="retu" name="return" value="貸出・返却に戻る">
+	 <form action="/LibraryProject/lendingBook/LendingReturn.jsp"  method=post>
+		 <input type="submit" class="retu" name="return" value="貸出・返却に戻る">
 	 </form>
 	</div>
 
