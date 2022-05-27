@@ -27,7 +27,7 @@ public class CreateUserServlet extends HttpServlet {
 			userDAO = new UserDAO();
 			if(userDAO.bAddUser(user))
 			{
-				gotoPage(request,response,"/LibraryProject/menberInfo/CreateUserComp.html");
+				gotoPage(request,response,"menberInfo/CreateUserComp.html");
 				return;
 			}
 		}catch(DAOException e){

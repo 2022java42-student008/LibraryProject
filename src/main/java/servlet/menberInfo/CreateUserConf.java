@@ -42,7 +42,7 @@ public class CreateUserConf extends HttpServlet {
 			}
 			else
 			{
-				gotoPage(request,response,"/LibraryProject/menberInfo/CreateUserConf.jsp");	
+				gotoPage(request,response,"menberInfo/CreateUserConf.jsp");	
 			}
 		}catch(DAOException e){
 			e.printStackTrace();
