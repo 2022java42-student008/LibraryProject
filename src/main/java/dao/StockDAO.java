@@ -76,7 +76,7 @@ public class StockDAO {
 	}
 
 	public boolean fixedDate(long isbn) throws DAOException {
-		String sql = "SELECT " + "  CASE " + "      WHEN publish_date + interval '30 day' >= CURRENT_DATE THEN 1 "
+		String sql = "SELECT " + "  CASE " + "      WHEN publish_date + interval '3 Month' >= CURRENT_DATE THEN 1 "
 				+ "      ELSE 2 " + "    END AS type,"
 				+ "    TO_CHAR(publish_date + interval '10 day', 'YYYY-MM-DD') AS  new_lend_date, "
 				+ "    TO_CHAR(publish_date + interval '15 day', 'YYYY-MM-DD') AS old_lend_date " + "FROM inventory "
