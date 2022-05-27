@@ -85,9 +85,11 @@
 <br>
 <div id="text">
 			<c:if test="${not empty sessionScope.menberInfo }">
-					<input type="submit" value="貸出" formaction="LendBook.jsp" > 
-				<c:if test="${ not empty sessionScope.rentalInfo }">
-					<input type="submit" value="返却" >
+				<c:if test="${empty sessionScope.menberInfo.secede_date}">
+					<input type="submit" value="貸出" formaction="LendBook.jsp" >
+					<c:if test="${ not empty sessionScope.rentalInfo }">
+						<input type="submit" value="返却" >
+					</c:if>
 				</c:if>
 			</c:if>
 			</div>
