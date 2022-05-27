@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>StockAdd</title>
-<link href="StockAdd.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./css/StockAdd.css">
 </head>
 
 <body>
@@ -25,15 +25,22 @@
 	<!--↓ここから入力フォーム-->
 
 	<form action="/LibraryProject/StockAddServlet" method="post">
-		ISBN番号 <input type="text" placeholder="ISBN番号を入力" name="ISBN"size="15" maxlength="13" required> <br> 
-		資料名 <input type="text" placeholder="資料名を入力" name="title" size="80" required> <br> 
-		著者名 <input type="text" placeholder="著者名を入力" name="author" size="50" required> <br>
-		出版社 <input type="text" placeholder="出版者名を入力" name="publisher"size="50" required> <br> 
-		出版年月日 <input type="date"placeholder="出版年月日を入力" name="publish_date" required> <br>
-		入荷年月日 <input type="date" placeholder="入荷年月日を入力" name="arrivalDate" value=<%= LocalDate.now() %> required> <br>
+		 <label for="isbn">ISBN番号</label>
+		 <input type="text" placeholder="ISBN番号を入力" name="ISBN"size="15" maxlength="13" required align="center"> <br> 
+		  <label for="bookname">資料名</label>
+		 <input type="text" placeholder="資料名を入力" name="title" size="80" required> <br> 
+		  <label for="author">著者名</label>
+		 <input type="text" placeholder="著者名を入力" name="author" size="50" required> <br>
+		  <label for="publisher">出版社</label>
+		  <input type="text" placeholder="出版者名を入力" name="publisher"size="50" required> <br> 
+		  <label for="publishdate">出版年月日</label>
+		 <input type="date"placeholder="出版年月日を入力" name="publish_date" required> <br>
+		  <label for="arrivaldate">入荷年月日</label>
+		 <input type="date" placeholder="入荷年月日を入力" name="arrivalDate" value=<%= LocalDate.now() %> required> <br>
 
 
-		分類コード <select name="code" >
+		<label for="code">分類コード</label>
+		 <select name="code" >
 			<option value="0">0</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
@@ -48,7 +55,8 @@
 		
 		 <br>
 		 
-		  備考 <input type="text" placeholder="備考を入力" name="remarks"
+		  <label for="arrivaldate">備考</label>
+		   <input type="text" placeholder="備考を入力" name="remarks"
 			size="80"> <input type="hidden" name=action value="conf">
 
 
