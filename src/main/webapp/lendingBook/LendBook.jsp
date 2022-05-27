@@ -33,7 +33,7 @@
 		<div id="text">会員情報</div>
 	
 	
- <table border="1" width="200px" align="center">
+ <table border="1"  align="center">
  	 <tr><td align="center"  bgcolor="#f0e68c"> 会員ID </td><th align="center">${sessionScope.menberInfo.iID}</th></tr>
  	 <tr><td align="center"  bgcolor="#f0e68c" > 氏名 </td><th align="center">${sessionScope.menberInfo.strName}</th></tr>
  </table>
