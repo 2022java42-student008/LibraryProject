@@ -179,6 +179,32 @@ public class BookDAO {
 		}
 		return list;
 	}
-			
+	
+	//isbnがinventryにあるかどうか
+	public boolean isFindInventry(long _isbn) throws DAOException
+	{
+		String sql = "SELECT * FROM inventory WHERE isbn = ?";
+		boolean bRet = false;
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);) 
+		{
+			st.setLong(1, _isbn);
+			try(ResultSet rs = st.executeQuery();)
+			{
+				if(rs.next())
+				{
+					bRet = true;
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+		
+		return bRet;
+	}
 }
 

@@ -19,7 +19,7 @@ public class StockAddDAO2 {
 		}
 
 	}
-
+	
 	public int AddBooks(long isbn, String title, int code, String author, String publisher, String publish_date)
 
 			throws DAOException {

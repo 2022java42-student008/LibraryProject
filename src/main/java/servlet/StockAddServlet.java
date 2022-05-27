@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.StockAddBean;
 import bean.StockAddBean2;
+import dao.BookDAO;
 import dao.DAOException;
 import dao.StockAddDAO;
 import dao.StockAddDAO2;
@@ -33,6 +34,7 @@ public class StockAddServlet extends HttpServlet {
 				// モデルのDAOを生成
 				StockAddDAO dao = new StockAddDAO();
 				StockAddDAO2 dao2 = new StockAddDAO2();
+				BookDAO bookdao = new BookDAO();
 
 				// 登録したら登録完了画面へ
 
@@ -50,8 +52,11 @@ public class StockAddServlet extends HttpServlet {
 				String publish_date = bookinfo2.getPublishDate();
 
 				dao.AddBooks(isbn, title, arrivalDate, remarks);
-				dao2.AddBooks(isbn, title, code, author, publisher, publish_date);
-
+				if(!(bookdao.isFindInventry(isbn)))
+				{
+					dao2.AddBooks(isbn, title, code, author, publisher, publish_date);
+				}
+				
 				RequestDispatcher rd = request.getRequestDispatcher("stock/StockAddComp.jsp");
 				rd.forward(request, response);
 				return;

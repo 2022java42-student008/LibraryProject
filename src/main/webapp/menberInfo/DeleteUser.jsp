@@ -41,7 +41,7 @@
 			<c:if test="${sessionScope.canDelete == true}">
 				本当に退会してもよろしいですか？<br>
 			</c:if>
-				<input type="submit" value="戻る" formaction="UserInfoSertch.jsp">
+				<input type="submit" value="戻る" formaction="/LibraryProject/menberInfo/UserInfoSertch.jsp">
 				<c:if test="${sessionScope.canDelete == true}">
 					<input type="submit" value="退会" >
 				</c:if>

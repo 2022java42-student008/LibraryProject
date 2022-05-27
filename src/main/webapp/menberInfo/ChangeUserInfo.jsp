@@ -31,7 +31,7 @@
 		
 		<br><h2>変更する内容を入力してください</h2><br>
 		<form action="../ChangeUserInfoConf" method="post">
-			<table border="1">
+			<table border="1" >
 				<tr><td>氏名</td><td><input type="text" name="inputName" value='${sessionScope.inputName}'></td></tr>
 				<tr><td>郵便番号</td><td><input type="number" name="inputPost" value='${sessionScope.inputPost}'></td></tr>
 				<tr><td>住所</td><td><input type="text" name="inputAddress" value='${sessionScope.inputAddress}'></td></tr>
