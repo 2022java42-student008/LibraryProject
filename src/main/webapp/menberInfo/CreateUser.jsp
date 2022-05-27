@@ -23,6 +23,6 @@
 				<tr><td>生年月日</td><td><input type="date" name="birthday" required></td></tr>
 				<tr><td>入会年月日</td><td><input type="date" name="indate" value=<%= LocalDate.now() %>></td></tr>
 			</table>
-			<input type="button" onclick="submit();" value="戻る" formaction="../TopMenu.html"><input type="submit" value="追加" >
+			<input type="button" onclick="location.href='/LibraryProject/TopMenu.html'" value="戻る" formaction="../TopMenu.html"><input type="submit" value="追加" >
 		</form>
 	</body>

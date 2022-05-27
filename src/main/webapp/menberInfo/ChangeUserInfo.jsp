@@ -40,7 +40,7 @@
 				<tr><td>E-mail</td><td><input type="text" name="inputMail" value='${sessionScope.inputMail}'></td></tr>
 				<tr><td>生年月日</td><td><input type="date" name="inputBirthday" value='${sessionScope.inputBirthday}'></td></tr>
 			</table>
-			<input type="button" onclick="submit();" value="戻る" formaction="/LibraryProject/menberInfo/UserInfoSertch.jsp"><input type="button" onclick="submit();" value="変更" >
+			<input type="button" value="戻る" onclick="location.href='/LibraryProject/menberInfo/UserInfoSertch.jsp'"><input type="button" onclick="submit();" value="変更" >
 		</form>
 	</body>
 </html>
