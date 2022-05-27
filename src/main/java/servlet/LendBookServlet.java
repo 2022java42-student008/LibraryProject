@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import bean.BookBean;
+import bean.RentalBean;
 import bean.StockBean;
 import bean.UserBean;
 import dao.BookDAO;
@@ -87,6 +88,7 @@ public class LendBookServlet extends HttpServlet {
 			}
 		}
 		
+		//借りる処理
 		if (action.equals("rentaldate")) {
 			HttpSession session = request.getSession();
 			@SuppressWarnings("unchecked")
@@ -95,6 +97,13 @@ public class LendBookServlet extends HttpServlet {
 			try {
 				BookDAO dao = new BookDAO();
 				dao.addrental(list, user.getiID());
+				
+				//レンタル情報を更新しメニューへ
+				List<RentalBean> rental = new ArrayList<RentalBean>();
+				RentalDAO rentalDAO = new RentalDAO();
+				rental = rentalDAO.ListUserRentalInfo(user.getiID());
+				session.setAttribute("rentalInfo", rental);
+				
 				RequestDispatcher rd = request.getRequestDispatcher("/lendingBook/LendComp.jsp");
 				rd.forward(request, response);
 				return;
