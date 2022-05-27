@@ -17,6 +17,7 @@
     <h1 style="text-align:center">資料の登録(確認)</h1>
     </div>
 
+
 <table border="1" align="center">
      
    
