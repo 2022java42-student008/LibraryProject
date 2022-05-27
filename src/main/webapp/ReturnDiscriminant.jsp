@@ -13,7 +13,7 @@
 
 	<a href="TopMenu.html" class="btn">トップメニュー</a>
 
-
+<br><br>
 
 	<form action="/LibraryProject/ReturnCompletedServlet" method="post">
 		<div class="centermargin">
