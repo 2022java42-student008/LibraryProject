@@ -1,4 +1,4 @@
-DROP TABLE inventory2 CASCADE;
+DROP TABLE user_table CASCADE;
  
  
  CREATE TABLE categorycode (code integer PRIMARY KEY, category_name character varying);
@@ -11,6 +11,6 @@ DROP TABLE inventory2 CASCADE;
  
  CREATE TABLE stock (book_id SERIAL PRIMARY KEY, inbn bigint NOT NULL, title character varying, arrival_date date, discard_date date, remarks text);
  
- CREATE TABLE user_table (user_id SERIAL PRIMARY KEY, name character varying, post_no bigint, address text, tel text, mail character varying, birthday date, join_date date, update_date timestamp, retire_date date);
+ CREATE TABLE user_table (user_id SERIAL PRIMARY KEY, name character varying, post_no bigint, address text, tel text, mail character varying, birthday date, join_date date, secede_date date, update_date timestamp);
  
 
