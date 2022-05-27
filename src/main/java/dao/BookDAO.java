@@ -155,14 +155,14 @@ public class BookDAO {
 		}
 	}
 	
-	public List<Integer> liFindBookIDFromISBN(int _isbn) throws DAOException {
+	public List<Integer> liFindBookIDFromISBN(long _isbn) throws DAOException {
 		String sql = "SELECT book_id FROM stock WHERE isbn = ?";
 		List<Integer> list = new ArrayList<Integer>();
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);) 
 		{
 			
-			st.setInt(1, _isbn);
+			st.setLong(1, _isbn);
 			try(ResultSet rs = st.executeQuery();)
 			{
 				while(rs.next())

@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -32,14 +33,19 @@ public class StockSearchServlet extends HttpServlet {
 
 		try {
 			BookDAO dao = new BookDAO();
-			BookBean list = dao.findBooks(IDForSearch).get(0);
-			request.setAttribute("searchResult", list);
-			
-			//ISBNを検索
-			List<Integer> bookIDList = dao.liFindBookIDFromISBN(list.getbook_id());
-
+			List<BookBean> list = dao.findBooks(IDForSearch);
+			BookBean bookBean = new BookBean();
+			List<Integer> bookIDList = new ArrayList<Integer>();
+			if(list.size() ==1)
+			{
+				bookBean = list.get(0);
+				
+				//ISBNを検索
+				bookIDList = dao.liFindBookIDFromISBN(bookBean.getIsbn());
+			}
+			request.setAttribute("searchResult", bookBean);
 			HttpSession session = request.getSession();
-			session.setAttribute("searchResult", list);
+			session.setAttribute("searchResult", bookBean);
 			session.setAttribute("bookIDs", bookIDList);
 
 		} catch (DAOException e) {

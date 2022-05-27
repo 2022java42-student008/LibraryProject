@@ -15,7 +15,7 @@
 		<form action="CreateUserConf.jsp">
 			<table border="1">
 				<tr><td>氏名</td><td><input type="text" name="name" required></td></tr>
-				<tr><td>郵便番号</td><td><input type="number" name="post" required></td></tr>
+				<tr><td>郵便番号</td><td><input type="number" name="post" maxlength="7" required></td></tr>
 				<tr><td>住所</td><td><input type="text" name="address" required></td></tr>
 				<tr><td>電話番号</td><td><input type="text" name="tel" required></td></tr>
 				<tr><td>E-mail</td><td><input type="text" name="mail" required></td></tr>
