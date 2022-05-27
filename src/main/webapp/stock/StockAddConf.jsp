@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>StockAddConf</title>
+<style>
+#text {
+	text-align: center;
+}
+</style>
 <link href="StockAdd.css" rel="stylesheet">
 </head>
 <body>
@@ -32,14 +37,18 @@
      <tr><td align="center"  bgcolor="#CCCCFF"> 備考</td><th>${bookinfo1.remarks}</th></tr>
 </table>
 
+<br>
+<br>
+
 <form action="/LibraryProject/StockAddServlet" method="post">
  <div class="enter">
+ <div id="text">
  <input type="button" onclick="location.href='/LibraryProject/stock/StockAdd.jsp'" name="return" value="戻る" >	
 <input type=submit name="enter" value="登録" >
 <input type="hidden" name=action value="add">
 	</form>
 </div>
-
+</div>
 
 </body>
 </html>
