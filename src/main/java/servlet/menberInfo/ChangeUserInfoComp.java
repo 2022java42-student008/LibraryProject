@@ -25,6 +25,7 @@ public class ChangeUserInfoComp extends HttpServlet {
 			UserDAO userDAO = new UserDAO();
 			if(userDAO.changeUserInfo(user))
 			{
+				
 				session.invalidate();
 				gotoPage(request,response,"menberInfo/ChangeUserComp.html");
 				return;
