@@ -195,4 +195,31 @@ public class RentalDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 	}
+	
+	//指定したIDが現在借りれるか(借りられているか)
+	public boolean nowRentalBookFromID(int ID) throws DAOException {
+		boolean bRet= true;
+		List<RentalBean> RentalBook= new ArrayList<RentalBean>();
+		String sql = "SELECT * FROM rental INNER JOIN stock ON rental.book_id = stock.book_id WHERE rental.book_id = ? AND rental.return_date IS NULL";
+
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement ps = con.prepareStatement(sql);) {
+			ps.setInt(1, ID);
+
+			try (ResultSet rs = ps.executeQuery();) {
+				if(rs.next())
+				{
+					bRet = false;
+				}
+				return bRet;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new DAOException("レコードの取得に失敗しました。");
+		}
+	}
 }

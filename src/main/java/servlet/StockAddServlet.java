@@ -37,7 +37,6 @@ public class StockAddServlet extends HttpServlet {
 				BookDAO bookdao = new BookDAO();
 
 				// 登録したら登録完了画面へ
-
 				HttpSession session = request.getSession();
 				StockAddBean bookinfo1 = (StockAddBean) session.getAttribute("bookinfo1");
 				StockAddBean2 bookinfo2 = (StockAddBean2) session.getAttribute("bookinfo2");

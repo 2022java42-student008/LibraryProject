@@ -17,6 +17,7 @@ import bean.StockBean;
 import bean.UserBean;
 import dao.BookDAO;
 import dao.DAOException;
+import dao.RentalDAO;
 import dao.StockDAO;
 
 @WebServlet("/LendBookServlet")
@@ -39,29 +40,35 @@ public class LendBookServlet extends HttpServlet {
 				}
 			}
 			
-			if(ids.size() == 0)
-			{
-				response.sendRedirect(request.getHeader("REFERER"));
-				return;
-			}
-			
 			try {
 				StockDAO dao = new StockDAO();
 				BookDAO bookDAO = new BookDAO();
+				//借りる予定の本情報
 				List<StockBean> list = dao.findBooks(ids);
 				
 				List<StockBean> sendStockList = new ArrayList<StockBean>();
 				List<BookBean> sendBookList =  new ArrayList<BookBean>();
 				
+				//借りる予定分
 				for(int i = 0;i < list.size();i++)
 				{
+					//借りる本の書籍情報
 					BookBean book = bookDAO.findBooks(list.get(i).getBook_id()).get(0);
-					System.out.print(book.getDiscardDate());
+					RentalDAO rentalDAO = new RentalDAO();
 					if(book.getDiscardDate() == null || book.getDiscardDate() == "" || book.getDiscardDate().length() == 0)
 					{
-						sendStockList.add(list.get(i));
-						sendBookList.add(book);
+						if(rentalDAO.nowRentalBookFromID(list.get(i).getBook_id()))
+						{
+							sendStockList.add(list.get(i));
+							sendBookList.add(book);
+						}
 					}
+				}
+				
+				if(sendStockList.size() == 0)
+				{
+					response.sendRedirect(request.getHeader("REFERER"));
+					return;
 				}
 
 				HttpSession session = request.getSession();

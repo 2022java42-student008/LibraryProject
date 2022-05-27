@@ -56,9 +56,9 @@
 <br>
 
 <div id="text">
-	<input type="submit" formaction="/LibraryProject/lendingBook/LendingReturn.jsp" name="return" value="戻る"size="5" class="retu">	
+	<input type="button" onclick="location.href='/LibraryProject/lendingBook/LendingReturn.jsp'" name="return" value="戻る"size="5" class="retu">	
 	<%if(size < 5 && size >= 0 ){ %>
-	<input type="submit"  name="lending" value="確認" size="5" class="sub">
+	<input type="button" onclick="submit();"  name="lending" value="確認" size="5" class="sub">
 	<%} %>
 	<input type="hidden" name="action" value="seach">
 </div>
