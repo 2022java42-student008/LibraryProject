@@ -17,6 +17,7 @@
 
 	<a href="/LibraryProject/TopMenu.html" class="btn">トップメニュー</a>
 
+<br><br>
 
 <div id="text">
 	<form action="../SerchInfoUser" method="post">

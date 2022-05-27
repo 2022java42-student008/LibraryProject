@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>lendbook</title>
+<title>Lend Book</title>
 <style>
 	#text { text-align : center ; }
 	.sub{background-color:#ffb6c1; border-radius: 10%;}
@@ -26,6 +26,8 @@
 <body>
 
 <a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+
+<br><br>
 
 	<div id="text"><h1>貸出</h1></div>
 

@@ -14,7 +14,9 @@
 </head>
 <body>
 
-	<h1 style="text-align : center">貸出が完了しました。</h1>
+<br><br><br><br><br><br><br><br><br>
+
+	<h1 style="text-align : center"> 貸出が完了しました。</h1>
 	
 	<div id="text">
 	 <form action="/LibraryProject/lendingBook/LendingReturn.jsp"  method=post>
