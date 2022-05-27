@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Book History</title>
 <style>
 	#text { text-align : center ; }
 	.retu{background-color:#98fb98; border-radius: 10%;}
@@ -18,6 +18,8 @@
 <body>
 
 <a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+
+<br><br><br>
 
 		<div id="text"><h1>貸出履歴</h1></div>
 

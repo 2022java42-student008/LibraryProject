@@ -14,21 +14,35 @@ import bean.UserBean;
 import dao.DAOException;
 import dao.UserDAO;
 
-@WebServlet("/CreateUserServlet")
-public class CreateUserServlet extends HttpServlet {
+
+@WebServlet("/CreateUserConf")
+public class CreateUserConf extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		UserDAO userDAO;
+		UserBean user;
 		HttpSession session = request.getSession();
-		UserBean user = (UserBean)session.getAttribute("CreateUser");
-		
 		
 		try {
 			userDAO = new UserDAO();
-			if(userDAO.bAddUser(user))
+			user = new UserBean();
+			user.setStrName(request.getParameter("name"));
+			user.setPost_no(Long.parseLong(request.getParameter("post")));
+			user.setAddress(request.getParameter("address"));
+			user.setTel(request.getParameter("tel"));
+			user.setMail(request.getParameter("mail"));
+			user.setBirthday(request.getParameter("birthday"));
+			session.setAttribute("CreateUser", user);
+			
+			if(userDAO.GetUser(user.getMail()) != null)
 			{
-				gotoPage(request,response,"menberInfo/CreateUserComp.html");
+				session.setAttribute("CreateMessage","すでに登録されているメールアドレスです");
+				response.sendRedirect(request.getHeader("REFERER"));	
 				return;
+			}
+			else
+			{
+				gotoPage(request,response,"menberInfo/CreateUserConf.jsp");	
 			}
 		}catch(DAOException e){
 			e.printStackTrace();
@@ -37,13 +51,10 @@ public class CreateUserServlet extends HttpServlet {
 		}
 	}
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	doPost(request,response);
-	}
-	
 	private void gotoPage(HttpServletRequest request, HttpServletResponse response,String page) throws ServletException, IOException 
 	{
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);
 	}
+
 }

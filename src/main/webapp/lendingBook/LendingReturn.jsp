@@ -17,6 +17,7 @@
 
 	<a href="/LibraryProject/TopMenu.html" class="btn">トップメニュー</a>
 
+<br><br>
 
 <div id="text">
 	<form action="../SerchInfoUser" method="post">
@@ -84,9 +85,7 @@
 <br>
 <div id="text">
 			<c:if test="${not empty sessionScope.menberInfo }">
-				<c:if test="${sessionScope.menberInfo.secede_date }">
 					<input type="submit" value="貸出" formaction="LendBook.jsp" > 
-				</c:if>
 				<c:if test="${ not empty sessionScope.rentalInfo }">
 					<input type="submit" value="返却" >
 				</c:if>
