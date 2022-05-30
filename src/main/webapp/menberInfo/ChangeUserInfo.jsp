@@ -5,16 +5,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>会員情報変更</title>
+		<style>
+#text {
+	text-align: center;
+}
+</style>
 		<link href="css/UserInfoStyle.css" rel="stylesheet">
 		<script src="/LibraryProject/VariousFunctions.js"></script>
 	</head>
 	<body>
 	<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a><br>
-		<h1>会員情報変更</h1><br>
+		<br>
+		<h1 style="text-align: center">会員情報変更</h1><br>
 		
 		<div class="tableCeter">
 			<font color="red">${ChangeMessage}</font>
-			<table border="1">
+			<table border="1" align="center">
 				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
 						<td>${sessionScope.menberInfo.iID}</td>
@@ -31,9 +37,9 @@
 			</table>
 		</div>
 		
-		<br><h2>変更する内容を入力してください</h2><br>
+		<br><h2 style="text-align: center">変更する内容を入力してください</h2><br>
 		<form action="../ChangeUserInfoConf" method="post">
-			<table border="1" >
+			<table border="1" align="center">
 				<tr><td>氏名</td><td><input type="text" name="inputName" value='${sessionScope.inputName}'></td></tr>
 				<tr><td>郵便番号</td><td><input type="number" name="inputPost" value='${sessionScope.inputPost}' oninput="sliceMaxLength(this, 7)"></td></tr>
 				<tr><td>住所</td><td><input type="text" name="inputAddress" value='${sessionScope.inputAddress}'></td></tr>
@@ -41,7 +47,13 @@
 				<tr><td>E-mail</td><td><input type="text" name="inputMail" value='${sessionScope.inputMail}'></td></tr>
 				<tr><td>生年月日</td><td><input type="date" name="inputBirthday" value='${sessionScope.inputBirthday}'></td></tr>
 			</table>
-			<input type="button" value="戻る" onclick="location.href='/LibraryProject/menberInfo/UserInfoSertch.jsp'"><input type="button" onclick="submit();" value="変更" >
+			<br>
+			<div id="text">
+			
+			<input type="button" value="戻る" onclick="location.href='/LibraryProject/menberInfo/UserInfoSertch.jsp'">
+			<input type="button" onclick="submit();" value="変更" >
+		  
+		    </div>
 		</form>
 	</body>
 </html>
