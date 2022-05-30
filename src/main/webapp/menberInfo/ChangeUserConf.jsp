@@ -33,7 +33,7 @@
 			</table>
 		</div>
 		
-		<h2 style="text-align: center">上記の内容で変更して宜しいでしょうか?</h2>
+		<h2 style="text-align: center">上記の内容で変更してよろしいでしょうか?</h2>
 
 		<div class="centermargin">
 	
