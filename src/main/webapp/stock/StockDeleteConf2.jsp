@@ -86,14 +86,16 @@
 
 
 	<div class="return" align="center" >
-		<input type="button"
-			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
-			name="return" value="戻る">
 		
-		<br><br>
+		
 		
 		<form action="/LibraryProject/StockDeleteServlet?action=DeleteComp"
 			method="post">
+			
+			<input type="button"
+			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
+			name="return" value="戻る">
+			
 			<input type="submit" value="削除確定">
 		</form>
 	</div>
