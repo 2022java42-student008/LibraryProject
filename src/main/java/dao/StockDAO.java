@@ -106,4 +106,25 @@ public class StockDAO {
 			throw new DAOException("レコードの取得に失敗しました。");
 		}
 	}
+	
+	//資料IDを参照する
+	public int sertchStockID() throws DAOException 
+	{
+		int iRet = 0;
+		String sql = "select * from stock_book_id_seq";
+		try (Connection con = DriverManager.getConnection(url, user, pass);
+				PreparedStatement st = con.prepareStatement(sql);
+				ResultSet rs = st.executeQuery();) {
+			if(rs.next())
+			{
+				iRet = rs.getInt(1);
+			}
+			
+		}catch (SQLException e) {
+				e.printStackTrace();
+				throw new DAOException("レコードの取得に失敗しました。");
+		}
+		return iRet;
+				
+	}
 }

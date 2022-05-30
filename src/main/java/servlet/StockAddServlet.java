@@ -16,6 +16,7 @@ import dao.BookDAO;
 import dao.DAOException;
 import dao.StockAddDAO;
 import dao.StockAddDAO2;
+import dao.StockDAO;
 
 @WebServlet("/StockAddServlet")
 public class StockAddServlet extends HttpServlet {
@@ -92,6 +93,17 @@ public class StockAddServlet extends HttpServlet {
 				info2.setPublishDate(publish_date);
 
 				HttpSession session = request.getSession();
+				
+				try {
+					StockDAO stockDAO = new StockDAO();
+					session.setAttribute("id", stockDAO.sertchStockID());
+				} catch (DAOException e) {
+					e.printStackTrace();
+					request.setAttribute("message", "内部エラーが発生しました。");
+					RequestDispatcher rd = request.getRequestDispatcher("/errInternal.jsp");
+					rd.forward(request, response);
+				} 
+				
 				session.setAttribute("bookinfo1", info1);
 				session.setAttribute("bookinfo2", info2);
 

@@ -26,7 +26,7 @@
 <table border="1" align="center">
      
    
-
+	 <tr><td align="center"  bgcolor="#CCCCFF"> 資料ID</td><th>${id}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> ISBN番号</td><th>${bookinfo1.isbn}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 資料名</td><th>${bookinfo1.title}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 著者名</td><th>${bookinfo2.author}</th></tr>
