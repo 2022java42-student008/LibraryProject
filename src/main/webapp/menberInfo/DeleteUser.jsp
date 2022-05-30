@@ -34,7 +34,7 @@
 		
 		<div class="centermargin">貸出状況<br></div>
 		<table border="1" class="tableCeter">
-			<tr><td>在庫ID</td><td>ISBN番号</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>
+			<tr><td>資料ID</td><td>ISBN番号</td><td>資料名</td><td>貸出年月日</td><td>返却期日</td></tr>
 			<c:forEach items="${ sessionScope.rentalInfo }" var="rental" >
 				<tr><td style="color:red" align="center">${rental.iBookID}</td><td style="color:red">${rental.isbn}</td><td style="color:red">${rental.title}</td><td style="color:red">${rental.dRentalDate}</td><td style="color:red">${rental.dReturnDate}</td></tr>
 			</c:forEach>
