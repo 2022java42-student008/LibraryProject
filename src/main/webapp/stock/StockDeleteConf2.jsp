@@ -100,12 +100,6 @@
 		</form>
 	</div>
 
-	<br>
-
-	<div class="return" align="center">
-		<input type="button" onclick="location.href='/LibraryProject/stock/StockMenu.html'"
-			name="return" value="資料管理メニューへ戻る">
-	</div>
-
+	
 </body>
 </html>

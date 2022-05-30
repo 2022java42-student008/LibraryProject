@@ -82,15 +82,7 @@
 		<input type="submit" value="確認画面へ">
 		  
 	</form>
-	</c:if>	S
-
-
-	<br>
-
-	<div class="return" align="center">
-		<input type="button" onclick="location.href='/LibraryProject/stock/StockMenu.html'"
-			name="return" display="inline-block"  value="資料管理メニューへ戻る">
-	</div>
+	</c:if>	
 
 
 </body>
