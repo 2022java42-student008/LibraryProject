@@ -24,15 +24,15 @@
 		<div>
 			<h1>貸出・返却</h1>
 
-
 			E-mail <input type="text" name="menberMail" > <input
 				type="submit" value="検索">
 		</div>
 	</form>
-</div>
 
 <br>
-
+		会員情報
+</div>
+		
 		<table border="1" align="center">
 
 			<tr>
@@ -53,6 +53,8 @@
 			type="hidden" name="userName" value=${menberInfo.strName}>
 
 <br>
+
+<div id="text"> 貸出状況 </div>
 
 		<div>
 			<table border="1" align="center">

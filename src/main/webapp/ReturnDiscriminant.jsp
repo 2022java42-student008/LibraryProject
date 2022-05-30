@@ -18,14 +18,16 @@
 	<form action="/LibraryProject/ReturnCompletedServlet" method="post">
 		<div class="centermargin">
 			<h1>返却</h1>
+			
+			会員情報
 			<table border="1" align="center">
 				<tr>
 					<th align="center">会員ID</th>
-					<th align="center" width="300">${sessionScope.menberInfo.iID }</th>
+					<th align="center">${sessionScope.menberInfo.iID }</th>
 				</tr>
 				<tr>
 					<th align="center">氏名</th>
-					<th align="center" width="300">${sessionScope.menberInfo.strName}</th>
+					<th align="center">${sessionScope.menberInfo.strName}</th>
 				</tr>
 			</table>
 
@@ -33,7 +35,7 @@
 <br>
 			
 
-
+			貸出状況
 			<table border="1" align="center">
 				<tr>
 					<th >資料ID</th>

@@ -9,12 +9,13 @@
 <style>
 	#text { text-align : center ; }
 	.retu{background-color:#98fb98; border-radius: 10%;}
+	p.small{line-height:190px; }
 </style>
 
 </head>
 <body>
 
-<br><br><br><br><br><br><br><br><br>
+<p class="small"><br></p>
 
 	<h1 style="text-align : center"> 貸出が完了しました。</h1>
 	
