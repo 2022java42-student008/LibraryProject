@@ -25,15 +25,7 @@ public class UserBean implements Serializable{
 		timeFM = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		this.iID = _iID;
 		this.strName = _strName;
-		
-		String strPost = String.valueOf(_post_no);
-		
-		for(int i = 0;i < 7 - strPost.length();i++)
-		{
-			strPost = "0" + strPost;
-		}
-		
-		this.post_no = strPost;
+		this.post_no = formatPostNO(_post_no);
 		this.address = _address;
 		this.tel = _tel;
 		this.mail = _mail;
@@ -95,7 +87,7 @@ public class UserBean implements Serializable{
 	String formatPostNO(long _postno)
 	{
 		String strPost = String.valueOf(_postno);
-		for(int i = 0;i < 7 - strPost.length();i++)
+		for(int i = 0;i <= 7 - strPost.length();i++)
 		{
 			strPost = "0" + strPost;
 		}
