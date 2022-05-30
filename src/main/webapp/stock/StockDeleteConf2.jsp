@@ -77,16 +77,13 @@
 	</table>
 
 
-
-
-	<br>
 	<div id="text">
 		<p>削除する資料の最終確認です。</p>
 		<p>上記の資料を削除してよろしいですか？</p>
 	</div>
 
 
-	<br>
+
 
 
 
@@ -94,6 +91,9 @@
 		<input type="button"
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">
+		
+		<br><br>
+		
 		<form action="/LibraryProject/StockDeleteServlet?action=DeleteComp"
 			method="post">
 			<input type="submit" value="削除確定">
