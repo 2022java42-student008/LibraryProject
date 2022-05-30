@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>ログイン画面</title>
-		<link href="css/TopLogin.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/TopLogin.css">
 		
 		<style>
 			p.small{line-height:120px; }
@@ -18,10 +18,11 @@
 	
 	<h1 class="s_center">図書管理システム</h1>
 	<form action="TopLoginServlt" method="post">
-			<p class="s_id">ID : <input type="number" name="id" required><br></p>
-			<p class="s_center">パスワード：<input type="password" name="pass" required><br></p>
+	
+			<p class="s_center">職員ID：<input type="number" name="id" required></p>
+			<p class="s_id">パスワード：<input type="password" name="pass" required><br></p>
 			<c:if test="${not empty loginConf || loginConf == false}">
-				<p class="s_err">IDかパスワードが違います</p>
+				<p class="s_err">職員IDかパスワードが違います</p>
 			</c:if>
 			<p class="s_center"><input type="submit" value="ログイン">
 		</form>

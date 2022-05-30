@@ -4,11 +4,17 @@
 
 .s_id{
 	text-align: center;
-	text-indent : 62px;
+	text-indent : -30px;
 }
 
 .s_err{
 	text-align: center;
 	color : red;
 	margin: auto;
+}
+
+label{
+    display: inline-block;
+    text-align: right;
+    width: 150px;
 }
