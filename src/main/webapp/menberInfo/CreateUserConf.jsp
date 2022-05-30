@@ -31,7 +31,7 @@
 			</table>
 			</div>
 			<h2 style="text-align: center">上記の内容で登録しますか？</h2>
-			<br>
+			
 			<div id="text">
 			<div class="centermargin">
 			<input type="submit" value="戻る" formaction="/LibraryProject/menberInfo/CreateUser.jsp">

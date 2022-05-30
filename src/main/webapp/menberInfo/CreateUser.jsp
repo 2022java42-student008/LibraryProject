@@ -21,7 +21,7 @@
 		<div class="centermargin">
 		<h1 style="text-align: center">新規会員登録</h1>
 		</div>
-		<font color="red">${CreateMessage}</font>
+		
 		<form action="/LibraryProject/CreateUserConf" method="post">
 			<table border="1" align="center">
 				<tr><td>氏名</td><td><input type="text" name="name" required value='${CreateUser.strName }'></td></tr>
@@ -33,6 +33,10 @@
 				<tr><td>入会年月日</td><td><input type="date" name="indate" value=<%= LocalDate.now() %>></td></tr>
 			</table>
 			<br>
+			
+			<div id="text"><font color="red"> ${CreateMessage}</font></div>
+			<br>
+			
 			<div id="text">
 			<div class="button">
 			<input type="button" onclick="location.href='/LibraryProject/TopMenu.html'" value="戻る" formaction="../TopMenu.html">
