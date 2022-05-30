@@ -29,7 +29,7 @@
   <input type="submit" name="submit" value="検索">
 </form>
 
-
+<br>
 
 <table border="1" align="center">
      <!--検索結果の表示 -->
@@ -49,6 +49,8 @@
      </table>
     <table border="1" align="center">
      
+    <br>
+     
 <tr><td align="center"  bgcolor="#D9E5FF">同じ資料(ISBN番号)の在庫</td><th>
 	<c:forEach items="${bookIDs}" var="bookID" varStatus="i">
 		<a href="../StockSearchServlet?BookID=${bookID}">${bookID}</a> <c:if test="${i.last == false}"> ,</c:if> 
@@ -56,7 +58,6 @@
 </th>
 </table>
 
-<br>
 <br>
 
 <div class="return" align="center">

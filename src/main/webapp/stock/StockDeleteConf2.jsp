@@ -24,8 +24,6 @@
 		<h1 style="text-align: center">資料削除</h1>
 	</div>
 
-	<br>
-
 
 	<table border="1" align="center">
 
@@ -39,7 +37,7 @@
 				<th>${searchResult.isbn}</th>
 			</tr>
 			<tr>
-				<td align="center" bgcolor="#CCCCFF">資料名</td>
+				<td align="center" bgcolor="#CCCCFF">資料名</d>
 				<th>${searchResult.title}</th>
 			</tr>
 			<tr>
@@ -87,7 +85,7 @@
 
 
 
-	<div class="return" align="center">
+	<div class="return" align="center" >
 		<input type="button"
 			onclick="location.href='/LibraryProject/stock/StockDeleteConf.jsp'"
 			name="return" value="戻る">

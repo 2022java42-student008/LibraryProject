@@ -7,12 +7,17 @@
 <title>StockAddComp</title>
 
 <link href="StockAddCom.css" rel="stylesheet">
+<style>
+p.small{line-height:190px; }
+</style>
 </head>
 <body>
 
 <div class="leftmargin">
 	 <a href="/LibraryProject/TopMenu.html" >トップメニュー</a>
     </div>
+
+<p class="small"><br></p>
 
 <div class="centermargin">
     <h1 style="text-align:center">資料を登録しました</h1>
