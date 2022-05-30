@@ -1,9 +1,23 @@
 @charset "UTF-8";
 
-.centermargin 
-{
+.centermargin {
 	position: relative;
 	text-align: center;
 }
-.tableCeter{margin : auto;}
-.color_red{color:red}
+
+.tableCeter {
+	margin: auto;
+}
+
+.color_red {
+	color: red
+}
+
+.button {
+	
+  padding-top: 20px;
+  display: flex;
+  width: 30%;
+  margin: auto;
+    margin-right: 10px;
+  }
