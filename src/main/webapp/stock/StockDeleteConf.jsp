@@ -68,7 +68,6 @@
 	<div id="text">
 		<p>上記の資料を削除します。</p>
 		<p>（削除すると在庫台帳に廃棄年月日が記録されます）</p>
-		<br>
 		<p>よろしければ以下に削除理由を入力し、確認画面へ進んでください。</p>
 	</div>
 	
@@ -78,32 +77,21 @@
 		<input type="hidden" name="action" value="conf"> 
 		
 		<br>
-		
+	
+		<input type="submit" name="return" value="戻る" formaction=/LibraryProject/stock/StockDelete.html>
 		<input type="submit" value="確認画面へ">
+		  
 	</form>
-	
-	</c:if>
-	
-	<br>
-
-
-
-
-	<div class="return" align="center">
-	<form action=/LibraryProject/stock/StockDelete.html>
-		<input type="submit"name="return" value="戻る">
-    </form>
-
-
-	</div>
+	</c:if>	S
 
 
 	<br>
 
 	<div class="return" align="center">
 		<input type="button" onclick="location.href='/LibraryProject/stock/StockMenu.html'"
-			name="return" value="資料管理メニューへ戻る">
+			name="return" display="inline-block"  value="資料管理メニューへ戻る">
 	</div>
+
 
 </body>
 </html>
