@@ -19,7 +19,6 @@
 		<h1 style="text-align: center">会員情報変更</h1><br>
 		
 		<div class="tableCeter">
-			<font color="red">${ChangeMessage}</font>
 			<table border="1" align="center">
 				<tr><td>会員ID</td><td>氏名</td><td>郵便番号</td><td>住所</td><td>携帯電話</td><td>メールアドレス</td><td>生年月日</td><td>入会年月日</td><td>退会年月日</td><td>最終情報更新日時</td></tr>
 				<tr>
@@ -37,7 +36,7 @@
 			</table>
 		</div>
 		
-		<br><h2 style="text-align: center">変更する内容を入力してください</h2><br>
+		<br><h2 style="text-align: center">変更する内容を入力してください</h2>
 		<form action="../ChangeUserInfoConf" method="post">
 			<table border="1" align="center">
 				<tr><td>氏名</td><td><input type="text" name="inputName" value='${sessionScope.inputName}'></td></tr>
@@ -49,10 +48,12 @@
 			</table>
 			<br>
 			<div id="text">
-			
+			<font color="red">${ChangeMessage}</font>
+			</div>
+			<br>
+			<div id="text">
 			<input type="button" value="戻る" onclick="location.href='/LibraryProject/menberInfo/UserInfoSertch.jsp'">
 			<input type="button" onclick="submit();" value="変更" >
-		  
 		    </div>
 		</form>
 	</body>
