@@ -21,7 +21,7 @@
 	<div class="leftmargin">
 		<a href="../TopMenu.html">トップメニュー</a>
 	</div>
-
+<br>
 	<div class="centermargin">
 		<h1 style="text-align: center">資料登録</h1>
 	</div>

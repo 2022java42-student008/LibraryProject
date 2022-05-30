@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.centermargin 
+{
+	position: relative;
+	text-align: center;
+}
+.leftmargin {
+	position: top;
+	left: 0;
+	bottom: 0;
+}
+
+.next {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+} 
+
+label{
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button{
+	  margin-right: 60px;
+	  
+}
