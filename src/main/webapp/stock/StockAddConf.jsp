@@ -32,7 +32,7 @@
      <tr><td align="center"  bgcolor="#CCCCFF"> 著者名</td><th>${bookinfo2.author}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 分類コード</td><th>${bookinfo2.code}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 出版社</td><th>${bookinfo2.publisher}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 出版日</td><th>${bookinfo2.publishDate}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 出版年月日</td><th>${bookinfo2.publishDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 入荷年月日</td><th>${bookinfo1.arrivalDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 備考</td><th>${bookinfo1.remarks}</th></tr>
 </table>
