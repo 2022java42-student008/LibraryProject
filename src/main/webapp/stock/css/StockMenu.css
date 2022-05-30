@@ -3,12 +3,12 @@
 
 .btn-square-shadow {
 	display: inline-block;
-	width: 200px;
-	height: 180px;
-    line-height:180px;
+	width: 150px;
+	height: 135px;
+    line-height:135px;
 	padding: 0.5em 1em;
 	margin: 30px;
-	font-size: 50px;
+	font-size: 40px;
 	text-decoration: none;
 	background: #668ad8; /*ボタン色*/
 	color: #FFF;
