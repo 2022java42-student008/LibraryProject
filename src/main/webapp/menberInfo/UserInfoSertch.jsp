@@ -14,7 +14,7 @@
 	
 		<h2 class="centermargin">会員情報</h2>
 		<form action="../SerchInfoUser" method="post" class="centermargin">
-			e-Mail : <input type="text" name="menberMail" placeholder=${sessionScope.sertch}>
+			E-mail <input type="text" name="menberMail" placeholder=${sessionScope.sertch}>
 			<input type="submit" value="検索">
 		</form>
 		
