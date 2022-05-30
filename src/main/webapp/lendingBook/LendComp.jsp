@@ -15,6 +15,8 @@
 </head>
 <body>
 
+<a href="/LibraryProject/TopMenu.html?Top">トップメニュー</a>
+
 <p class="small"><br></p>
 
 	<h1 style="text-align : center"> 貸出が完了しました。</h1>
