@@ -111,13 +111,13 @@ public class StockDAO {
 	public int sertchStockID() throws DAOException 
 	{
 		int iRet = 0;
-		String sql = "select * from stock_book_id_seq";
+		String sql = "select max(book_id) FROM stock";
 		try (Connection con = DriverManager.getConnection(url, user, pass);
 				PreparedStatement st = con.prepareStatement(sql);
 				ResultSet rs = st.executeQuery();) {
 			if(rs.next())
 			{
-				iRet = rs.getInt(1);
+				iRet = rs.getInt(1) + 1;
 			}
 			
 		}catch (SQLException e) {

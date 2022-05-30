@@ -93,7 +93,7 @@ public class UserDAO {
 			Date date = new Date();
 			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
 			ps.setString(1, _user.getStrName());
-			ps.setLong(2, _user.getPost_no());
+			ps.setLong(2, Longuser.getPost_no()));
 			ps.setString(3, _user.getAddress());
 			ps.setString(4, _user.getTel());
 			ps.setString(5, _user.getMail());
