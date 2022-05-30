@@ -41,7 +41,7 @@
      <tr><td align="center"  bgcolor="#CCCCFF"> 資料名</td><th>${searchResult.title}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 著者名</td><th>${searchResult.author}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 出版社</td><th>${searchResult.publisher}</th></tr>
-     <tr><td align="center"  bgcolor="#CCCCFF"> 出版日</td><th>${searchResult.publishDate}</th></tr>
+     <tr><td align="center"  bgcolor="#CCCCFF"> 出版年月日</td><th>${searchResult.publishDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 入荷年月日</td><th>${searchResult.arrivalDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 削除年月日</td><th>${searchResult.discardDate}</th></tr>
      <tr><td align="center"  bgcolor="#CCCCFF"> 備考</td><th>${searchResult.remarks}</th></tr>

@@ -52,7 +52,7 @@
 				<th>${searchResult.publisher}</th>
 			</tr>
 			<tr>
-				<td align="center" bgcolor="#CCCCFF">出版日</td>
+				<td align="center" bgcolor="#CCCCFF">出版年月日</td>
 				<th>${searchResult.publishDate}</th>
 			</tr>
 			<tr>
