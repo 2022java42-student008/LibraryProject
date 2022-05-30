@@ -13,11 +13,7 @@
 	color: red
 }
 
-.button {
 	
-  padding-top: 20px;
-  display: flex;
-  width: 30%;
-  margin: auto;
-    margin-right: 10px;
+  .button{
+     margin-right: 100px;
   }
