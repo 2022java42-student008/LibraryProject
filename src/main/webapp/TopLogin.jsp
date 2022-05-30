@@ -7,8 +7,14 @@
 		<meta charset="UTF-8">
 		<title>ログイン画面</title>
 		<link href="css/TopLogin.css" rel="stylesheet">
+		
+		<style>
+			p.small{line-height:120px; }
+		</style>
 	</head>
 	<body>
+	
+	<p class="small"><br></p>
 	
 	<h1 class="s_center">図書管理システム</h1>
 	<form action="TopLoginServlt" method="post">
