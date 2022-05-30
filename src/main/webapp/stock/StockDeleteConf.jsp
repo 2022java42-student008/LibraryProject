@@ -24,8 +24,6 @@
 		<h1 style="text-align: center">資料削除</h1>
 	</div>
 
-	<br>
-
 
 	<table border="1" align="center">
      
@@ -63,7 +61,7 @@
 			</tr>
 
 	</table>
-	<br>
+	
 	<c:if test="${empty searchResult.discardDate}" >
 	
 	
@@ -73,10 +71,14 @@
 		<br>
 		<p>よろしければ以下に削除理由を入力し、確認画面へ進んでください。</p>
 	</div>
+	
 
 	<form action="/LibraryProject/StockDeleteServlet" method="post" align="center">
 		<input type="text" placeholder="削除理由を入力" name="DeleteReason" size="80"><br>
 		<input type="hidden" name="action" value="conf"> 
+		
+		<br>
+		
 		<input type="submit" value="確認画面へ">
 	</form>
 	

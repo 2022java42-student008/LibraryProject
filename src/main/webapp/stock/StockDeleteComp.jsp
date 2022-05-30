@@ -7,15 +7,21 @@
 <title>StockAddComp</title>
 
 <link href="StockAddCom.css" rel="stylesheet">
+
+<style>
+	p.small{line-height:170px; }
+</style>
 </head>
 <body>
 
 <div class="leftmargin">
 	 <a href="/LibraryProject/TopMenu.html" >トップメニュー</a>
     </div>
+    
+    <p class="small"><br></p>
 
 <div class="centermargin">
-    <h1 style="text-align:center">資料データの削除が完了しました</h1>
+    <h1 style="text-align:center">資料の削除が完了しました</h1>
     </div>
 
 <div class="next" align = center>
