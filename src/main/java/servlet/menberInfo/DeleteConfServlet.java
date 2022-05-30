@@ -37,7 +37,8 @@ public class DeleteConfServlet extends HttpServlet {
 			{
 				books.add(((List<BookBean>)bookDAO.findBooks(rentalList.get(i).getiBookID())).get(0));
 				//廃棄済みか貸出中なら
-				if(books.get(i).getDiscardDate() != null || rentalList.get(i).getdFixedDate() == null)
+				if(books.get(i).getDiscardDate() != null || books.get(i).getDiscardDate() != "" || 
+						rentalList.get(i).getdFixedDate() == null || rentalList.get(i).getdFixedDate() == "")
 				{
 					canDelete = false;
 				}
