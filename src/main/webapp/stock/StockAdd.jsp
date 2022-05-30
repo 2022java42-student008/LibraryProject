@@ -36,7 +36,7 @@
 			<label for="author">著者名</label> 
 				<input type="text" placeholder="著者名を入力" name="author" size="50" required value='${bookinfo2.author}'> <br> <br> 
 			<label for="publisher">出版社</label> 
-				<input type="text" placeholder="出版者名を入力" name="publisher" size="50" required value='${bookinfo2.publisher}'> <br> <br>
+				<input type="text" placeholder="出版社名を入力" name="publisher" size="50" required value='${bookinfo2.publisher}'> <br> <br>
 			<label for="publishdate">出版年月日</label> 
 				<input type="date" placeholder="出版年月日を入力" name="publish_date" required value='${bookinfo2.publishDate}'> <br><br> 
 			<label for="arrivaldate">入荷年月日</label> 
