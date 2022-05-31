@@ -87,7 +87,8 @@ public class UserBean implements Serializable{
 	String formatPostNO(long _postno)
 	{
 		String strPost = String.valueOf(_postno);
-		for(int i = 0;i <= 7 - strPost.length();i++)
+		int postLength = strPost.length();
+		for(int i = 0;i < 7 - postLength;i++)
 		{
 			strPost = "0" + strPost;
 		}
